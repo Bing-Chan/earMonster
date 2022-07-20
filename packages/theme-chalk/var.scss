@@ -1,0 +1,28 @@
+@use 'config' as *;
+
+:root {
+	--ga-border-width-base: 1px;
+	--ga-border-radius-round: 20px;
+	--ga-border-style-base: solid;
+	--ga-color-white: #{$color-white};
+
+	--ga-color-black: #{$color-black};
+	--ga-color-success: #{$color-success};
+	--ga-color-error: #{$color-error};
+	--ga-color-warning: #{$color-warning};
+	--ga-color-info: #{$color-info};
+	--ga-color-danger: #{$color-danger};
+	--ga-text-color-regular: #{$text-color-regular};
+	--ga-text-color-disabled: #{$text-color-disabled};
+
+	--ga-color-primary: #{$color-primary};
+	--ga-color-primary-light-1: #{$color-primary-light-1};
+	--ga-color-primary-light-2: #{$color-primary-light-2};
+	--ga-color-primary-light-3: #{$color-primary-light-3};
+	--ga-color-primary-light-4: #{$color-primary-light-4};
+	--ga-color-primary-light-5: #{$color-primary-light-5};
+	--ga-color-primary-light-6: #{$color-primary-light-6};
+	--ga-color-primary-light-7: #{$color-primary-light-7};
+	--ga-color-primary-light-8: #{$color-primary-light-8};
+	--ga-color-primary-light-9: #{$color-primary-light-9};
+}

@@ -1,0 +1,100 @@
+@use 'mixins' as *;
+@use 'config' as *;
+@use 'var' as *;
+
+@include b(button) {
+	line-height: 1;
+	white-space: nowrap;
+	cursor: pointer;
+	-webkit-appearance: none;
+	text-align: center;
+	box-sizing: border-box;
+	color: var(--ga-button-text-color);
+	background-color: var(--ga-button-bg-color);
+	border: var(--ga-border-width-base) var(--ga-border-style-base) var(--ga-button-border-color);
+	border-color: var(--ga-button-border-color);
+	outline: none;
+	margin: 0;
+	transition: 0.1s;
+	user-select: none;
+	padding: 12px 20px;
+	--ga-button-text-color: var(--ga-color-white);
+	--ga-button-hover-text-color: var(--ga-color-white);
+	--ga-button-disabled-text-color: var(--ga-color-white);
+	--ga-button-active-text-color: var(--ga-color-white);
+	--ga-button-bg-color: var(--ga-color-white);
+
+	& + & {
+		margin-left: 10px;
+	}
+	&:hover,
+	&:focus {
+		color: var(--ga-button-hover-text-color);
+		background-color: var(--ga-button-hover-bg-color);
+		border-color: var(--ga-button-hover-border-color, var(--ga-button-hover-bg-color));
+		outline: none;
+	}
+	&:active {
+		color: var(--ga-button-active-text-color);
+		border-color: var(--ga-button-active-border-color, var(--ga-button-active-bg-color));
+		background-color: var(--ga-button-active-bg-color, var(--ga-button-bg-color));
+		outline: none;
+	}
+
+	&::-moz-focus-inner {
+		border: 0;
+	}
+	@include m(default) {
+		--ga-button-hover-text-color: var(--ga-color-primary);
+		--ga-button-active-text-color: var(--ga-color-primary);
+		--ga-button-disabled-text-color: #c0c4cc;
+		--ga-button-text-color: var(--ga-text-color-regular);
+		--ga-button-disablega-border-color: var(--ga-text-color-disabled);
+		--ga-button-border-color: #dcdfe6;
+		--ga-button-hover-bg-color: var(--ga-color-primary-light-9);
+		&:hover,
+		&:focus {
+			border-color: var(--ga-button-border-color);
+		}
+		&:active {
+			border-color: var(--ga-color-primary);
+			background-color: var(--ga-button-hover-bg-color);
+		}
+	}
+
+	@include m(primary) {
+		--ga-button-bg-color: var(--ga-color-primary);
+	}
+
+	@include m(success) {
+		--ga-button-bg-color: var(--ga-color-success);
+	}
+
+	@include m(info) {
+		--ga-button-bg-color: var(--ga-color-info);
+	}
+
+	@include m(warning) {
+		--ga-button-bg-color: var(--ga-color-warning);
+	}
+
+	@include m(danger) {
+		--ga-button-bg-color: var(--ga-color-danger);
+	}
+
+	@include when(round) {
+		border-radius: var(--ga-border-radius-round);
+		padding: 12px 23px;
+	}
+
+	@include when(disabled) {
+		&,
+		&:hover,
+		&:focus {
+			cursor: not-allowed;
+			color: var(--ga-button-disabled-text-color);
+			background-color: var(--ga-button-disabled-bg-color);
+			border-color: var(--ga-button-disablega-border-color);
+		}
+	}
+}
