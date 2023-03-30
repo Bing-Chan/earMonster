@@ -64,7 +64,7 @@ export function isPrimitive(arg) {
 	)
 }
 
-export const isBuffer = require('buffer').Buffer.isBuffer
+export const isBuffer =  require('buffer').Buffer.isBuffer
 
 export function objectToString(o) {
 	return Object.prototype.toString.call(o)

@@ -1,7 +1,8 @@
 export function calcColorChannels(c: string) {
 	let rawColor = c.trim().replace('#', '')
 	if (/^[0-9a-fA-F]{3}$/.test(rawColor)) {
-		rawColor = rawColor[0].repeat(2) + rawColor[1].repeat(2) + rawColor[2].repeat(2)
+		rawColor =
+			rawColor[0].repeat(2) + rawColor[1].repeat(2) + rawColor[2].repeat(2)
 	}
 	if (/^[0-9a-fA-F]{6}$/.test(rawColor)) {
 		return {

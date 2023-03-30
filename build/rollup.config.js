@@ -45,10 +45,13 @@ const inputOptions = {
 		commonjs(),
 		copy({
 			targets: [
-				{ src: path.resolve(__dirname, '../LICENSE.md'), dest: 'dist' },
-				{ src: path.resolve(__dirname, '../README.md'), dest: 'dist' },
-				{ src: path.resolve(__dirname, '../CHANGELOG.md'), dest: 'dist' },
-				{ src: path.resolve(__dirname, '../package.json'), dest: 'dist' },
+				// { src: path.resolve(__dirname, '../LICENSE.md'), dest: 'dist' },
+				// { src: path.resolve(__dirname, '../README.md'), dest: 'dist' },
+				// { src: path.resolve(__dirname, '../CHANGELOG.md'), dest: 'dist' },
+				// { src: '../readme.md', dest: 'dist' },
+				// { src: '../LICENSE.md', dest: 'dist' },
+				// { src: '../CHANGELOG.md', dest: 'dist' },
+				{ src: '../package.json', dest: 'dist' },
 			],
 		}),
 	],

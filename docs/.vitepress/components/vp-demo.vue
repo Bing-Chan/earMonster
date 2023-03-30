@@ -24,8 +24,8 @@ import { useSourceCode } from '../composables/source-code'
 import GithubIcon from '../components/github.vue'
 import SourceCodeIcon from '../components/source-code.vue'
 import CopyIcon from '../components/copy-icon.vue'
-import VpExample from './vp-example.vue'
-import VpSourceCode from './vp-source-code.vue'
+import VpExample from "./vp-example.vue";
+import VpSourceCode from "./vp-source-code.vue";
 
 export default defineComponent({
 	name: 'vp-demo',

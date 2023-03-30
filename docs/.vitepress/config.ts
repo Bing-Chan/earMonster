@@ -22,6 +22,7 @@ module.exports = {
 		// repo: 'fish-uncle/design-plus', 自动生成github链接
 		logo: '/logo.png',
 		nav: [
+			{ text: '主页', link: '/' },
 			{ text: 'PC端', link: '/component/pc/index.html' },
 			{ text: 'H5端', link: '/component/h5/index.html' },
 			{ text: 'Gitee', link: 'https://gitee.com/duochan' },
