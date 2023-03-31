@@ -1,6 +1,7 @@
-<template lang="pug">
-button(:class="className" :style="style" @click="handleClick" :autofocus="autofocus")
-	slot
+<template>
+	<button :class="className" :value="111" :style="style" @click="handleClick" :autofocus="autofocus">
+		<slot></slot>
+	</button>
 </template>
 <script lang="ts">
 import { defineComponent, computed } from 'vue'
@@ -18,6 +19,7 @@ export default defineComponent({
 		}
 
 		const className = computed(() => {
+			debugger
 			const buttonType = props.type || 'default'
 			const classArr = [
 				'ga-button',

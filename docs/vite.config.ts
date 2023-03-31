@@ -8,8 +8,8 @@ export default defineConfig({
 	plugins: [sassDts(), Inspect()],
 	resolve: {
 		alias: {
-			'@request_cb': path.resolve(__dirname, '../packages'),
-		},
+			'@request_cb': path.resolve(__dirname, '../packages')
+		}
 	},
 	optimizeDeps: {
 		include: ['vue', 'markdown-it', '@vueuse/core'],
