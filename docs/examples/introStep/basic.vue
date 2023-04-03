@@ -1,8 +1,8 @@
 <template>
 	<p>
-		<d-button type="primary">菜单一</d-button>
-		<d-button type="success">菜单二</d-button>
-		<d-button type="info">菜单三</d-button>
+		<ga-button type="primary">菜单一</ga-button>
+		<ga-button type="success">菜单二</ga-button>
+		<ga-button type="info">菜单三</ga-button>
 	</p>
 </template>
 <script lang="ts">

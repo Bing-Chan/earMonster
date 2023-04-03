@@ -48,11 +48,15 @@ module.exports = {
 					children: [
 						{
 							text: 'Button 按钮',
-							link: '/component/button.html',
+							link: './button.html',
 						},
 						{
 							text: 'Link 链接',
-							link: '/component/link.html',
+							link: './link.html',
+						},
+						{
+							text: '引导页',
+							link: './introStep.html',
 						},
 					],
 				},
