@@ -1,4 +1,5 @@
 import { mdPlugin } from './config/plugins'
+const path = require('path')
 
 module.exports = {
 	lang: 'zh-CN',
@@ -48,15 +49,15 @@ module.exports = {
 					children: [
 						{
 							text: 'Button 按钮',
-							link: './button.html',
+							link: path.resolve(__dirname, '../component/pc/button.html'),
 						},
 						{
 							text: 'Link 链接',
-							link: './link.html',
+							link:  path.resolve(__dirname, '../component/link.html'),
 						},
 						{
 							text: '引导页',
-							link: './introStep.html',
+							link:  path.resolve(__dirname, '../component/pc/introStep.html'),
 						},
 					],
 				},
