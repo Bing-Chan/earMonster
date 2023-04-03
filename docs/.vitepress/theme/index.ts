@@ -9,6 +9,7 @@ export default {
 	...DefaultTheme,
 	logo: '/logo.png',
 	enhanceApp: ({ app }) => {
+		// app.use(request_cb)
 		app.use(request_cb)
 		app.component('vp-demo', vpDemo)
 	},

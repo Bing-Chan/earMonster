@@ -1,18 +1,18 @@
 <template>
 	<p>
-		<d-button disabled>Default</d-button>
-		<d-button type="primary" disabled>Primary</d-button>
-		<d-button type="success" disabled>Success</d-button>
-		<d-button type="info" disabled>Info</d-button>
-		<d-button type="warning" disabled>Warning</d-button>
-		<d-button type="danger" disabled>Danger</d-button>
+		<ga-button disabled>Default</ga-button>
+		<ga-button type="primary" disabled>Primary</ga-button>
+		<ga-button type="success" disabled>Success</ga-button>
+		<ga-button type="info" disabled>Info</ga-button>
+		<ga-button type="warning" disabled>Warning</ga-button>
+		<ga-button type="danger" disabled>Danger</ga-button>
 	</p>
 	<p>
-		<d-button round disabled>Default</d-button>
-		<d-button type="primary" round disabled>Primary</d-button>
-		<d-button type="success" round disabled>Success</d-button>
-		<d-button type="info" round disabled>Info</d-button>
-		<d-button type="warning" round disabled>Warning</d-button>
-		<d-button type="danger" round disabled>Danger</d-button>
+		<ga-button round disabled>Default</ga-button>
+		<ga-button type="primary" round disabled>Primary</ga-button>
+		<ga-button type="success" round disabled>Success</ga-button>
+		<ga-button type="info" round disabled>Info</ga-button>
+		<ga-button type="warning" round disabled>Warning</ga-button>
+		<ga-button type="danger" round disabled>Danger</ga-button>
 	</p>
 </template>

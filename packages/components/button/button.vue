@@ -10,7 +10,7 @@ import { useCssVar } from '@vueuse/core'
 import { lighten, darken } from '@request_cb/utils/color'
 
 export default defineComponent({
-	name: 'GAButton',
+	name: 'GaButton',
 	props: buttonProps,
 	emits: buttonEmits,
 	setup(props, { emit }) {

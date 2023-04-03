@@ -10,7 +10,7 @@ import { useCssVar } from '@vueuse/core'
 import { lighten } from '@request_cb/utils/color'
 
 export default defineComponent({
-	name: 'GALink',
+	name: 'GaLink',
 	props: linkProps,
 	emits: linkEmits,
 	setup(props, { emit }) {

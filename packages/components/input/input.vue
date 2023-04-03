@@ -1,12 +1,12 @@
 <template>
-	<input type="text" />
+	<input type="text" class="ele-input" />
 </template>
 <script lang="ts">
-import { defineComponent, computed } from 'vue'
+import { defineComponent } from 'vue'
 
 export default defineComponent({
 	name: 'GAInput',
-	setup(props, { emit }) {
+	setup() {
 		return {}
 	},
 })

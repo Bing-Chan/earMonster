@@ -10,7 +10,6 @@
 	text-align: center;
 	box-sizing: border-box;
 	color: var(--ga-button-text-color);
-	color: red;
 	background-color: var(--ga-button-bg-color);
 	border: var(--ga-border-width-base) var(--ga-border-style-base) var(--ga-button-border-color);
 	border-color: var(--ga-button-border-color);
@@ -52,7 +51,7 @@
 		--ga-button-text-color: var(--ga-text-color-regular);
 		--ga-button-disablega-border-color: var(--ga-text-color-disabled);
 		--ga-button-border-color: #dcdfe6;
-		--ga-button-hover-bg-color: var(--ga-color-primary-light-9);
+		--ga-button-hover-bg-color: var(--ga-color-primary-light-3);
 		&:hover,
 		&:focus {
 			border-color: var(--ga-button-border-color);
