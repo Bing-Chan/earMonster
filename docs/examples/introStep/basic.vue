@@ -34,7 +34,7 @@ export default defineComponent({
 								// 延迟2秒 再执行下一步
 								setTimeout(() => {
 									resolve(true)
-								}, 2000)
+								}, 500)
 							})
 						},
 					},
