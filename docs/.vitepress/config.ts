@@ -43,9 +43,9 @@ module.exports = {
 					link: '/guide/quickstart.html',
 				},
 			],
-			'/component/': [
+			'/component/h5/': [
 				{
-					text: 'PC基础组件',
+					text: 'H5基础组件',
 					collapsible: true,
 					children: [
 						{
@@ -63,6 +63,30 @@ module.exports = {
 						{
 							text: '电子签名',
 							link:  '/component/sign.html',
+						},
+					],
+				},
+			],
+			'/component/pc/': [
+				{
+					text: 'PC基础组件',
+					collapsible: true,
+					children: [
+						{
+							text: 'Button 按钮',
+							link:  '/component/pc/button.html',
+						},
+						{
+							text: 'Link 链接',
+							link:  '/component/pc/link.html',
+						},
+						{
+							text: '引导页',
+							link:  '/component/pc/introStep.html',
+						},
+						{
+							text: '电子签名',
+							link:  '/component/pc/sign.html',
 						},
 					],
 				},

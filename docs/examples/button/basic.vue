@@ -5,5 +5,4 @@
 	<ga-button type="info">Info</ga-button>
 	<ga-button type="warning">Warning</ga-button>
 	<ga-button type="danger">Danger</ga-button>
-	<ga-intro-step v-show="true"></ga-intro-step>
 </template>

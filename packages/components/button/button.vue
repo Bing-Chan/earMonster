@@ -19,7 +19,6 @@ export default defineComponent({
 		}
 
 		const className = computed(() => {
-			debugger
 			const buttonType = props.type || 'default'
 			const classArr = [
 				'ga-button',

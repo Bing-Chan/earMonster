@@ -89,6 +89,7 @@ export default defineComponent({
 			try {
 				await copy()
 				console.log('copy-success')
+				alert("已复制")
 			} catch (e: Error) {
 				console.log(e.message)
 			}
@@ -96,8 +97,9 @@ export default defineComponent({
 		const formatPathDemos = computed(() => {
 			debugger
 			const demos = {}
+			console.log(props.demos,"demos")
 			Object.keys(props.demos).forEach(key => {
-				demos[key.replace('../examples/', '').replace('.vue', '')] = props.demos[key].default
+				demos[key.replace('../../examples/', '').replace('.vue', '')] = props.demos[key].default
 			})
 			return demos
 		})

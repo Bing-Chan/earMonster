@@ -1,6 +1,6 @@
 <template>
 	<p>
-		<ga-sign>111</ga-sign>
+		<ga-sign></ga-sign>
 	</p>
 </template>
 <script lang="ts">

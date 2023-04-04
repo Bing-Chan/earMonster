@@ -170,7 +170,7 @@ export default defineComponent({
 		// 根据标签获取盒子的位置
 		const setBoxInfo = async (index?: number) => {
 			try {
-				 debugger
+				
 				if (index === undefined) {
 					index = state.currentIndex
 				}
@@ -201,7 +201,6 @@ export default defineComponent({
 		}
 
 		const next = async () => {
-			debugger
 			// 判断是否有onNext 是否可以继续往下走
 			let flag = true
 			if (state.config.tips[state.currentIndex] && state.config.tips[state.currentIndex].onNext) {
@@ -216,13 +215,13 @@ export default defineComponent({
 		}
 
 		const done = () => {
-			debugger
+			
 			emit('update:show', false)
 		}
 
 		// 根据配置初始化
 		const init = () => {
-			debugger
+			
 			// 获取config中的tips数组
 			const { tips } = state.config
 			let timer: any = null

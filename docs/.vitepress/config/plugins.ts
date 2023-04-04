@@ -21,7 +21,6 @@ export const mdPlugin = (md: MarkdownIt) => {
 		validate(params) {
 			return !!params.trim().match(/^demo\s*(.*)$/)
 		},
-
 		render(tokens, idx) {
 			const data = (md as any).__data
 			debugger
@@ -30,19 +29,21 @@ export const mdPlugin = (md: MarkdownIt) => {
 			if (tokens[idx].nesting === 1 /* means the tag is opening */) {
 				const description = m && m.length > 1 ? m[1] : ''
 				const sourceFileToken = tokens[idx + 2]
-				console.log(sourceFileToken,"sourceFileToken")
+
 				let source = ''
 				const sourceFile = sourceFileToken.children?.[0].content ?? ''
-				debugger
 				if (sourceFileToken.type === 'inline') {
 					source = fs.readFileSync(path.resolve(docRoot, 'examples', `${sourceFile}.vue`), 'utf-8')
+					console.log(source, 'source')
+					console.log(sourceFile, 'sourceFile')
 					const existingScriptIndex = hoistedTags.findIndex(tag => {
 						return scriptSetupRE.test(tag)
 					})
 					if (existingScriptIndex === -1) {
 						hoistedTags.push(`
     <script setup>
-    const demos = import.meta.globEager('../examples/${sourceFile.split('/')[0]}/*.vue')
+    const demos = import.meta.globEager('../../examples/${sourceFile.split('/')[0]}/*.vue')
+	console.log(demos,"demosdemosdemos")
     </script>`)
 					}
 				}
