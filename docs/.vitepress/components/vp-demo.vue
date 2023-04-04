@@ -94,6 +94,7 @@ export default defineComponent({
 			}
 		}
 		const formatPathDemos = computed(() => {
+			debugger
 			const demos = {}
 			Object.keys(props.demos).forEach(key => {
 				demos[key.replace('../examples/', '').replace('.vue', '')] = props.demos[key].default

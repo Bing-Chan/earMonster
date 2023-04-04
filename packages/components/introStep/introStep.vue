@@ -1,15 +1,15 @@
 <script lang="ts">
-import { computed, defineComponent, onBeforeMount, onMounted, watch, reactive, toRefs } from 'vue'
+import { computed, defineComponent, onBeforeMount, onMounted, watch, reactive, toRefs, watchEffect } from 'vue'
 import { introStepProps } from './type'
 
 export default defineComponent({
-	name: 'GAIntroStep',
+	name: 'GaIntroStep',
 	props: introStepProps,
 	emits: ['update:show'],
 	setup(props, { emit }) {
 		const state = reactive({
 			config: props.config,
-			show: false,
+			show: props.show,
 			originalBox: {
 				left: 250,
 				top: 250,
@@ -88,6 +88,7 @@ export default defineComponent({
 
 		// 根据配置初始化
 		const init = () => {
+			debugger
 			// 获取config中的tips数组
 			const { tips } = state.config
 			let timer: any = null
@@ -122,7 +123,7 @@ export default defineComponent({
 		}
 
 		watch(
-			() => state.config,
+			() => props.config,
 			() => {
 				// 监听配置变化 重置当前显示的索引
 				state.currentIndex = 0
@@ -130,7 +131,7 @@ export default defineComponent({
 		)
 
 		watch(
-			() => state.show,
+			() => props.show,
 			(val: any) => {
 				if (val) {
 					setBoxInfo()
@@ -173,7 +174,7 @@ export default defineComponent({
 		onBeforeMount(() => {
 			init()
 		})
-		
+
 		const throttle = (fn: () => void, delay: number) => {
 			let timerId: any = null
 			let flag = true
@@ -208,91 +209,6 @@ export default defineComponent({
 		}
 	},
 })
-
-// export default /*#__PURE__*/ defineComponent({
-// 	name: 'GAIntroStep', // vue component name
-// 	props: introStepProps,
-// 	emits: introStepEmits,
-// 	data() {
-// 		return {
-// 			// 聚焦盒子的信息
-// 			originalBox: {
-// 				left: 250,
-// 				top: 250,
-// 				width: 200,
-// 				height: 100,
-// 			},
-// 			// 提示盒子的位置
-// 			tipBoxPosition: 'bottom',
-// 			// 当前显示的提示进度索引
-// 			currentIndex: 0,
-// 		}
-// 	},
-// 	watch: {
-// 		config: {
-// 			deep: true,
-// 			handler() {
-// 				// 监听配置变化 重置当前显示的索引
-// 				state.currentIndex = 0
-// 			},
-// 			immediate: true,
-// 		},
-// 		show(val) {
-// 			if (val) {
-// 				state.setBoxInfo()
-// 			} else {
-// 				// 允许页面滚动
-// 				document.body.style.overflow = 'auto'
-// 			}
-// 		},
-// 	},
-// 	computed: {
-// 		// 计算提示盒子的位置
-// 		// eslint-disable-next-line vue/return-in-computed-property
-// 		tipBoxStyle() {
-// 			// 如果提示盒子的位置是right
-// 			if (state.tipBoxPosition === 'right') {
-// 				return {
-// 					left: `${state.originalBox.left + state.originalBox.width}px`,
-// 					top: `${state.originalBox.top}px`,
-// 				}
-// 			} else if (state.tipBoxPosition === 'left') {
-// 				return {
-// 					right: `${window.innerWidth - state.originalBox.left}px`,
-// 					top: `${state.originalBox.top}px`,
-// 				}
-// 			} else if (state.tipBoxPosition === 'top') {
-// 				return {
-// 					left: `${state.originalBox.left}px`,
-// 					bottom: `${window.innerHeight - state.originalBox.top}px`,
-// 				}
-// 			} else if (state.tipBoxPosition === 'bottom') {
-// 				return {
-// 					left: `${
-// 						state.originalBox.left > window.innerWidth - 300
-// 							? window.innerWidth - 300
-// 							: state.originalBox.left
-// 					}px`,
-// 					top: `${state.originalBox.top + state.originalBox.height}px`,
-// 				}
-// 			}
-// 		},
-// 	},
-// 	created() {
-// 		state.init()
-// 	},
-// 	mounted() {
-// 		window.onresize = throttle(() => {
-// 			if (state.show) {
-// 				state.setBoxInfo()
-// 			}
-// 		}, 100)
-// 	},
-// 	beforeUnmount() {
-// 		window.onresize = null
-// 	},
-// 	methods: {},
-// })
 </script>
 
 <template>
@@ -426,3 +342,144 @@ export default defineComponent({
 		</div>
 	</transition>
 </template>
+
+<style scoped>
+#intro_box {
+	position: fixed;
+	left: 0px;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	z-index: 99999;
+}
+#intro_box > .top {
+	width: 100%;
+}
+#intro_box > .content {
+	width: 100%;
+}
+#intro_box > .content > .left {
+	position: absolute;
+	left: 0;
+}
+#intro_box > .content > .original-box {
+	position: absolute;
+	background-color: transparent;
+	transition: all 0.3s cubic-bezier(0, 0, 0.58, 1);
+}
+#intro_box > .content > .original-box .round {
+	position: absolute;
+	left: 14px;
+	top: 50%;
+	transform: translateY(-50%);
+	width: 10px;
+	height: 10px;
+	border-radius: 50%;
+	opacity: 0.65;
+	background-color: #ffffff;
+}
+#intro_box > .content > .original-box .round-flicker:before,
+#intro_box > .content > .original-box .round-flicker:after {
+	content: '';
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	left: -1px;
+	top: -1px;
+	box-shadow: #ffffff 0px 0px 2px 2px;
+	border: 1px solid rgba(255, 255, 255, 0.5);
+	border-radius: 50%;
+	animation: warn 2s linear 0s infinite;
+}
+@keyframes warn {
+	0% {
+		transform: scale(0.5);
+		opacity: 1;
+	}
+	25% {
+		transform: scale(1);
+		opacity: 0.75;
+	}
+	50% {
+		transform: scale(1.5);
+		opacity: 0.5;
+	}
+	75% {
+		transform: scale(2);
+		opacity: 0.25;
+	}
+	100% {
+		transform: scale(2.5);
+		opacity: 0;
+	}
+}
+#intro_box > .content > .tip-box {
+	position: absolute;
+	/*宽度应为内容宽*/
+	width: fit-content;
+	max-width: 300px;
+	box-sizing: border-box;
+	/*高度应为内容高度*/
+	height: fit-content;
+	transition: all 0.3s;
+	z-index: 99999;
+	padding: 12px;
+	font-size: 15px;
+}
+#intro_box > .content > .tip-box > .tip-content {
+	border-radius: 10px;
+	overflow: hidden;
+	padding: 10px;
+	color: #fff;
+	padding-left: 40px;
+}
+#intro_box > .content > .tip-box > .tip-content > .title {
+	font-weight: bold;
+	margin-bottom: 10px;
+}
+#intro_box > .content > .tip-box > .tip-content > .content {
+	white-space: normal;
+	overflow-wrap: break-word;
+	line-height: 1.5;
+}
+#intro_box > .content > .tip-box > .tip-content > .action {
+	margin-top: 15px;
+	width: 100%;
+	display: flex;
+}
+#intro_box > .content > .tip-box > .tip-content > .action > .item {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+	border-radius: 15px;
+	font-size: 12px;
+	cursor: pointer;
+	transition: all 0.3s;
+	padding: 5px 15px;
+	color: #fff;
+	font-weight: bold;
+	border: 1px solid #ccc;
+	margin: 5px;
+}
+#intro_box > .content > .tip-box > .tip-content > .action > .item.prev {
+	color: #ccc;
+}
+#intro_box > .content > .tip-box > .tip-content > .action > .item.next {
+	color: #ccc;
+}
+#intro_box > .content > .tip-box > .tip-content > .action > .item.done {
+	color: #ccc;
+}
+#intro_box > .content > .tip-box > .tip-content > .action > .item.skip {
+	color: #ccc;
+}
+#intro_box > .content > .right {
+	position: absolute;
+	background-color: rgba(0, 0, 0, 0.9);
+}
+#intro_box > .bottom {
+	width: 100%;
+	background-color: rgba(0, 0, 0, 0.9);
+}
+</style>

@@ -57,7 +57,7 @@ module.exports = {
 						},
 						{
 							text: '引导页',
-							link:  path.resolve(__dirname, '../component/pc/introStep.html'),
+							link:  path.resolve(__dirname, '../component/introStep.html'),
 						},
 					],
 				},

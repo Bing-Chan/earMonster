@@ -23,19 +23,18 @@ export const mdPlugin = (md: MarkdownIt) => {
 		},
 
 		render(tokens, idx) {
-			console.log(tokens,"88888")
-			console.log(idx,"88888")
 			const data = (md as any).__data
+			debugger
 			const hoistedTags: string[] = data.hoistedTags || (data.hoistedTags = [])
 			const m = tokens[idx].info.trim().match(/^demo\s*(.*)$/)
 			if (tokens[idx].nesting === 1 /* means the tag is opening */) {
 				const description = m && m.length > 1 ? m[1] : ''
 				const sourceFileToken = tokens[idx + 2]
+				console.log(sourceFileToken,"sourceFileToken")
 				let source = ''
 				const sourceFile = sourceFileToken.children?.[0].content ?? ''
+				debugger
 				if (sourceFileToken.type === 'inline') {
-					console.log(docRoot,"1111")
-					console.log(sourceFile,"1111")
 					source = fs.readFileSync(path.resolve(docRoot, 'examples', `${sourceFile}.vue`), 'utf-8')
 					const existingScriptIndex = hoistedTags.findIndex(tag => {
 						return scriptSetupRE.test(tag)
