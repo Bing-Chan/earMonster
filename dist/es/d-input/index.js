@@ -1,0 +1,1 @@
+import{defineComponent as t,openBlock as p,createElementBlock as o}from"vue";var e=t({name:"GAInput",setup(){return{}}});const r={type:"text",class:"ele-input"};function u(n,a,c,i,s,l){return p(),o("input",r)}e.render=u,e.__file="packages/components/input/input.vue",e.install=n=>{n.component(e.name,e)};export{e as default};

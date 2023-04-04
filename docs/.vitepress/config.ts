@@ -50,19 +50,19 @@ module.exports = {
 					children: [
 						{
 							text: 'Button 按钮',
-							link: path.resolve(__dirname, '../component/pc/button.html'),
+							link:  '/component/button.html',
 						},
 						{
 							text: 'Link 链接',
-							link:  path.resolve(__dirname, '../component/link.html'),
+							link:  '/component/link.html',
 						},
 						{
 							text: '引导页',
-							link:  path.resolve(__dirname, '../component/introStep.html'),
+							link:  '/component/introStep.html',
 						},
 						{
 							text: '电子签名',
-							link:  path.resolve(__dirname, '../component/sign.html'),
+							link:  '/component/sign.html',
 						},
 					],
 				},
