@@ -1,9 +1,10 @@
 <template>
 	<p>
-		<ga-button type="primary" @click="handleStart">点击</ga-button>
-		<span class="step-item" id="step1">菜单一</span>
-		<span class="step-item" id="step2">菜单二</span>
-		<span class="step-item" id="step3">菜单三</span>
+		<ga-button type="primary" @click="handleStart1">点击</ga-button>
+		<span class="step-item" id="topstep">上部</span>
+		<span class="step-item" id="leftstep">左部</span>
+		<span class="step-item" id="rightstep">右部</span>
+		<span class="step-item" id="bottomstep">底部</span>
 		<ga-intro-step v-model:show="show" :config="config"></ga-intro-step>
 	</p>
 </template>
@@ -26,8 +27,8 @@ export default defineComponent({
 				},
 				tips: [
 					{
-						el: '#step1',
-						tipPosition: 'bottom',
+						el: '#topstep',
+						tipPosition: 'top',
 						title: '菜单1',
 						content: '点击菜单1',
 						onNext: () => {
@@ -40,8 +41,8 @@ export default defineComponent({
 						},
 					},
 					{
-						el: '#step2',
-						tipPosition: 'bottom',
+						el: '#leftstep',
+						tipPosition: 'left',
 						// title: '点击进入个人中心',
 						content: '点击菜单2',
 						// 点击上一步时，触发的事件
@@ -57,10 +58,26 @@ export default defineComponent({
 						},
 					},
 					{
-						el: '#step3',
-						tipPosition: 'bottom',
-						title: '菜单3',
+						el: '#rightstep',
+						tipPosition: 'right',
 						content: '点击菜单3',
+						// 点击上一步时，触发的事件
+						onPrev: () => {
+							return new Promise(resolve => {
+								resolve(true)
+							})
+						},
+						onNext: () => {
+							return new Promise(resolve => {
+								resolve(true)
+							})
+						},
+					},
+					{
+						el: '#bottomstep',
+						tipPosition: 'bottom',
+						title: '菜单4',
+						content: '点击菜单4',
 						onNext: () => {
 							return Promise.resolve(true)
 						},
@@ -71,7 +88,7 @@ export default defineComponent({
 
 		return {
 			...toRefs(state),
-			handleStart: () => {
+			handleStart1: () => {
 				state.show = true
 			},
 		}

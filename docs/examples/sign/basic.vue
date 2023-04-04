@@ -1,10 +1,6 @@
 <template>
 	<p>
-		<ga-button type="primary" @click="handleStart">点击</ga-button>
-		<span class="step-item" id="step1">菜单一</span>
-		<span class="step-item" id="step2">菜单二</span>
-		<span class="step-item" id="step3">菜单三</span>
-		<ga-intro-step v-model:show="show" :config="config"></ga-intro-step>
+		<ga-sign>111</ga-sign>
 	</p>
 </template>
 <script lang="ts">

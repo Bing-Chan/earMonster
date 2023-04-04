@@ -170,6 +170,7 @@ export default defineComponent({
 		// 根据标签获取盒子的位置
 		const setBoxInfo = async (index?: number) => {
 			try {
+				 debugger
 				if (index === undefined) {
 					index = state.currentIndex
 				}
@@ -256,7 +257,7 @@ export default defineComponent({
 		}
 
 		watch(
-			() => props.config,
+			() => state.config,
 			() => {
 				// 监听配置变化 重置当前显示的索引
 				state.currentIndex = 0
@@ -264,7 +265,7 @@ export default defineComponent({
 		)
 
 		watch(
-			() => props.show,
+			() => state.show,
 			(val: any) => {
 				if (val) {
 					setBoxInfo()
@@ -274,6 +275,10 @@ export default defineComponent({
 				}
 			},
 		)
+
+		watchEffect(() => {
+			state.show = props.show
+		})
 
 		const tipBoxStyle = computed(() => {
 			// 如果提示盒子的位置是right

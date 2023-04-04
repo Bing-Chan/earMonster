@@ -27,13 +27,13 @@
 	& + & {
 		margin-left: 10px;
 	}
-	&:hover,
-	&:focus {
-		color: var(--ga-button-hover-text-color);
-		background-color: var(--ga-button-hover-bg-color);
-		border-color: var(--ga-button-hover-border-color, var(--ga-button-hover-bg-color));
-		outline: none;
-	}
+	// &:hover,
+	// &:focus {
+	// 	color: var(--ga-button-hover-text-color);
+	// 	// background-color: var(--ga-button-hover-bg-color);
+	// 	border-color: var(--ga-button-hover-border-color, var(--ga-button-hover-bg-color));
+	// 	outline: none;
+	// }
 	&:active {
 		color: var(--ga-button-active-text-color);
 		border-color: var(--ga-button-active-border-color, var(--ga-button-active-bg-color));
@@ -72,6 +72,11 @@
 
 	@include m(info) {
 		--ga-button-bg-color: var(--ga-color-info);
+		&:hover,
+		&:focus {
+			cursor: not-allowed;
+			--ga-button-bg-color: var(--ga-color-info) !important;
+		}
 	}
 
 	@include m(warning) {

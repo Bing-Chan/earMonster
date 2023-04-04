@@ -1,19 +1,13 @@
-# 引导页
-新手引导提示步骤框
+# 电子签名
+web签名插件
 
 ## 基础用法
 点击按钮开始步骤页
 
 :::demo
-introStep/basic
+sign/basic
 :::
 
-## 浮动框定位
-点击按钮开始步骤页
-
-:::demo
-introStep/position
-:::
 
 ### 属性
 

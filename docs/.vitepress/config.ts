@@ -45,7 +45,8 @@ module.exports = {
 			],
 			'/component/': [
 				{
-					text: 'Basic 基础组件',
+					text: 'PC基础组件',
+					collapsible: true,
 					children: [
 						{
 							text: 'Button 按钮',
@@ -58,6 +59,10 @@ module.exports = {
 						{
 							text: '引导页',
 							link:  path.resolve(__dirname, '../component/introStep.html'),
+						},
+						{
+							text: '电子签名',
+							link:  path.resolve(__dirname, '../component/sign.html'),
 						},
 					],
 				},
