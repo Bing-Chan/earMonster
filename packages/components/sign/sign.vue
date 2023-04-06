@@ -8,7 +8,7 @@
 	</div>
 </template>
 <script lang="ts" setup>
-import { ref, onMounted, onUnmounted } from 'vue'
+import { ref, onMounted, onUnmounted, defineExpose } from 'vue'
 
 export interface IProps {
 	/**
@@ -66,7 +66,6 @@ export interface IProps {
 	 */
 	onDrawEnd?: (canvas: HTMLCanvasElement) => void
 }
-
 
 const props = withDefaults(defineProps<IProps>(), {
 	width: 400,
@@ -129,6 +128,7 @@ const save = () => {
 
 // 绘制
 const draw = (event: { changedTouches?: any; pageX?: any; pageY?: any }) => {
+	debugger
 	// 获取当前坐标点位
 	const { pageX, pageY } = mobileStatus ? event.changedTouches[0] : event
 	// 获取canvas 实例
@@ -223,11 +223,16 @@ onMounted(() => {
 onUnmounted(() => {
 	removeEventListener()
 })
+
+defineExpose({
+	initEsign,
+})
 </script>
 
 <style scoped lang="scss">
 .esign-wrapper {
 	border: 1px solid #ccc;
+	padding: 10px 10px;
 	.sign-btnWrap {
 		margin-top: 10px;
 		.sign-btn {

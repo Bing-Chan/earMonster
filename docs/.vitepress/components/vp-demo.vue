@@ -24,8 +24,9 @@ import { useSourceCode } from '../composables/source-code'
 import GithubIcon from '../components/github.vue'
 import SourceCodeIcon from '../components/source-code.vue'
 import CopyIcon from '../components/copy-icon.vue'
-import VpExample from "./vp-example.vue";
-import VpSourceCode from "./vp-source-code.vue";
+import VpExample from './vp-example.vue'
+import VpSourceCode from './vp-source-code.vue'
+import { ElMessage } from 'element-plus'
 
 export default defineComponent({
 	name: 'vp-demo',
@@ -89,7 +90,7 @@ export default defineComponent({
 			try {
 				await copy()
 				console.log('copy-success')
-				alert("已复制")
+				ElMessage.success('已复制')
 			} catch (e: Error) {
 				console.log(e.message)
 			}
@@ -97,7 +98,7 @@ export default defineComponent({
 		const formatPathDemos = computed(() => {
 			debugger
 			const demos = {}
-			console.log(props.demos,"demos")
+			console.log(props.demos, 'demos')
 			Object.keys(props.demos).forEach(key => {
 				demos[key.replace('../../examples/', '').replace('.vue', '')] = props.demos[key].default
 			})

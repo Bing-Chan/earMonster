@@ -1,16 +1,26 @@
 <template>
 	<p>
 		<el-button @click="show = true">点击</el-button>
-		<el-dialog v-model="show" width="600"><ga-sign width="500"></ga-sign></el-dialog>
+		<el-dialog v-model="show" width="600">
+			<el-select style="margin-bottom: 10px" @change="handleStart" v-model="strokeColor" placeholder="请选择">
+				<el-option label="红" value="red"></el-option>
+				<el-option label="绿" value="green"></el-option>
+				<el-option label="蓝" value="blue"></el-option>
+			</el-select>
+			<ga-sign v-if="signShow" ref="signRef" width="500" :strokeColor="strokeColor"></ga-sign>
+		</el-dialog>
 	</p>
 </template>
 <script lang="ts">
-import { defineComponent, reactive, toRefs } from 'vue'
+import { defineComponent, reactive, toRefs, ref } from 'vue'
 
 export default defineComponent({
 	setup() {
+		const signRef = ref<any>(null)
 		const state = reactive({
 			show: false,
+			signShow: true,
+			strokeColor: 'blue',
 			config: {
 				backgroundOpacity: 0.5,
 				titleStyle: {
@@ -68,8 +78,12 @@ export default defineComponent({
 
 		return {
 			...toRefs(state),
+			signRef,
 			handleStart: () => {
-				state.show = true
+				debugger
+				state.signShow = false
+				state.signShow = true
+				// signRef.value.initEsign()
 			},
 		}
 	},

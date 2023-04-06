@@ -1,20 +1,19 @@
-# 电子签名
-web签名插件
+# 引导页
+新手引导提示步骤框
 
 ## 基础用法
 点击按钮开始步骤页
 
 :::demo
-sign/basic
+introStep/basic
 :::
 
-##  线条颜色
-选择下拉列表设置颜色
+## 浮动框定位
+点击按钮开始步骤页
 
 :::demo
-sign/color
+introStep/position
 :::
-
 
 ### 属性
 
