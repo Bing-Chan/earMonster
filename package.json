@@ -1,5 +1,5 @@
 {
-	"name": "request_cb",
+	"name": "galaxy6",
 	"packageManager": "pnpm@7.3.0",
 	"workspaces": [
 		"packages/*",
