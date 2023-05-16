@@ -52,6 +52,18 @@ module.exports = {
 							text: 'Button 按钮',
 							link:  '/component/button.html',
 						},
+						{
+							text: 'Link 链接',
+							link:  '/component/link.html',
+						},
+						{
+							text: '引导页',
+							link:  '/component/introStep.html',
+						},
+						{
+							text: '电子签名',
+							link:  '/component/sign.html',
+						},
 					],
 				},
 			],
@@ -63,7 +75,19 @@ module.exports = {
 						{
 							text: 'Button 按钮',
 							link:  '/component/pc/button.html',
-						}
+						},
+						{
+							text: 'Link 链接',
+							link:  '/component/pc/link.html',
+						},
+						{
+							text: '引导页',
+							link:  '/component/pc/introStep.html',
+						},
+						{
+							text: '电子签名',
+							link:  '/component/pc/sign.html',
+						},
 					],
 				},
 			],

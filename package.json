@@ -39,6 +39,8 @@
 		"*.{js,ts,css,vue,scss}": "prettier  --plugin-search-dir ./node_modules --config .prettierrc --write"
 	},
 	"dependencies": {
-		"@request_cb/utils": "workspace:^1.0.0"
+		"@request_cb/components": "workspace:^1.0.0",
+		"@request_cb/utils": "workspace:^1.0.0",
+		"vite": "^2.0.0"
 	}
 }
