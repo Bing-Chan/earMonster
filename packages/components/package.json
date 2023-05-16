@@ -1,0 +1,18 @@
+{
+  "name": "@request_cb/components",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.ts",
+  "types": "index.d.ts",
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "vite": "^2.0.0",
+    "vue": "^3.2.47"
+  },
+  "dependencies": {
+    "@vueuse/core": "^7.7.1",
+    "element-plus": "^2.3.4"
+  }
+}

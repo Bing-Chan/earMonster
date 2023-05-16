@@ -1,0 +1,13 @@
+{
+	"extends": "./tsconfig.base.json",
+	"include": [
+		"typings/vue-shim.d.ts",
+		"typings/global.d.ts",
+		"build/**/*.ts",
+		"docs/**/*.ts",
+		"docs/**/*.vue",
+		"packages/**/*.ts",
+		"packages/**/*.vue"
+	],
+	"exclude": ["node_modules", "dist/**", "lib/**"]
+}

@@ -23,7 +23,6 @@ export const mdPlugin = (md: MarkdownIt) => {
 		},
 		render(tokens, idx) {
 			const data = (md as any).__data
-			debugger
 			const hoistedTags: string[] = data.hoistedTags || (data.hoistedTags = [])
 			const m = tokens[idx].info.trim().match(/^demo\s*(.*)$/)
 			if (tokens[idx].nesting === 1 /* means the tag is opening */) {
