@@ -24,7 +24,7 @@ const genVueTypes = async (root, outDir = path.resolve(__dirname, '../dist/types
 			outDir,
 			baseUrl: path.resolve(__dirname, '../'),
 			paths: {
-				'@request_cb/*': ['packages/*'],
+				'@galaxy6/*': ['packages/*'],
 			},
 			skipLibCheck: true,
 		},
@@ -94,7 +94,7 @@ const genVueTypes = async (root, outDir = path.resolve(__dirname, '../dist/types
 
 			await fs.promises.writeFile(
 				filepath,
-				outputFile.getText().replace(new RegExp('@request_cb', 'g'), '../../'),
+				outputFile.getText().replace(new RegExp('@galaxy6', 'g'), '../../'),
 				'utf8',
 			)
 			const name = filepath.split('/')

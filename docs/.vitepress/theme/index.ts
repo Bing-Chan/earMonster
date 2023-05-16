@@ -1,5 +1,5 @@
 // @ts-ignore
-import request_cb from '@request_cb/components'
+import galaxy6 from '@galaxy6/components'
 import DefaultTheme from 'vitepress/dist/client/theme-default'
 import vpDemo from '../components/vp-demo.vue'
 import ElementPlus from 'element-plus'
@@ -11,9 +11,9 @@ export default {
 	...DefaultTheme,
 	logo: '/logo.png',
 	enhanceApp: ({ app }) => {
-		console.log(request_cb, 'c')
+		console.log(galaxy6, 'c')
 		app.use(ElementPlus)
-		app.use(request_cb)
+		app.use(galaxy6)
 		app.component('vp-demo', vpDemo)
 	},
 }

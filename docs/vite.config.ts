@@ -8,7 +8,7 @@ export default defineConfig({
 	plugins: [sassDts(), Inspect()],
 	resolve: {
 		alias: {
-			'@request_cb/components': path.resolve(__dirname, '../packages/components'),
+			'@galaxy6/components': path.resolve(__dirname, '../packages/components'),
 		},
 	},
 	server: {

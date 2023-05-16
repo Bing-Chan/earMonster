@@ -1691,7 +1691,7 @@
   dependencies:
     "pug-lexer" "^5.0.0"
 
-"@request_cb/docs@file:D:\\工作台\\绩效项目\\request_cb\\docs":
+"@galaxy6/docs@file:D:\\工作台\\绩效项目\\request_cb\\docs":
   "resolved" "file:docs"
   "version" "1.0.0"
 

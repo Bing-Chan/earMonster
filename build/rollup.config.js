@@ -24,7 +24,7 @@ const inputOptions = {
 		}),
 		alias({
 			entries: {
-				'@request_cb': path.resolve(__dirname, '../packages'),
+				'@galaxy6': path.resolve(__dirname, '../packages'),
 			},
 			customResolver,
 		}),
