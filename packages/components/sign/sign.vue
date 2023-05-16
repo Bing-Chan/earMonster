@@ -172,7 +172,7 @@ const init = (event: { changedTouches?: any; offsetX?: any; offsetY?: any; pageX
 }
 // 结束绘制
 const closeDraw = () => {
-	console.log(ctxRef.value)
+
 	// 结束绘制
 	ctxRef.value.closePath()
 	// 移除鼠标移动或手势移动监听器

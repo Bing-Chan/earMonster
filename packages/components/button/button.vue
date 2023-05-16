@@ -28,7 +28,6 @@ export default defineComponent({
 					'is-round': props.round,
 				},
 			]
-			console.log(classArr, 'classArr')
 			return classArr
 		})
 

@@ -11,7 +11,6 @@ export default {
 	...DefaultTheme,
 	logo: '/logo.png',
 	enhanceApp: ({ app }) => {
-		console.log(galaxy6, 'c')
 		app.use(ElementPlus)
 		app.use(galaxy6)
 		app.component('vp-demo', vpDemo)
