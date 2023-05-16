@@ -1,10 +1,10 @@
 {
 	"name": "@galaxy6/docs",
 	"private": true,
-	"version": "0.0.0",
+	"version": "1.0.0",
 	"scripts": {
 		"dev": "vitepress dev",
-		"build": "vue-tsc && vite build",
+		"build": "vitepress build",
 		"preview": "vite preview"
 	},
 	"dependencies": {
