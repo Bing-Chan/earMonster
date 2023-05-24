@@ -1,5 +1,4 @@
-<h1 align="center">Galaxy-UI</h1>
-
+<h1 align="center">Ear-Monster</h1>
 
 <p align="center">
     <img src="https://img.shields.io/npm/v/vant?style=flat-square" alt="npm version" />
@@ -18,7 +17,7 @@
 
 ### 🕵介绍
 
-Galaxy UI  是自己编写一些日常工作中用到的插件，整理起来，方便复用,目前支持[Vue 3 版本](https://vant-contrib.gitee.io/vant)
+  Ear-Monster是自己编写一些日常工作中用到的插件，整理起来，方便复用,目前支持[Vue 3 版本](https://vant-contrib.gitee.io/vant)
 
 自己模仿尝试编写的简单轻量插件，希望有志同道合的同学或大佬赐教，多提意见~
 
@@ -40,18 +39,18 @@ Galaxy UI  是自己编写一些日常工作中用到的插件，整理起来，
 ## 👷安装
 
 ```shell
-# Vue 3 项目，安装最新版 Galaxy UI 
-npm i request_cb
+# Vue 3 项目，安装最新版 Ear-Monster 
+npm i Ear-Monster
 ```
 
 当然，你也可以通过 `yarn` 或 `pnpm` 进行安装：
 
 ```bash
 # 通过 yarn 安装
-yarn add request_cb
+yarn add Ear-Monster
 
 # 通过 pnpm 安装
-pnpm add request_cb
+pnpm add Ear-Monster
 ```
 
 
