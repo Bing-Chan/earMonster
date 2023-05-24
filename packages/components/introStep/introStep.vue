@@ -132,6 +132,7 @@
 <script lang="ts">
 import { computed, defineComponent, onBeforeMount, onMounted, watch, reactive, toRefs, watchEffect } from 'vue'
 import { introStepProps } from './type'
+import { useWindowSize } from '@ear-monster/use'
 
 export default defineComponent({
 	name: 'GaIntroStep',
@@ -170,7 +171,6 @@ export default defineComponent({
 		// 根据标签获取盒子的位置
 		const setBoxInfo = async (index?: number) => {
 			try {
-				
 				if (index === undefined) {
 					index = state.currentIndex
 				}
@@ -200,6 +200,10 @@ export default defineComponent({
 			}
 		}
 
+		useWindowSize(() => {
+			console.log("变化了")
+		}, 200)
+
 		const next = async () => {
 			// 判断是否有onNext 是否可以继续往下走
 			let flag = true
@@ -215,13 +219,11 @@ export default defineComponent({
 		}
 
 		const done = () => {
-			
 			emit('update:show', false)
 		}
 
 		// 根据配置初始化
 		const init = () => {
-			
 			// 获取config中的tips数组
 			const { tips } = state.config
 			let timer: any = null
