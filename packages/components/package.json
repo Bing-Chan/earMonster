@@ -1,12 +1,16 @@
 {
-  "name": "@galaxy6/components",
+  "name": "@ear-monster/components",
   "version": "2.0.0",
-  "description": "",
   "main": "index.ts",
   "types": "index.d.ts",
+  "private": false,
   "keywords": [],
-  "author": "",
+  "author": "chenbing",
   "license": "ISC",
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
+  },
   "devDependencies": {
     "vite": "^2.0.0",
     "vue": "^3.2.47"
@@ -14,5 +18,12 @@
   "dependencies": {
     "@vueuse/core": "^7.7.1",
     "element-plus": "^2.3.4"
-  }
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "engines": {
+    "node": ">=16.11.1"
+  },
+  "description": ""
 }

@@ -1,4 +1,10 @@
-# @galaxy6/components
+# @ear-monster/components
+
+## 2.0.0
+
+### Major Changes
+
+-   重新更换包名
 
 ## 2.0.0
 

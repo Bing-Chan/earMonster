@@ -24,7 +24,7 @@ const inputOptions = {
 		}),
 		alias({
 			entries: {
-				'@galaxy6': path.resolve(__dirname, '../packages'),
+				'@ear-monster': path.resolve(__dirname, '../packages'),
 			},
 			customResolver,
 		}),

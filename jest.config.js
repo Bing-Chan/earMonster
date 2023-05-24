@@ -8,7 +8,7 @@ module.exports = {
 	coverageProvider: 'v8',
 	moduleFileExtensions: ['vue', 'js', 'json', 'jsx', 'ts', 'tsx', 'node'],
 	moduleNameMapper: {
-		'@galaxy6/(.*)$': '<rootDir>/packages/$1',
+		'@ear-monster/(.*)$': '<rootDir>/packages/$1',
 	},
 	preset: 'ts-jest',
 	testEnvironment: 'jsdom',

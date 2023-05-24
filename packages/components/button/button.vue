@@ -7,7 +7,7 @@
 import { defineComponent, computed } from 'vue'
 import { buttonEmits, buttonProps } from './type'
 import { useCssVar } from '@vueuse/core'
-import { lighten, darken } from '@galaxy6/utils/color'
+import { lighten, darken } from '@ear-monster/utils/color'
 
 export default defineComponent({
 	name: 'GaButton',

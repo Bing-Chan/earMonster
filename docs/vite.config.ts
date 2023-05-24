@@ -8,7 +8,7 @@ export default defineConfig({
 	plugins: [sassDts(), Inspect()],
 	resolve: {
 		alias: {
-			'@galaxy6/components': path.resolve(__dirname, '../packages/components'),
+			'@ear-monster/components': path.resolve(__dirname, '../packages/components'),
 		},
 	},
 	server: {
