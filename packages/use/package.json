@@ -1,6 +1,6 @@
 {
   "name": "@ear-monster/use",
-  "version": "2.0.1 rc.0",
+  "version": "2.0.1",
   "description": "通用钩子",
   "private": false,
   "main": "index.ts",
