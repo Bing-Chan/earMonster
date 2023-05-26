@@ -5,7 +5,7 @@ import {
   onDeactivated,
   onBeforeUnmount,
 } from 'vue';
-import { raf, cancelRaf, inBrowser } from '../utils';
+import { raf, cancelRaf, inBrowser } from '@ear-monster/utils/raf';
 
 export type CurrentTime = {
   days: number;
