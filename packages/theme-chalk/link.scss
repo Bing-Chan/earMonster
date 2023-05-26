@@ -13,37 +13,37 @@
 	outline: none;
 	cursor: pointer;
 	padding: 0;
-	color: var(--el-link-text-color);
+	color: var(--ear-link-text-color);
 
 	&:hover {
 		text-decoration: none;
-		color: var(--ga-link-hover-text-color);
+		color: var(--ear-link-hover-text-color);
 	}
 
 	@include m(default) {
-		--el-link-text-color: var(--ga-text-color-regular);
-		--ga-link-hover-text-color: var(--ga-color-primary);
-		--ga-link-disabled-text-color: var(--ga-text-color-disabled);
+		--el-link-text-color: var(--ear-text-color-regular);
+		--ear-link-hover-text-color: var(--ear-color-primary);
+		--ear-link-disabled-text-color: var(--ear-text-color-disabled);
 	}
 
 	@include m(success) {
-		--el-link-text-color: var(--ga-color-success);
+		--el-link-text-color: var(--ear-color-success);
 	}
 
 	@include m(primary) {
-		--el-link-text-color: var(--ga-color-primary);
+		--el-link-text-color: var(--ear-color-primary);
 	}
 
 	@include m(info) {
-		--el-link-text-color: var(--ga-color-info);
+		--el-link-text-color: var(--ear-color-info);
 	}
 
 	@include m(warning) {
-		--el-link-text-color: var(--ga-color-warning);
+		--el-link-text-color: var(--ear-color-warning);
 	}
 
 	@include m(danger) {
-		--el-link-text-color: var(--ga-color-danger);
+		--el-link-text-color: var(--ear-color-danger);
 	}
 
 	@include when(underline) {
@@ -54,12 +54,12 @@
 			right: 0;
 			height: 0;
 			bottom: 0;
-			border-bottom: 1px solid var(--ga-link-hover-text-color);
+			border-bottom: 1px solid var(--ear-link-hover-text-color);
 		}
 	}
 
 	@include when(disabled) {
 		cursor: not-allowed;
-		color: var(--ga-link-disabled-text-color);
+		color: var(--ear-link-disabled-text-color);
 	}
 }

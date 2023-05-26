@@ -10,7 +10,7 @@ import { useCssVar } from '@vueuse/core'
 import { lighten, darken } from '@ear-monster/utils/color'
 
 export default defineComponent({
-	name: 'GaButton',
+	name: 'EarButton',
 	props: buttonProps,
 	emits: buttonEmits,
 	setup(props, { emit }) {
@@ -21,8 +21,8 @@ export default defineComponent({
 		const className = computed(() => {
 			const buttonType = props.type || 'default'
 			const classArr = [
-				'ga-button',
-				buttonType ? 'ga-button--' + buttonType : '',
+				'ear-button',
+				buttonType ? 'ear-button--' + buttonType : '',
 				{
 					'is-disabled': props.disabled,
 					'is-round': props.round,

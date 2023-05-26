@@ -1,8 +1,8 @@
 <template>
-	<ga-button type="default">Primary</ga-button>
-	<ga-button type="primary">Primary</ga-button>
-	<ga-button type="success">Success</ga-button>
-	<ga-button type="info">Info</ga-button>
-	<ga-button type="warning">Warning</ga-button>
-	<ga-button type="danger">Danger</ga-button>
+	<ear-button type="default">Primary</ear-button>
+	<ear-button type="primary">Primary</ear-button>
+	<ear-button type="success">Success</ear-button>
+	<ear-button type="info">Info</ear-button>
+	<ear-button type="warning">Warning</ear-button>
+	<ear-button type="danger">Danger</ear-button>
 </template>

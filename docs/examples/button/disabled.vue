@@ -1,18 +1,18 @@
 <template>
 	<p>
-		<ga-button disabled>Default</ga-button>
-		<ga-button type="primary" disabled>Primary</ga-button>
-		<ga-button type="success" disabled>Success</ga-button>
-		<ga-button type="info" disabled>Info</ga-button>
-		<ga-button type="warning" disabled>Warning</ga-button>
-		<ga-button type="danger" disabled>Danger</ga-button>
+		<ear-button disabled>Default</ear-button>
+		<ear-button type="primary" disabled>Primary</ear-button>
+		<ear-button type="success" disabled>Success</ear-button>
+		<ear-button type="info" disabled>Info</ear-button>
+		<ear-button type="warning" disabled>Warning</ear-button>
+		<ear-button type="danger" disabled>Danger</ear-button>
 	</p>
 	<p>
-		<ga-button round disabled>Default</ga-button>
-		<ga-button type="primary" round disabled>Primary</ga-button>
-		<ga-button type="success" round disabled>Success</ga-button>
-		<ga-button type="info" round disabled>Info</ga-button>
-		<ga-button type="warning" round disabled>Warning</ga-button>
-		<ga-button type="danger" round disabled>Danger</ga-button>
+		<ear-button round disabled>Default</ear-button>
+		<ear-button type="primary" round disabled>Primary</ear-button>
+		<ear-button type="success" round disabled>Success</ear-button>
+		<ear-button type="info" round disabled>Info</ear-button>
+		<ear-button type="warning" round disabled>Warning</ear-button>
+		<ear-button type="danger" round disabled>Danger</ear-button>
 	</p>
 </template>

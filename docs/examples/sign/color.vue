@@ -7,7 +7,7 @@
 				<el-option label="绿" value="green"></el-option>
 				<el-option label="蓝" value="blue"></el-option>
 			</el-select>
-			<ga-sign v-if="signShow" ref="signRef" width="500" :strokeColor="strokeColor"></ga-sign>
+			<ear-sign v-if="signShow" ref="signRef" width="500" :strokeColor="strokeColor"></ear-sign>
 		</el-dialog>
 	</p>
 </template>

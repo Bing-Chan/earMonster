@@ -1,11 +1,11 @@
 <template>
 	<p>
-		<ga-button type="primary" @click="handleStart1">点击</ga-button>
+		<ear-button type="primary" @click="handleStart1">点击</ear-button>
 		<span class="step-item" id="topstep">上部</span>
 		<span class="step-item" id="leftstep">左部</span>
 		<span class="step-item" id="rightstep">右部</span>
 		<span class="step-item" id="bottomstep">底部</span>
-		<ga-intro-step v-model:show="show" :config="config"></ga-intro-step>
+		<ear-intro-step v-model:show="show" :config="config"></ear-intro-step>
 	</p>
 </template>
 <script lang="ts">

@@ -135,7 +135,7 @@ import { introStepProps } from './type'
 import { useWindowSize } from '@ear-monster/use'
 
 export default defineComponent({
-	name: 'GaIntroStep',
+	name: 'EarIntroStep',
 	props: introStepProps,
 	emits: ['update:show'],
 	setup(props, { emit }) {

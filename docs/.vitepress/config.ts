@@ -3,9 +3,9 @@ const path = require('path')
 
 module.exports = {
 	lang: 'zh-CN',
-	title: 'galaxy-ui',
-	description: 'galaxy-ui',
-	base: '/request_cb/',
+	title: 'ear-monster',
+	description: 'ear-monster',
+	base: '/ear-monster/',
 	head: [
 		[
 			'link',

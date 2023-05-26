@@ -1,7 +1,7 @@
 <template>
 	<p>
 		<el-button @click="show = true">点击</el-button>
-		<el-dialog v-model="show" width="600"><ga-sign width="500"></ga-sign></el-dialog>
+		<el-dialog v-model="show" width="600"><ear-sign width="500"></ear-sign></el-dialog>
 	</p>
 </template>
 <script lang="ts">
