@@ -1,14 +1,16 @@
-import GAButton from './button'
-import GALink from './link'
-import GAIntroStep from './introStep'
-import GAInpput from './input'
-import GASign from './sign'
-export { default as GAButton } from './button'
-export { default as GALink } from './link'
-export { default as GAIntroStep } from './introStep'
-export { default as GAInpput } from './input'
-export { default as GASign } from './sign'
-const component = { GAButton, GALink, GAIntroStep, GAInpput, GASign }
+import EarButton from './button'
+import EarLink from './link'
+import EarIntroStep from './introStep'
+import EarInpput from './input'
+import EarSign from './sign'
+import EarNumberRanger from './number-ranger'
+export { default as EarButton } from './button'
+export { default as EarLink } from './link'
+export { default as EarIntroStep } from './introStep'
+export { default as EarInpput } from './input'
+export { default as EarSign } from './sign'
+export { default as EarNumberRanger } from './number-ranger'
+const component = { EarButton, EarLink, EarIntroStep, EarInpput, EarSign, EarNumberRanger }
 export default {
 	version() {
 		return process.env.version

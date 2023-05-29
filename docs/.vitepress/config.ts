@@ -50,19 +50,19 @@ module.exports = {
 					children: [
 						{
 							text: 'Button 按钮',
-							link:  '/component/button.html',
+							link: '/component/button.html',
 						},
 						{
 							text: 'Link 链接',
-							link:  '/component/link.html',
+							link: '/component/link.html',
 						},
 						{
 							text: '引导页',
-							link:  '/component/introStep.html',
+							link: '/component/introStep.html',
 						},
 						{
 							text: '电子签名',
-							link:  '/component/sign.html',
+							link: '/component/sign.html',
 						},
 					],
 				},
@@ -74,19 +74,23 @@ module.exports = {
 					children: [
 						{
 							text: 'Button 按钮',
-							link:  '/component/pc/button.html',
+							link: '/component/pc/button.html',
 						},
 						{
 							text: 'Link 链接',
-							link:  '/component/pc/link.html',
+							link: '/component/pc/link.html',
 						},
 						{
 							text: '引导页',
-							link:  '/component/pc/introStep.html',
+							link: '/component/pc/introStep.html',
 						},
 						{
 							text: '电子签名',
-							link:  '/component/pc/sign.html',
+							link: '/component/pc/sign.html',
+						},
+						{
+							text: '区间选择',
+							link: '/component/pc/number-ranger.html',
 						},
 					],
 				},
