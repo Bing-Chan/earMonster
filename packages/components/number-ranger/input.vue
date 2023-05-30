@@ -44,7 +44,7 @@
 				</el-input>
 			</div>
 			<div v-if="isError">
-				<span>sdsad</span>
+				<span class="item_error">请填写开始和结束</span>
 			</div>
 		</div>
 
@@ -77,10 +77,14 @@ export default defineComponent({
 			type: String,
 			default: () => '请选择区间',
 		},
-		value: {
-			default: () => {},
+		modelValue: {
+			type: Array,
+			default: () => {
+				return []
+			},
 		},
 	},
+	emits: ['update:modelValue'],
 	setup(props, { emit }) {
 		const state = reactive({
 			showRange: false,
@@ -95,6 +99,7 @@ export default defineComponent({
 
 		//开始
 		const handleMax = () => {
+			state.isError = false
 			//为空
 			if (state.beginVal == '') {
 				state.limtVal = parseInt(state.endVal)
@@ -104,10 +109,15 @@ export default defineComponent({
 					state.limtVal = parseInt(state.beginVal)
 				}
 			}
+
+			if (state.beginVal == '') {
+				state.isError = true
+			}
 		}
 
 		//结束
 		const handleMin = () => {
+			state.isError = false
 			//为空
 			if (state.endVal == '') {
 				state.limtVal = parseInt(state.beginVal)
@@ -117,29 +127,35 @@ export default defineComponent({
 					state.limtVal = parseInt(state.endVal)
 				}
 			}
+
+			if (state.endVal == '') {
+				state.isError = true
+			}
 		}
 
 		//完成事件
 		const handleSave = () => {
+			//
+			if (state.beginVal == '' || state.endVal == '') {
+				state.isError = true
+				return false
+			}
+
 			state.showRange = !state.showRange
 			state.showValue = ` ${state.beginFlag} ${state.beginVal} - ${state.endVal} ${state.endFlag}`
+			debugger
 			//处理日期
-			emit('update:value', {
-				v1: state.beginFlag,
-				v2: state.beginVal,
-				v3: state.endVal,
-				v4: state.endFlag,
-			})
+			emit('update:modelValue', [state.beginFlag, state.beginVal, state.endVal, state.endFlag])
 		}
 
 		const handleOpen = () => {
 			state.showRange = true
 			// 重置
-			if (props.value && Object.keys(props.value).length > 0) {
-				state.beginFlag = props.value.v1
-				state.beginVal = props.value.v2
-				state.endVal = props.value.v3
-				state.endFlag = props.value.v4
+			if (props.modelValue && props.modelValue.length > 0) {
+				state.beginFlag = props.modelValue[0];
+				state.beginVal = props.modelValue[1];
+				state.endVal = props.modelValue[2];
+				state.endFlag = props.modelValue[3];
 			}
 		}
 
@@ -165,5 +181,9 @@ input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
 	-webkit-appearance: none;
 	margin: 0;
+}
+.item_error {
+	color: #f56c6c;
+	font-size: 12px;
 }
 </style>
