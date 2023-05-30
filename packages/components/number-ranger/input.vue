@@ -94,22 +94,29 @@ export default defineComponent({
 		})
 
 		//开始
-		const handleMax = value => {
-			if (state.limtVal < parseInt(state.beginVal)) {
-				state.beginVal = state.limtVal
+		const handleMax = () => {
+			//为空
+			if (state.beginVal == '') {
+				state.limtVal = parseInt(state.endVal)
+			} else {
+				if (parseInt(state.endVal) < parseInt(state.beginVal)) {
+					state.beginVal = ''
+					state.limtVal = parseInt(state.beginVal)
+				}
 			}
-			if (state.endVal != '' && parseInt(state.endVal) < parseInt(state.beginVal)) {
-				state.beginVal = ''
-			}
-			// return !isNaN(parseFloat(n)) && isFinite(n);
 		}
 
 		//结束
 		const handleMin = () => {
-			if (state.limtVal > parseInt(state.endVal)) {
-				state.endVal = state.limtVal
+			//为空
+			if (state.endVal == '') {
+				state.limtVal = parseInt(state.beginVal)
+			} else {
+				if (parseInt(state.beginVal) > parseInt(state.endVal)) {
+					state.endVal = ''
+					state.limtVal = parseInt(state.endVal)
+				}
 			}
-			// return !isNaN(parseFloat(n)) && isFinite(n);
 		}
 
 		//完成事件
@@ -128,7 +135,6 @@ export default defineComponent({
 		const handleOpen = () => {
 			state.showRange = true
 			// 重置
-			debugger
 			if (props.value && Object.keys(props.value).length > 0) {
 				state.beginFlag = props.value.v1
 				state.beginVal = props.value.v2
@@ -143,31 +149,6 @@ export default defineComponent({
 			state.endVal = ''
 			state.endFlag = ']'
 		}
-
-		watch(
-			() => state.beginVal,
-			(newVal, oldVal) => {
-				
-				if (state.limtVal > parseInt(state.endVal)) {
-					state.endVal = state.limtVal
-				}
-
-				if (state.endVal == '') {
-					state.limtVal = parseInt(state.beginVal)
-				} else {
-				}
-			},
-		)
-
-		watch(
-			() => state.endVal,
-			(newVal, oldVal) => {
-				if (state.beginVal == '') {
-					state.limtVal = parseInt(state.endVal)
-				} else {
-				}
-			},
-		)
 
 		return {
 			...toRefs(state),
