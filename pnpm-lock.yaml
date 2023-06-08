@@ -6,6 +6,7 @@ importers:
     specifiers:
       '@changesets/cli': ^2.26.1
       '@changesets/git': ^2.0.0
+      '@ear-monster/constants': workspace:*
       '@ear-monster/theme-chalk': workspace:*
       '@ear-monster/use': workspace:*
       '@ear-monster/utils': workspace:*
@@ -22,6 +23,7 @@ importers:
     devDependencies:
       '@changesets/cli': 2.26.1
       '@changesets/git': 2.0.0
+      '@ear-monster/constants': link:packages/constants
       '@ear-monster/theme-chalk': link:packages/theme-chalk
       '@ear-monster/use': link:packages/use
       '@ear-monster/utils': link:packages/utils

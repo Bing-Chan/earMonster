@@ -1,6 +1,7 @@
 <template>
-	<ear-number-ranger :modelValue="values"></ear-number-ranger>
-	<span>{{values}}</span>
+	<div>
+		<div><ear-number-ranger :modelValue="values"></ear-number-ranger></div>
+	</div>
 </template>
 <script lang="ts">
 import { defineComponent, reactive, toRefs, watch } from 'vue'

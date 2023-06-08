@@ -21,7 +21,7 @@
     "docs:build": "pnpm run -C docs build",
     "build": "pnpm --filter=@ear-monster/* run build",
     "publish": "changeset publish --access public",
-	"release": "release-it",
+    "release": "release-it",
     "version": "changeset version",
     "preinstall": "npx only-allow pnpm",
     "changeset": "changeset",
@@ -30,6 +30,7 @@
   "devDependencies": {
     "@changesets/cli": "^2.26.1",
     "@changesets/git": "^2.0.0",
+    "@ear-monster/constants": "workspace:*",
     "@ear-monster/theme-chalk": "workspace:*",
     "@ear-monster/use": "workspace:*",
     "@ear-monster/utils": "workspace:*",
