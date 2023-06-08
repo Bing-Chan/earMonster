@@ -1,6 +1,6 @@
 <template>
 	<div>
-		<div><ear-number-ranger :modelValue="values"></ear-number-ranger></div>
+		<div><ear-number-ranger v-model:modelValue="values"></ear-number-ranger></div>
 	</div>
 </template>
 <script lang="ts">

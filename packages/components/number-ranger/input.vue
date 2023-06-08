@@ -1,12 +1,5 @@
 <template>
-	<el-popover
-		ref="popover"
-		v-model:visible="showRange"
-		placement="bottom-start"
-		:teleported="false"
-		title=""
-		:width="350"
-	>
+	<el-popover ref="popover" :visible="showRange" placement="bottom-start" :teleported="false" title="" :width="350">
 		<div class="number-wapper">
 			<el-form ref="formRef" :model="formData" :rules="formRules" label-width="0px">
 				<div class="number-wapper-body">
