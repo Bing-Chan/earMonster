@@ -102,7 +102,6 @@ import { validateEnd, validateStart, toBeginFlag, toEndFlag } from '@ear-monster
 
 export default defineComponent({
 	name: 'EarNumberRanger',
-	directives: { ClickOutside },
 	props: {
 		// 双向绑定
 		placeholder: {
@@ -142,7 +141,7 @@ export default defineComponent({
 				endVal: '',
 				beginVal: '',
 				beginFlag: 1,
-				endFlag: 1,
+				endFlag: 2,
 			},
 			formRules: {
 				endVal: [
@@ -262,7 +261,7 @@ export default defineComponent({
 			state.formData.beginFlag = 1
 			state.formData.beginVal = ''
 			state.formData.endVal = ''
-			state.formData.endFlag = 1
+			state.formData.endFlag = 2
 		}
 
 		return {
