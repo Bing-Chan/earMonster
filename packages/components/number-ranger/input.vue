@@ -1,82 +1,84 @@
 <template>
-	<el-popover ref="popover" :visible="showRange" placement="bottom-start" :teleported="false" title="" :width="350">
-		<div class="number-wapper">
-			<el-form ref="formRef" :model="formData" :rules="formRules" label-width="0px">
-				<div class="number-wapper-body">
-					<div class="item">
-						<el-form-item prop="beginVal" class="item—form">
-							<el-input
-								@focus="isError = false"
-								v-model.trim="formData.beginVal"
-								:max="limtVal"
-								type="number"
-								placeholder="左区间"
-								style="width: 155px"
-								@blur="handleMax"
-								:maxlength="5"
-							>
-								<template #prepend>
-									<el-select
-										:popper-append-to-body="false"
-										style="width: 50px"
-										v-model="formData.beginFlag"
-										placeholder=""
-									>
-										<el-option
-											:label="SCOPE_TYPE.closeBegin.name"
-											:value="SCOPE_TYPE.closeBegin.code"
-										></el-option>
-										<el-option
-											:label="SCOPE_TYPE.openBegin.name"
-											:value="SCOPE_TYPE.openBegin.code"
-										></el-option>
-									</el-select>
-								</template>
-							</el-input>
-						</el-form-item>
+	<el-popover ref="popover" :visible="showRange" placement="bottom-start" title="" :width="350">
+		<div>
+			<div class="number-wapper">
+				<el-form ref="formRef" :model="formData" :rules="formRules" label-width="0px">
+					<div class="number-wapper-body">
+						<div class="item">
+							<el-form-item prop="beginVal" class="item—form">
+								<el-input
+									@focus="isError = false"
+									v-model.trim="formData.beginVal"
+									:max="limtVal"
+									type="number"
+									placeholder="左区间"
+									style="width: 155px"
+									@blur="handleMax"
+									:maxlength="5"
+								>
+									<template #prepend>
+										<el-select
+											:teleported="false"
+											style="width: 50px"
+											v-model="formData.beginFlag"
+											placeholder=""
+										>
+											<el-option
+												:label="SCOPE_TYPE.closeBegin.name"
+												:value="SCOPE_TYPE.closeBegin.code"
+											></el-option>
+											<el-option
+												:label="SCOPE_TYPE.openBegin.name"
+												:value="SCOPE_TYPE.openBegin.code"
+											></el-option>
+										</el-select>
+									</template>
+								</el-input>
+							</el-form-item>
+						</div>
+						<div class="item">-</div>
+						<div class="item">
+							<el-form-item prop="endVal" class="item—form">
+								<el-input
+									@focus="isError = false"
+									:min="limtVal"
+									v-model.trim="formData.endVal"
+									placeholder="右区间"
+									@blur="handleMin"
+									style="width: 155px"
+									:maxlength="8"
+								>
+									<template #append>
+										<el-select
+											:teleported="false"
+											style="width: 50px"
+											v-model="formData.endFlag"
+											placeholder=""
+										>
+											<el-option
+												:label="SCOPE_TYPE.closeEnd.name"
+												:value="SCOPE_TYPE.closeEnd.code"
+											></el-option>
+											<el-option
+												:label="SCOPE_TYPE.openEnd.name"
+												:value="SCOPE_TYPE.openEnd.code"
+											></el-option>
+										</el-select>
+									</template>
+								</el-input>
+							</el-form-item>
+						</div>
 					</div>
-					<div class="item">-</div>
-					<div class="item">
-						<el-form-item prop="endVal" class="item—form">
-							<el-input
-								@focus="isError = false"
-								:min="limtVal"
-								v-model.trim="formData.endVal"
-								placeholder="右区间"
-								@blur="handleMin"
-								style="width: 155px"
-								:maxlength="8"
-							>
-								<template #append>
-									<el-select
-										:popper-append-to-body="false"
-										style="width: 50px"
-										v-model="formData.endFlag"
-										placeholder=""
-									>
-										<el-option
-											:label="SCOPE_TYPE.closeEnd.name"
-											:value="SCOPE_TYPE.closeEnd.code"
-										></el-option>
-										<el-option
-											:label="SCOPE_TYPE.openEnd.name"
-											:value="SCOPE_TYPE.openEnd.code"
-										></el-option>
-									</el-select>
-								</template>
-							</el-input>
-						</el-form-item>
-					</div>
-				</div>
-				<!-- <div v-if="isError">
+					<!-- <div v-if="isError">
 					<span class="item_error">开始和结束不能为空，且区间需要存在有效值</span>
 				</div> -->
-			</el-form>
-		</div>
+				</el-form>
+			</div>
 
-		<div style="text-align: right; margin: 0; margin-top: 10px">
-			<el-button size="mini" type="default" @click="showRange = false">取消</el-button>
-			<el-button type="primary" :loading="loading" size="mini" @click="handleSave">确定</el-button>
+			<div style="text-align: right; margin: 0; margin-top: 10px">
+				<el-button size="mini" type="default" @click="showRange = false">取消</el-button>
+				<el-button type="primary" :loading="loading" size="mini" @click="handleSave">确定</el-button>
+			</div>
 		</div>
 		<template #reference>
 			<el-input
@@ -95,10 +97,12 @@
 <script lang="ts">
 import { defineComponent, reactive, toRefs, watchEffect, getCurrentInstance } from 'vue'
 import { SCOPE_TYPE } from '@ear-monster/constants/number'
+import { ClickOutside } from 'element-plus'
 import { validateEnd, validateStart, toBeginFlag, toEndFlag } from '@ear-monster/utils/validate'
 
 export default defineComponent({
 	name: 'EarNumberRanger',
+	directives: { ClickOutside },
 	props: {
 		// 双向绑定
 		placeholder: {

@@ -14,20 +14,18 @@ number-ranger/basic
 | Name                  | Description                          | Type                                     | Default |
 | --------------------- | ------------------------------------ | ---------------------------------------- | ------- |
 | model-value / v-model | binding value                        | ^[string] / ^[number] / ^[boolean]       | —       |
-| label                 | the value of Radio                   | ^[string] / ^[number] / ^[boolean]       | —       |
-| disabled              | whether Radio is disabled            | ^[boolean]                               | false   |
-| border                | whether to add a border around Radio | ^[boolean]                               | false   |
-| size                  | size of the Radio                    | ^[enum]`'large' \| 'default' \| 'small'` | —       |
-| name                  | native `name` attribute              | ^[string]                                | —       |
+| placeholder           | 提示文字                  | ^[string]       | —       |
+| row              | 绑定扩展信息           | ^[string]                               | {}   |
+| isOpen                | 是否需要打开选择框 | ^[boolean]                               | true                             | —       |
 
 ### 事件
 
 | Name   | Description                           | Type                                                      |
 | ------ | ------------------------------------- | --------------------------------------------------------- |
-| change | triggers when the bound value changes | ^[Function]`(value: string \| number \| boolean) => void` |
+| complete | 选择区间完成事件 | ^[Function]`({ row:object,selected:object}) => void` |
 
 ### 插槽
 
 | Name    | Description               |
 | ------- | ------------------------- |
-| default | customize default content |
+| — | — |
