@@ -1,5 +1,4 @@
-<h1 align="center">Galaxy-UI</h1>
-
+<h1 align="center">Ear-Monster</h1>
 
 <p align="center">
     <img src="https://img.shields.io/npm/v/vant?style=flat-square" alt="npm version" />
@@ -18,9 +17,7 @@
 
 ### 🕵介绍
 
-Galaxy UI  是自己编写一些日常工作中用到的插件，整理起来，方便复用,目前支持[Vue 3 版本](https://vant-contrib.gitee.io/vant)
-
-自己模仿尝试编写的简单轻量插件，希望有志同道合的同学或大佬赐教，多提意见~
+​		Ear-Monster 是自己模仿、学习、编写的一些日常工作中用到的插件，整理起来，方便复用,目前支持[Vue 3 版本](https://vant-contrib.gitee.io/vant)，希望有志同道合的同学或大佬赐教，多提意见~
 
 
 
@@ -41,17 +38,17 @@ Galaxy UI  是自己编写一些日常工作中用到的插件，整理起来，
 
 ```shell
 # Vue 3 项目，安装最新版 Galaxy UI 
-npm i request_cb
+npm i  ear-monster
 ```
 
 当然，你也可以通过 `yarn` 或 `pnpm` 进行安装：
 
 ```bash
 # 通过 yarn 安装
-yarn add request_cb
+yarn add  ear-monster
 
 # 通过 pnpm 安装
-pnpm add request_cb
+pnpm add  ear-monster
 ```
 
 
@@ -61,17 +58,17 @@ pnpm add request_cb
 ```js
 import { createApp } from 'vue';
 //😂😂😂由于自己当时申请的npm包起了这个名字，现在没法改了，重新申请需要交钱，我就放弃了，先将就用着
-import * as galaxyUI from 'request_cb';
+import * as earMonster from 'ear-monster';
 
 const app = createApp();
 //注册你的全局组件
 app.use(galaxyUI);
 
 // 也可以按需引入哦~
-import {GAButton } from 'request_cb';
+import {GAButton } from 'ear-monster';
 
 //注册你的全局组件
-app.compoent(GAButton);
+app.compoent(EarButton);
 ```
 
 

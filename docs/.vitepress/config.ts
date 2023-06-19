@@ -108,7 +108,7 @@ module.exports = {
 						{ text: 'useFloor', link: '/component/use/math/useFloor.html' },
 						{ text: 'useMath', link: '/component/use/math/useMath.html' },
 						{ text: 'useMax', link: '/component/use/math/useMax.html' },
-						{ text: 'use Min', link: '/component/use/math/use Min.html' },
+						{ text: 'useMin', link: '/component/use/math/useMin.html' },
 						{ text: 'useRound', link: '/component/use/math/useRound.html' },
 						{ text: 'useSum', link: '/component/use/math/useSum.html' },
 					],
