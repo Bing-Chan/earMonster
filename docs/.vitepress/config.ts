@@ -24,8 +24,9 @@ module.exports = {
 		logo: '/logo.png',
 		nav: [
 			{ text: '主页', link: '/' },
-			{ text: 'Use', link: '/component/use/index.html' },
 			{ text: 'PC端', link: '/component/pc/index.html' },
+			{ text: 'Use', link: '/component/use/index.html' },
+		
 			// { text: 'H5端', link: '/component/h5/index.html' },
 			{ text: 'Gitee', link: 'https://gitee.com/duochan' },
 		],
