@@ -66,17 +66,18 @@ module.exports = {
 			],
 			'/component/use/': [
 				{
-					text: '工具',
+					text: 'State',
 					collapsible: true,
 					children: [
-						{
-							text: '测试页',
-							link: '/component/use/introStep.html',
-						},
+						{ text: 'useAsyncState', link: '/component/use/state/useAsyncState.html' },
+						{ text: 'useLocalStorage', link: '/component/use/state/useLocalStorage.html' },
+						{ text: 'useSessionStorage', link: '/component/use/state/useSessionStorage.html' },
+						{ text: 'useStorage', link: '/component/use/state/useStorage.html' },
+						{ text: 'useStorageAsync', link: '/component/use/state/useStorageAsync.html' },
 					],
 				},
 				{
-					text: '路由',
+					text: 'Router',
 					collapsible: true,
 					children: [
 						{
