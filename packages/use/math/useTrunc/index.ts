@@ -9,5 +9,5 @@ import { toValue } from '@vueuse/shared'
  * @see https://vueuse.org/useTrunc
  */
 export function useTrunc(value: MaybeRefOrGetter<number>): ComputedRef<number> {
-  return computed<number>(() => Math.trunc(toValue(value)))
+	return computed<number>(() => Math.trunc(toValue(value)))
 }

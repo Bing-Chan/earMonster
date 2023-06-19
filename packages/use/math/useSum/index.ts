@@ -13,5 +13,5 @@ export function useSum(...args: MaybeRefOrGetter<number>[]): ComputedRef<number>
  * @see https://vueuse.org/useSum
  */
 export function useSum(...args: MaybeComputedRefArgs<number>): ComputedRef<number> {
-  return computed(() => toValueArgsFlat(args).reduce((sum, v) => sum += v, 0))
+	return computed(() => toValueArgsFlat(args).reduce((sum, v) => (sum += v), 0))
 }

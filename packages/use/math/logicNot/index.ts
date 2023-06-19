@@ -9,7 +9,7 @@ import type { MaybeRefOrGetter } from '@vueuse/shared'
  * @see https://vueuse.org/logicNot
  */
 export function logicNot(v: MaybeRefOrGetter<any>): ComputedRef<boolean> {
-  return computed(() => !toValue(v))
+	return computed(() => !toValue(v))
 }
 
 // alias

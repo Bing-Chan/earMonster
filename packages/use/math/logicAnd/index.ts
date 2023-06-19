@@ -9,7 +9,7 @@ import type { MaybeRefOrGetter } from '@vueuse/shared'
  * @see https://vueuse.org/logicAnd
  */
 export function logicAnd(...args: MaybeRefOrGetter<any>[]): ComputedRef<boolean> {
-  return computed(() => args.every(i => toValue(i)))
+	return computed(() => args.every(i => toValue(i)))
 }
 
 // alias
