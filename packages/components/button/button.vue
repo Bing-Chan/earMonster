@@ -63,6 +63,3 @@ export default defineComponent({
 	},
 })
 </script>
-<style lang="scss">
-@import '../../theme-chalk/button.scss';
-</style>

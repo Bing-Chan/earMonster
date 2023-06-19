@@ -1,6 +1,6 @@
 {
   "name": "@ear-monster/utils",
-  "version": "3.0.1",
+  "version": "4.0.0",
   "private": false,
   "main": "index.ts",
   "publishConfig": {

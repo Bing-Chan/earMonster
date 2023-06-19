@@ -55,6 +55,3 @@ export default defineComponent({
 	},
 })
 </script>
-<style lang="scss">
-@import '../../theme-chalk/link.scss';
-</style>

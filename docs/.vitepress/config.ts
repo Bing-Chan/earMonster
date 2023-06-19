@@ -48,14 +48,14 @@ module.exports = {
 					text: 'H5基础组件',
 					collapsible: true,
 					children: [
-						{
-							text: 'Button 按钮',
-							link: '/component/button.html',
-						},
-						{
-							text: 'Link 链接',
-							link: '/component/link.html',
-						},
+						// {
+						// 	text: 'Button 按钮',
+						// 	link: '/component/button.html',
+						// },
+						// {
+						// 	text: 'Link 链接',
+						// 	link: '/component/link.html',
+						// },
 						{
 							text: '引导页',
 							link: '/component/introStep.html',
@@ -72,14 +72,14 @@ module.exports = {
 					text: 'PC基础组件',
 					collapsible: true,
 					children: [
-						{
-							text: 'Button 按钮',
-							link: '/component/pc/button.html',
-						},
-						{
-							text: 'Link 链接',
-							link: '/component/pc/link.html',
-						},
+						// {
+						// 	text: 'Button 按钮',
+						// 	link: '/component/pc/button.html',
+						// },
+						// {
+						// 	text: 'Link 链接',
+						// 	link: '/component/pc/link.html',
+						// },
 						{
 							text: '引导页',
 							link: '/component/pc/introStep.html',
