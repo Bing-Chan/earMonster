@@ -24,8 +24,9 @@ module.exports = {
 		logo: '/logo.png',
 		nav: [
 			{ text: '主页', link: '/' },
+			{ text: 'Use', link: '/component/use/index.html' },
 			{ text: 'PC端', link: '/component/pc/index.html' },
-			{ text: 'H5端', link: '/component/h5/index.html' },
+			// { text: 'H5端', link: '/component/h5/index.html' },
 			{ text: 'Gitee', link: 'https://gitee.com/duochan' },
 		],
 		sidebar: {
@@ -43,43 +44,11 @@ module.exports = {
 					link: '/guide/quickstart.html',
 				},
 			],
-			'/component/h5/': [
-				{
-					text: 'H5基础组件',
-					collapsible: true,
-					children: [
-						// {
-						// 	text: 'Button 按钮',
-						// 	link: '/component/button.html',
-						// },
-						// {
-						// 	text: 'Link 链接',
-						// 	link: '/component/link.html',
-						// },
-						{
-							text: '引导页',
-							link: '/component/introStep.html',
-						},
-						{
-							text: '电子签名',
-							link: '/component/sign.html',
-						},
-					],
-				},
-			],
 			'/component/pc/': [
 				{
 					text: 'PC基础组件',
 					collapsible: true,
 					children: [
-						// {
-						// 	text: 'Button 按钮',
-						// 	link: '/component/pc/button.html',
-						// },
-						// {
-						// 	text: 'Link 链接',
-						// 	link: '/component/pc/link.html',
-						// },
 						{
 							text: '引导页',
 							link: '/component/pc/introStep.html',
@@ -92,6 +61,55 @@ module.exports = {
 							text: '区间选择',
 							link: '/component/pc/number-ranger.html',
 						},
+					],
+				},
+			],
+			'/component/use/': [
+				{
+					text: '工具',
+					collapsible: true,
+					children: [
+						{
+							text: '测试页',
+							link: '/component/use/introStep.html',
+						},
+					],
+				},
+				{
+					text: '路由',
+					collapsible: true,
+					children: [
+						{
+							text: 'useRouteParams',
+							link: '/component/use/router/useRouteParams.html',
+						},
+						{
+							text: 'useRouteQuery',
+							link: '/component/use/router/useRouteQuery.html',
+						},
+						{
+							text: 'useRouteHash',
+							link: '/component/use/router/useRouteHash.html',
+						},
+					],
+				},
+				{
+					text: 'Math',
+					collapsible: true,
+					children: [
+						{ text: 'createGenericProjection', link: '/component/use/math/createGenericProjection.html' },
+						{ text: 'createProjection', link: '/component/use/math/createProjection.html' },
+						{ text: 'logicAnd', link: '/component/use/math/logicAnd.html' },
+						{ text: 'logicNot', link: '/component/use/math/logicNot.html' },
+						{ text: 'logicOr', link: '/component/use/math/logicOr.html' },
+						{ text: 'useAbs', link: '/component/use/math/useAbs.html' },
+						{ text: 'useAverage', link: '/component/use/math/useAverage.html' },
+						{ text: 'useFloor', link: '/component/use/math/useFloor.html' },
+						{ text: 'useMath', link: '/component/use/math/useMath.html' },
+						{ text: 'useMax', link: '/component/use/math/useMax.html' },
+						{ text: 'use Min', link: '/component/use/math/use Min.html' },
+						{ text: 'useRound', link: '/component/use/math/useRound.html' },
+						{ text: 'useSum', link: '/component/use/math/useSum.html' },
 					],
 				},
 			],
