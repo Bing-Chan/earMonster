@@ -3,7 +3,7 @@ const path = require('path')
 
 module.exports = {
 	lang: 'zh-CN',
-	title: 'ear-monster',
+	title: 'Ear Monster',
 	description: 'ear-monster',
 	base: '/ear-monster/',
 	head: [
@@ -26,7 +26,7 @@ module.exports = {
 			{ text: '主页', link: '/' },
 			{ text: 'PC端', link: '/component/pc/index.html' },
 			{ text: 'Use', link: '/component/use/index.html' },
-		
+
 			// { text: 'H5端', link: '/component/h5/index.html' },
 			{ text: 'Gitee', link: 'https://gitee.com/duochan' },
 		],
@@ -115,6 +115,15 @@ module.exports = {
 					],
 				},
 			],
+		},
+		editLink: {
+			pattern: 'https://github.com/vueuse/vueuse/tree/main/packages/:path',
+			text: 'Suggest changes to this page',
+		},
+
+		footer: {
+			message: 'Released under the MIT License.',
+			copyright: 'Copyright © 2020-PRESENT Anthony Fu and VueUse contributors',
 		},
 	},
 }
