@@ -1,5 +1,5 @@
 ### 所有函数
 
-:::warn
+:::nolayout
 all/basic
 :::
