@@ -11,7 +11,7 @@ module.exports = {
 			'link',
 			{
 				rel: 'icon',
-				href: '/favicon.ico',
+				href: '/11.ico',
 			},
 		],
 	],
@@ -21,7 +21,7 @@ module.exports = {
 	},
 	themeConfig: {
 		// repo: 'fish-uncle/design-plus', 自动生成github链接
-		logo: '/logo.png',
+		logo: '/logo.jpg',
 		nav: [
 			{ text: '主页', link: '/' },
 			{ text: 'PC端', link: '/component/pc/index.html' },
