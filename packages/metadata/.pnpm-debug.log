@@ -1,0 +1,16 @@
+{
+  "0 debug pnpm:scope": {
+    "selected": 1,
+    "workspacePrefix": "D:\\工作台\\绩效项目\\ear-monster"
+  },
+  "1 error pnpm": {
+    "code": "ERR_PNPM_NO_SCRIPT",
+    "hint": "But docs:dev is present in the root of the workspace,\nso you may run \"pnpm -w run docs:dev\"",
+    "err": {
+      "name": "pnpm",
+      "message": "Missing script: docs:dev",
+      "code": "ERR_PNPM_NO_SCRIPT",
+      "stack": "pnpm: Missing script: docs:dev\n    at Object.handler (D:\\Develop\\nodejs\\node_global\\node_modules\\pnpm\\dist\\pnpm.cjs:178137:19)\n    at async D:\\Develop\\nodejs\\node_global\\node_modules\\pnpm\\dist\\pnpm.cjs:182687:21\n    at async run (D:\\Develop\\nodejs\\node_global\\node_modules\\pnpm\\dist\\pnpm.cjs:182661:34)\n    at async runPnpm (D:\\Develop\\nodejs\\node_global\\node_modules\\pnpm\\dist\\pnpm.cjs:182879:5)\n    at async D:\\Develop\\nodejs\\node_global\\node_modules\\pnpm\\dist\\pnpm.cjs:182871:7"
+    }
+  }
+}

@@ -92,6 +92,7 @@ importers:
       eslint-plugin-standard: ^5.0.0
       eslint-plugin-vue: ^6.2.2
       esno: ^0.12.1
+      fuse.js: ^6.6.2
       git-cz: ^4.7.6
       glob: ^7.2.0
       husky: ^4.3.8
@@ -194,6 +195,7 @@ importers:
       eslint-plugin-standard: 5.0.0_eslint@7.32.0
       eslint-plugin-vue: 7.20.0_eslint@7.32.0
       esno: 0.12.1
+      fuse.js: 6.6.2
       git-cz: 4.9.0
       glob: 7.2.3
       husky: 4.3.8
@@ -10253,6 +10255,11 @@ packages:
 
   /functions-have-names/1.2.3:
     resolution: {integrity: sha512-xckBUXyTIqT97tq2x2AMb+g163b5JFysYk0x4qxNFwbfQkmNZoiRHb6sPzI9/QV33WeuvVYBUIiD4NzNIyqaRQ==}
+    dev: true
+
+  /fuse.js/6.6.2:
+    resolution: {integrity: sha512-cJaJkxCCxC8qIIcPBF9yGxY0W/tVZS3uEISDxhYIdtk8OL93pe+6Zj7LjCqVV4dzbqcriOZ+kQ/NE4RXZHsIGA==}
+    engines: {node: '>=10'}
     dev: true
 
   /gauge/3.0.2:
