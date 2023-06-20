@@ -2,19 +2,7 @@
 	<client-only>
 		<!-- danger here DO NOT USE INLINE SCRIPT TAG -->
 		<p class="example-description" v-html="decodedDescription" />
-		<div class="example">
-			<div class="example-button-box">
-				<a class="example-button" :href="demoSourceUrl" rel="noreferrer noopener" target="_blank">
-					<github-icon />
-				</a>
-				<copy-icon class="example-button" @click="copyCode" />
-				<source-code-icon class="example-button" @click="setSourceVisible" />
-			</div>
-			<div class="example-divider" />
-			<vp-example :file="path" :demo="formatPathDemos[path]" />
-			<vp-source-code v-show="sourceVisible" :source="source" />
-		</div>
-		
+		<vp-example :file="path" :demo="formatPathDemos[path]" />
 	</client-only>
 </template>
 <script lang="ts">
@@ -30,7 +18,7 @@ import VpSourceCode from './vp-source-code.vue'
 import { ElMessage } from 'element-plus'
 
 export default defineComponent({
-	name: 'vp-demo',
+	name: 'all-demo',
 	components: {
 		VpSourceCode,
 		VpExample,

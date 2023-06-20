@@ -1,5 +1,5 @@
 ### 所有函数
 
-:::demo
+:::warn
 all/basic
 :::

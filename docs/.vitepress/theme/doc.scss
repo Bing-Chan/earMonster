@@ -6,9 +6,11 @@ h2 {
 	font-size: 1.65rem !important;
 	border-bottom: none !important;
 }
+
 p {
 	font-size: 14px;
 }
+
 table {
 	font-size: 14px;
 	margin-bottom: 45px;
@@ -17,10 +19,11 @@ table {
 	table-layout: fixed;
 	width: 100%;
 	display: table;
-	
+
 	thead {
 		border: none;
 	}
+
 	th,
 	td {
 		border: none;
@@ -29,18 +32,26 @@ table {
 		text-align: left;
 		border-bottom: 1px solid #dcdfe6;
 	}
+
 	tr {
 		border-top: none;
 		border-bottom: 1px solid #dcdfe6;
+
 		&:nth-child(2n) {
 			background-color: transparent;
 		}
 	}
 }
+
 .container {
-	max-width: 55rem !important;
+	max-width: 80% !important;
 }
 
-.logo{
+.logo {
 	height: 35px !important;
+	transform: scale(1.4) rotate(45deg)
+}
+
+.logo:hover {
+	transform: scale(1) rotate(0deg)
 }
