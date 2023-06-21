@@ -7,11 +7,11 @@ importers:
       '@changesets/cli': ^2.26.1
       '@changesets/git': ^2.0.0
       '@ear-monster/constants': workspace:*
-      '@ear-monster/metadata': workspace:^1.0.0
       '@ear-monster/theme-chalk': workspace:*
       '@ear-monster/use': workspace:*
       '@ear-monster/utils': workspace:*
       '@types/fs-extra': ^11.0.1
+      '@types/node': ^16.18.27
       '@typescript-eslint/eslint-plugin': ^4.20.0
       '@vueuse/core': ^10.1.2
       fast-glob: ^3.2.12
@@ -25,7 +25,6 @@ importers:
       vite-plugin-sass-dts: ^1.1.20
       vitepress: ^0.20.1
     dependencies:
-      '@ear-monster/metadata': link:packages/metadata
       vite: 2.9.15_sass@1.62.1
     devDependencies:
       '@changesets/cli': 2.26.1
@@ -35,6 +34,7 @@ importers:
       '@ear-monster/use': link:packages/use
       '@ear-monster/utils': link:packages/utils
       '@types/fs-extra': 11.0.1
+      '@types/node': 16.18.27
       '@typescript-eslint/eslint-plugin': 4.33.0_s2qqtxhzmb7vugvfoyripfgp7i
       '@vueuse/core': 10.1.2
       fast-glob: 3.2.12

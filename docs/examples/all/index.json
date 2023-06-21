@@ -1,0 +1,126 @@
+{
+	"math": [
+		{
+			"name": "createGenericProjection",
+			"link": "./createGenericProjection",
+			"desc": ""
+		},
+		{
+			"name": "CreateProjection",
+			"link": "./CreateProjection",
+			"desc": ""
+		},
+		{
+			"name": "logicAnd",
+			"link": "./logicAnd",
+			"desc": ""
+		},
+		{
+			"name": "logicNot",
+			"link": "./logicNot",
+			"desc": ""
+		},
+		{
+			"name": "useAbs",
+			"link": "./useAbs",
+			"desc": ""
+		},
+		{
+			"name": "useAverage",
+			"link": "./useAverage",
+			"desc": ""
+		},
+		{
+			"name": "useC eil",
+			"link": "./useC eil",
+			"desc": ""
+		},
+		{
+			"name": "useClamp ",
+			"link": "./useClamp ",
+			"desc": ""
+		},
+		{
+			"name": "useFloor",
+			"link": "./useFloor",
+			"desc": ""
+		},
+		{
+			"name": "useMath",
+			"link": "./useMath",
+			"desc": ""
+		},
+		{
+			"name": "useMax",
+			"link": "./useMax",
+			"desc": ""
+		},
+		{
+			"name": "useMin",
+			"link": "./useMin",
+			"desc": ""
+		},
+		{
+			"name": "usePrecision",
+			"link": "./usePrecision",
+			"desc": ""
+		},
+		{
+			"name": "useProjection",
+			"link": "./useProjection",
+			"desc": ""
+		},
+		{
+			"name": "useRound",
+			"link": "./useRound",
+			"desc": ""
+		},
+		{
+			"name": "useSum",
+			"link": "./useSum",
+			"desc": ""
+		},
+		{
+			"name": "useTrunc",
+			"link": "./useTrunc",
+			"desc": ""
+		},
+	],
+	"core": [
+		{
+			"name": "unrefElement",
+			"link": "./unrefElement",
+			"desc": ""
+		},
+		{
+			"name": "useAsyncState",
+			"link": "./useAsyncState",
+			"desc": ""
+		},
+		{
+			"name": "useEventL istener",
+			"link": "./useEventL istener",
+			"desc": ""
+		},
+		{
+			"name": "useLocalStorage ",
+			"link": "./useLocalStorage ",
+			"desc": ""
+		},
+		{
+			"name": "useSessionStorage",
+			"link": "./useSessionStorage",
+			"desc": ""
+		},
+		{
+			"name": "useStorage",
+			"link": "./useStorage",
+			"desc": ""
+		},
+		{
+			"name": "useStorageAsync",
+			"link": "./useStorageAsync",
+			"desc": ""
+		}
+	]
+}
