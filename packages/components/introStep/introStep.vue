@@ -200,8 +200,10 @@ export default defineComponent({
 			}
 		}
 
+		console.log(moduleList, 'moduleList')
+
 		useWindowSize(() => {
-			console.log("变化了")
+			console.log('变化了')
 		}, 200)
 
 		const next = async () => {

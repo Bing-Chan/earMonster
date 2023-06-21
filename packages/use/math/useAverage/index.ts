@@ -13,8 +13,8 @@ export function useAverage(...args: MaybeRefOrGetter<number>[]): ComputedRef<num
  * @see https://vueuse.org/useAverage
  */
 export function useAverage(...args: MaybeComputedRefArgs<number>): ComputedRef<number> {
-  return computed(() => {
-    const array = toValueArgsFlat(args)
-    return array.reduce((sum, v) => sum += v, 0) / array.length
-  })
+	return computed(() => {
+		const array = toValueArgsFlat(args)
+		return array.reduce((sum, v) => (sum += v), 0) / array.length
+	})
 }
