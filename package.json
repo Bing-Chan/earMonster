@@ -8,7 +8,6 @@
   "private": false,
   "version": "1.0.0",
   "main": "umd/index.js",
-  "unpkg": "umd/index.js",
   "typings": "types/index.d.ts",
   "style": "umd/style.css",
   "module": "es/index.js",
