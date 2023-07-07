@@ -5,7 +5,7 @@ import clear from 'clear'
 import figlet from 'figlet'
 import bluebird from 'bluebird'
 import fs from 'fs-extra'
-import data from '../lib/data'
+import data from './data.js'
 
 export default {
 	fsExistsSync(path) {

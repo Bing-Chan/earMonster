@@ -1,9 +1,13 @@
 import inquirer from 'inquirer'
 import path from 'path'
-import fs from '../common/file'
+import fs from '../common/file.js'
+import questions from '../common/questions.js'
 
-const questions = require('../common/questions')
-const config = require('../common/config')
+
+const config= {
+	"projectPath": "D:\\ear-cli\\text"
+}
+
 
 let TemplatePath = path.resolve(__dirname, '../template/')
 let ProjectPath = path.resolve(process.cwd(), './')

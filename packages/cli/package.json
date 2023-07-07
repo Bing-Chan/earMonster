@@ -3,21 +3,26 @@
 	"version": "1.0.0",
 	"description": "脚手架项目",
 	"main": "bin.js",
-	"type":"module",
+	"type": "module",
 	"bin": {
 		"ear-cli": "./bin.js"
-	  },
+	},
 	"scripts": {
 		"test": "echo \"Error: no test specified\" && exit 1"
 	},
 	"publishConfig": {
 		"access": "public",
 		"registry": "https://registry.npmjs.org/"
-	  },
+	},
 	"author": "",
 	"license": "ISC",
 	"devDependencies": {
+		"bluebird": "^3.7.2",
 		"chalk": "^4.1.2",
-		"commander": "^11.0.0"
+		"clear": "^0.1.0",
+		"commander": "^11.0.0",
+		"figlet": "^1.6.0",
+		"fs-extra": "^11.1.1",
+		"inquirer": "^9.2.7"
 	}
 }
