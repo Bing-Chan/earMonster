@@ -1,7 +1,7 @@
-const path = require('path')
-const inquirer = require('inquirer')
+import inquirer from 'inquirer'
+import path from 'path'
+import fs from '../common/file'
 
-const fs = require('../common/file')
 const questions = require('../common/questions')
 const config = require('../common/config')
 
@@ -101,4 +101,3 @@ export default runInit = opts => {
 	init(opts)
 	return
 }
-
