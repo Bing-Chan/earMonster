@@ -8,6 +8,6 @@
 		"docs/**/*.vue",
 		"packages/**/*.ts",
 		"packages/**/*.vue"
-	],
+, "packages/cli/bin.js", "packages/cli/lib/version.js"	],
 	"exclude": ["node_modules", "dist/**", "lib/**"]
 }

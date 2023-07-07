@@ -1,0 +1,37 @@
+/**
+* scss 怎么动态创建变量
+* 本来想用 @function，@for 好像不可以动态创建
+* 2020.12.19 lyt 记录
+**/
+
+/* 定义初始颜色
+------------------------------- */
+$color-primary: #4C84FF !default;
+$color-primary-light: #c6d4ff;
+$color-primary-light1: #e2e4ff !default;
+$color-primary-light2: #362EA0 !default;
+$color-whites: #ffffff !default;
+$color-aside-up: #0E1B42 !default;
+$color-aside-down: #0E1B42 !default;
+
+
+
+
+$color-active: #3971ED;
+$color-hover: #88ADFF;
+$color-disabled: #c8c9cc;
+
+$color-black: #333333;
+$bgcolor-gray: #ecf0f4;
+$bgcolor-search: #8187cf;
+$bgcolor-list-item: #f5f7fa;
+
+$color-gray: #ffffff;
+$color-gray1: #666666;
+$color-gray2: #999999;
+
+$border-gray: #eeeeee;
+
+$color-red: #ff6960;
+$color-green: #6dd400;
+$color-fileName: #58a7d9;
