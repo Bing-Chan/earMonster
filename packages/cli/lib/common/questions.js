@@ -1,8 +1,8 @@
-import fs from './file.js'
 import path from 'path'
+import fs from './file.js'
 import { fileURLToPath } from 'url'
 const __filenameNew = fileURLToPath(import.meta.url)
-const __dirnameNew = path.dirname( filenameNew)
+const __dirnameNew = path.dirname(__filenameNew)
 
 
 let TemplatePath = path.resolve(__dirnameNew, '../template/')
