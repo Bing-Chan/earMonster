@@ -5,6 +5,7 @@ module.exports = {
 	lang: 'zh-CN',
 	title: 'Ear Monster',
 	description: 'ear-monster',
+	base: '/ear-monster/',
 	head: [
 		[
 			'link',
