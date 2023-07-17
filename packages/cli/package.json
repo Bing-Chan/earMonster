@@ -2,13 +2,14 @@
 	"name": "@ear-monster/cli",
 	"version": "1.0.0",
 	"description": "脚手架项目",
-	"main": "bin.js",
+	"main": "bin.ts",
 	"type": "module",
 	"bin": {
-		"ear-cli": "./bin.js"
+		"ear-cli": "./bin.ts"
 	},
 	"scripts": {
-		"test": "echo \"Error: no test specified\" && exit 1"
+		"test": "echo \"Error: no test specified\" && exit 1",
+		"build": "node build.js"
 	},
 	"publishConfig": {
 		"access": "public",
@@ -17,6 +18,8 @@
 	"author": "",
 	"license": "ISC",
 	"devDependencies": {
+		"typescript": "^5.0.2",
+		"vite": "^4.4.0",
 		"bluebird": "^3.7.2",
 		"chalk": "^4.1.2",
 		"clear": "^0.1.0",
