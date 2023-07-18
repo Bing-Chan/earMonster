@@ -18,7 +18,7 @@
   "scripts": {
     "docs:dev": "pnpm run -C docs dev",
     "docs:build": "pnpm run -C docs build",
-	"build:cli": "pnpm  --filter=@ear-monster/cli build",
+    "build:cli": "pnpm  --filter=@ear-monster/cli build",
     "build": "pnpm --filter=@ear-monster/* run build",
     "publish": "changeset publish --access public",
     "release": "release-it",
@@ -42,6 +42,7 @@
     "fast-glob": "^3.2.12",
     "fs-extra": "^11.1.1",
     "gray-matter": "^4.0.3",
+    "node-sass": "^9.0.0",
     "pug": "^3.0.0",
     "release-it": "^15.10.3",
     "typescript": "^4.1.5",
