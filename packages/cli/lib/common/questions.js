@@ -1,25 +1,26 @@
-import fs from './file';
-import path from 'path';
+import path from 'path'
+import fs from './file.js'
+import { fileURLToPath } from 'url'
+const __filenameNew = fileURLToPath(import.meta.url)
+const __dirnameNew = path.dirname(__filenameNew)
 
-let TemplatePath = path.resolve(__dirname, '../template/');
+
+let TemplatePath = path.resolve(__dirnameNew, '../template/')
 
 let questionOne = [
 	{
 		name: 'projectName',
 		type: 'input',
 		message: "Enter your Project's name:",
-		choices: null,
-		default:"",
 		validate(value) {
 			if (value.length) {
-				return true;
+				return true
 			} else {
-				return `Please Enter your Project's name`;
+				return `Please Enter your Project's name`
 			}
 		},
 	},
-];
-
+]
 let questionAdd = [
 	{
 		name: 'templateName',
@@ -28,11 +29,11 @@ let questionAdd = [
 		validate(value) {
 			if (value.length) {
 				if (/[\\\/\*\?\|\<\>\:\"]+/g.test(value) || /^\.+$/.test(value)) {
-					return `Template name is illegal.`;
+					return `Template name is illegal.`
 				}
-				return true;
+				return true
 			} else {
-				return `Please Enter your Template's name.`;
+				return `Please Enter your Template's name.`
 			}
 		},
 	},
@@ -41,13 +42,13 @@ let questionAdd = [
 		type: 'confirm',
 		message: function (args) {
 			if (fs.fsExistsSync(path.join(TemplatePath, args.templateName))) {
-				return `The template name '${args.templateName}' already exists, whether it is overwritten?`;
+				return `The template name '${args.templateName}' already exists, whether it is overwritten?`
 			}
-			return `Confirm Template's name：${args.templateName}`;
+			return `Confirm Template's name：${args.templateName}`
 		},
 		default: true,
 	},
-];
+]
 let questionRemove = [
 	{
 		name: 'templateName',
@@ -59,13 +60,13 @@ let questionRemove = [
 		name: 'bRemove',
 		type: 'confirm',
 		message: function (args) {
-			return `Confirm remove Template's name：${args.templateName}`;
+			return `Confirm remove Template's name：${args.templateName}`
 		},
 		default: false,
 	},
-];
+]
 export default {
 	questionOne,
 	questionAdd,
 	questionRemove,
-};
+}
