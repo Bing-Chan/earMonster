@@ -1,12 +1,13 @@
 {
+	"include": ["lib","dist"],
 	"compilerOptions": {
-	  "target": "es5",
+	  "target": "ES2016",
 	  "module": "commonjs",
 	  "declaration": true,
 	  "outDir": "dist",
 	  "strict": true,
 	  "rootDir": "./lib/",
-	  "esModuleInterop": true
+	  "esModuleInterop": true,
 	}
   }
   

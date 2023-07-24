@@ -1,11 +1,11 @@
 {
 	"name": "@ear-monster/cli",
-	"version": "1.0.3",
+	"version": "1.0.4",
 	"description": "脚手架项目",
-	"main": "./dist/bin.ts",
+	"main": "./lib/bin.js",
 	"type": "module",
 	"bin": {
-		"ear-cli": "./lib/bin.ts"
+		"ear-cli": "./lib/bin.js"
 	},
 	"scripts": {
 		"test": "echo \"Error: no test specified\" && exit 1",
