@@ -2,12 +2,13 @@
 	"name": "@ear-monster/cli",
 	"version": "1.0.4",
 	"description": "脚手架项目",
-	"main": "./lib/bin.js",
-	"type": "module",
+	"main": "./dist/index.js",
 	"bin": {
-		"ear-cli": "./lib/bin.js"
+		"eaa-cli": "./bin/index.js"
 	},
+	"type": "module",
 	"scripts": {
+		"compile": "babel src -d dist --extensions '.ts' ",
 		"test": "echo \"Error: no test specified\" && exit 1",
 		"build": "tsc"
 	},
@@ -16,12 +17,14 @@
 		"registry": "https://registry.npmjs.org/"
 	},
 	"files": [
-		"dist",
-		"src"
+		"dist/**/*.js",
+		"bin"
 	],
 	"author": "",
 	"license": "ISC",
-	"devDependencies": {
+	"dependencies": {
+		"@esbuild-plugins/node-globals-polyfill": "^0.2.3",
+		"@esbuild-plugins/node-modules-polyfill": "^0.2.2",
 		"@vitejs/plugin-vue": "^4.2.3",
 		"bluebird": "^3.7.2",
 		"chalk": "^4.1.2",
@@ -30,8 +33,16 @@
 		"figlet": "^1.6.0",
 		"fs-extra": "^11.1.1",
 		"inquirer": "^9.2.7",
-		"typescript": "^5.0.2",
+		"node-stdlib-browser": "^1.2.0",
+		"rollup-plugin-node-polyfills": "^0.2.1",
+		"rollup-plugin-polyfill-node": "^0.12.0",
+		"typescript": "^5.0.2"
+	},
+	"devDependencies": {
 		"vite": "^4.4.0",
-		"vite-plugin-dts": "^3.3.0"
+		"vite-plugin-compression": "^0.5.1",
+		"vite-plugin-dts": "^3.3.0",
+		"vite-plugin-node-stdlib-browser": "^0.2.1",
+		"vite-plugin-progress": "^0.0.7"
 	}
 }
