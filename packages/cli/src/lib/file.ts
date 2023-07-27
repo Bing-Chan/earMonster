@@ -1,7 +1,7 @@
-import chalk from 'chalk'
-import clear from 'clear'
-import figlet from 'figlet'
-import fs from 'fs-extra'
+import * as chalk from 'chalk'
+import * as clear from 'clear'
+import * as figlet from 'figlet'
+import * as fs from 'fs-extra'
 
 export const fsextent = {
 	fsExistsSync(filePath) {

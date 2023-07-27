@@ -1,6 +1,6 @@
-import inquirer from 'inquirer'
-import path from 'path'
-import { questions, fsextent as fs } from './lib/index'
+
+import * as path from 'path'
+import { questions, fsextent as fs, inquirer } from './lib/index'
 import { fileURLToPath } from 'url'
 
 let TemplatePath = path.resolve(__dirname, '../project-template/')

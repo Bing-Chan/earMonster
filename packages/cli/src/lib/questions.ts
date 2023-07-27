@@ -1,5 +1,4 @@
-import path from 'path'
-import { fileURLToPath } from 'url'
+import * as path from 'path'
 import { fsextent as fs } from './file'
 
 let TemplatePath = path.resolve(__dirname, '../template/')
