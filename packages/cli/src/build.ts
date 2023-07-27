@@ -1,13 +1,9 @@
 import inquirer from 'inquirer'
 import path from 'path'
-import fs from '../common/file'
-import questions from '../common/questions'
+import { questions, fsextent as fs } from './lib/index'
 import { fileURLToPath } from 'url'
 
-const __filenameNew = fileURLToPath(import.meta.url)
-const __dirname = path.dirname(__filenameNew)
-
-let TemplatePath = path.resolve(__dirname, '../template/')
+let TemplatePath = path.resolve(__dirname, '../project-template/')
 let ProjectPath = path.resolve(process.cwd(), './')
 
 //filter file Function

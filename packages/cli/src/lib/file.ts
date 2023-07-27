@@ -1,10 +1,9 @@
-
 import chalk from 'chalk'
 import clear from 'clear'
 import figlet from 'figlet'
 import fs from 'fs-extra'
 
-export default {
+export const fsextent = {
 	fsExistsSync(filePath) {
 		if (fs.existsSync(filePath)) {
 			return true

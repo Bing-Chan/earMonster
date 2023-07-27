@@ -1,11 +1,8 @@
 import path from 'path'
 import { fileURLToPath } from 'url'
-import fs from './file'
+import { fsextent as fs } from './file'
 
-const __filenameNew = fileURLToPath(import.meta.url)
-const __dirnameNew = path.dirname(__filenameNew)
-
-let TemplatePath = path.resolve(__dirnameNew, '../template/')
+let TemplatePath = path.resolve(__dirname, '../template/')
 
 let questionOne = [
 	{
@@ -67,7 +64,7 @@ let questionRemove = [
 		default: false,
 	},
 ]
-export default {
+export const questions = {
 	questionOne,
 	questionAdd,
 	questionRemove,

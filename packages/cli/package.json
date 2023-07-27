@@ -1,48 +1,51 @@
 {
 	"name": "@ear-monster/cli",
 	"version": "1.0.4",
-	"description": "脚手架项目",
-	"main": "./dist/index.js",
-	"bin": {
-		"eaa-cli": "./bin/index.js"
-	},
-	"type": "module",
+	"description": "earMonster 脚手架",
+	"main": "./build",
 	"scripts": {
-		"compile": "babel src -d dist --extensions '.ts' ",
-		"test": "echo \"Error: no test specified\" && exit 1",
-		"build": "tsc"
+		"clear": "rimraf build",
+		"build": "npm run clear && tsc",
+		"publish": "npm run build && npm publish",
+		"lint": "tslint ./src/**/*.ts --fix"
 	},
 	"publishConfig": {
 		"access": "public",
 		"registry": "https://registry.npmjs.org/"
 	},
+	"bin": {
+		"ear-cli": "./bin.js"
+	},
 	"files": [
-		"dist/**/*.js",
-		"bin"
+		"build",
+		"bin.js"
 	],
-	"author": "",
+	"keywords": [
+		"cli",
+		"node",
+		"typescript",
+		"command"
+	],
+	"author": "zxyue25",
 	"license": "ISC",
+	"devDependencies": {
+		"rimraf": "^3.0.2",
+		"ts-node": "^10.3.0",
+		"tslint": "^6.1.3",
+		"typescript": "^4.4.4"
+	},
 	"dependencies": {
-		"@esbuild-plugins/node-globals-polyfill": "^0.2.3",
-		"@esbuild-plugins/node-modules-polyfill": "^0.2.2",
-		"@vitejs/plugin-vue": "^4.2.3",
+		"execa": "^5.1.1",
+		"globby": "^11.0.4",
+		"handlebars": "^4.7.7",
+		"ora": "^5.4.1",
+		"pacote": "^12.0.2",
 		"bluebird": "^3.7.2",
 		"chalk": "^4.1.2",
 		"clear": "^0.1.0",
 		"commander": "^11.0.0",
 		"figlet": "^1.6.0",
 		"fs-extra": "^11.1.1",
-		"inquirer": "^9.2.7",
-		"node-stdlib-browser": "^1.2.0",
-		"rollup-plugin-node-polyfills": "^0.2.1",
-		"rollup-plugin-polyfill-node": "^0.12.0",
-		"typescript": "^5.0.2"
-	},
-	"devDependencies": {
-		"vite": "^4.4.0",
-		"vite-plugin-compression": "^0.5.1",
-		"vite-plugin-dts": "^3.3.0",
-		"vite-plugin-node-stdlib-browser": "^0.2.1",
-		"vite-plugin-progress": "^0.0.7"
+		"inquirer": "^9.2.7"
 	}
 }
