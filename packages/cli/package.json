@@ -5,6 +5,7 @@
 	"main": "./build",
 	"scripts": {
 		"clear": "rimraf build",
+		"debug": "node --inspect bin-local.js",
 		"build": "npm run clear && tsc",
 		"publish": "npm run build && npm publish",
 		"lint": "tslint ./src/**/*.ts --fix"
@@ -14,7 +15,8 @@
 		"registry": "https://registry.npmjs.org/"
 	},
 	"bin": {
-		"ear-cli": "./bin.js"
+		"ear-cli": "./bin.js",
+		"ear-local": "./bin-local.js"
 	},
 	"files": [
 		"build",

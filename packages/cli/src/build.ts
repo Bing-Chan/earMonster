@@ -1,7 +1,6 @@
-
 import * as path from 'path'
-import { questions, fsextent as fs, inquirer } from './lib/index'
-import { fileURLToPath } from 'url'
+import * as inquirer from 'inquirer'
+import { questions, fsextent as fs } from './lib/index'
 
 let TemplatePath = path.resolve(__dirname, '../project-template/')
 let ProjectPath = path.resolve(process.cwd(), './')
@@ -31,77 +30,82 @@ function addQuestions() {
 			choices: choices,
 			default: 'PC',
 			validate(value) {
-				if (value.length) {
-					return true
-				} else {
-					return `Please Enter your Project's name`
-				}
+				return true
 			},
 		})
 	})
 }
 
-function init(opts) {
+const init = async opts => {
 	let bAll = false
 	let toPath = ProjectPath
 	let fromPath = TemplatePath
-
-	//show npm info
+	//  显示文件
 	fs.showNpmInfo()
-	//user input project info
-	inquirer
-		.prompt(questions.questionOne)
-		.then(args => {
-			toPath = path.join(toPath, args.projectName)
+	console.log("AasAS")
+	debugger
+	let args
+	try {
+		args = await inquirer.prompt([
+			{
+				name: 'projectName',
+				type: 'input',
+				message: "Enter your Project's name:",
+			},
+		])
+	} catch (ex) {}
 
-			if (opts.pc && opts.h5) {
-				bAll = true
-			} else if (opts.pc) {
-				toPath = path.join(toPath, '/PC')
-				fromPath = path.join(fromPath, '/PC')
-			} else if (opts.h5) {
-				toPath = path.join(toPath, '/H5')
-				fromPath = path.join(fromPath, '/H5')
-			} else {
-				fromPath = path.join(fromPath, args.templateName)
-			}
-			//check dir
-			return fs.ensureDir(toPath)
-		})
-		//clear dir
-		.then(() => {
-			return fs.emptyDir(toPath)
-		})
-		//copy template
-		.then(() => {
-			fs.showCreateDirInfo(`\n Project directory：${toPath}`)
-			fs.showCreateDirInfo('begin')
-			if (bAll) {
-				let aCopy = [
-					fs.copy(`${fromPath}/PC`, `${toPath}/PC`, filterFunc),
-					fs.copy(`${fromPath}/H5`, `${toPath}/H5`, filterFunc),
-				]
-				return Promise.all(aCopy)
-			}
-			return fs.copy(fromPath, toPath, filterFunc)
-		})
-		//copy end
-		.then(() => {
-			return fs.showCreateDirInfo('end')
-		})
-		//error
-		.catch(err => {
-			console.log('err:', err)
-		})
+	//user input project info
+	//toPath = path.join(toPath, args.projectName)
+
+	// if (opts.pc && opts.h5) {
+	// 	bAll = true
+	// } else if (opts.pc) {
+	// 	toPath = path.join(toPath, '/PC')
+	// 	fromPath = path.join(fromPath, '/PC')
+	// } else if (opts.h5) {
+	// 	toPath = path.join(toPath, '/H5')
+	// 	fromPath = path.join(fromPath, '/H5')
+	// } else {
+	// 	fromPath = path.join(fromPath, args.templateName)
+	// }
+	// console.log('zoudaozhe')
+	// //check dir
+	// return fs.ensureDir(toPath)
+	//clear dir
+	// .then(() => {
+	// 	return fs.emptyDir(toPath)
+	// })
+	// //copy template
+	// .then(() => {
+	// 	fs.showCreateDirInfo(`\n Project directory：${toPath}`)
+	// 	fs.showCreateDirInfo('begin')
+	// 	if (bAll) {
+	// 		let aCopy = [
+	// 			fs.copy(`${fromPath}/PC`, `${toPath}/PC`, filterFunc),
+	// 			fs.copy(`${fromPath}/H5`, `${toPath}/H5`, filterFunc),
+	// 		]
+	// 		return Promise.all(aCopy)
+	// 	}
+	// 	return fs.copy(fromPath, toPath, filterFunc)
+	// })
+	// //copy end
+	// .then(() => {
+	// 	return fs.showCreateDirInfo('end')
+	// })
+	// //error
+	// .catch(err => {
+	// 	console.log('err:', err)
+	// })
 }
 
 const runInit = opts => {
-	if (!(opts.pc || opts.h5)) {
-		addQuestions().then(() => {
-			init(opts)
-		})
-		return
-	}
+	// if (!(opts.pc || opts.h5)) {
+	// 	addQuestions().then(() => {
+	// 		init(opts)
+	// 	})
+	// 	return
+	// }
 	init(opts)
 	return
 }
