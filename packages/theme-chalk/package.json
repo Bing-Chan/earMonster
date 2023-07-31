@@ -1,6 +1,7 @@
 {
   "name": "@ear-monster/theme-chalk",
   "version": "3.0.1",
+  "description": "样式文件",
   "private": false,
   "main": "index.js",
   "scripts": {
@@ -24,6 +25,5 @@
     "gulp-sass": "^5.1.0"
   },
   "license": "ISC",
-  "dependencies": {},
-  "description": ""
+  "dependencies": {}
 }
