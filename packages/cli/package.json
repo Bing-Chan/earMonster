@@ -1,7 +1,8 @@
 {
 	"name": "@ear-monster/cli",
-	"version": "1.0.4",
+	"version": "1.0.5",
 	"description": "earMonster 脚手架",
+	"private":"false",
 	"main": "./build",
 	"scripts": {
 		"clear": "rimraf build",
@@ -20,7 +21,9 @@
 	},
 	"files": [
 		"build",
-		"bin.js"
+		"bin.js",
+		"project-template",
+		"package.json"
 	],
 	"keywords": [
 		"cli",

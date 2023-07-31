@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0, user-scalable=0">
+    <meta http-equiv="Cache-Control" content="no-cache,no-store,must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="Wed, 26 Feb 1997 08:21:57 GMT">
+    <meta http-equiv="Expires" content="0">
+    <meta name="referrer" content="no-referrer"/>
+    <title></title>
+    <script>
+        document.title = '\u200E'
+    </script>
+    <!-- <script>
+        //统计
+        ;(function(win, doc) {
+            const host = window.location.host;
+            var ip = "//10.130.36.205:8095";//发布生产前还原
+            if (host.match(/^121.46.239.214/i) || host.match(/^jscapp.yto56.com.cn/i)) {
+                ip = "//jscapp.yto56.com.cn:8081";
+            }
+            win.loadSource = function (path, type = 'script', async = false) {
+
+                let a = new Date(), s = '?v=' + a.getFullYear() + a.getMonth() + '_' + a.getDate(), n = doc.createElement(type);
+
+                if (type === 'script') {
+                    n.type = 'text/javascript'
+                    n.charset = 'utf-8'
+                    if (async) n.async = true;
+                    n.src = ip + path + s
+                    let cn = doc.getElementById('insert_script');
+                    cn.parentNode.insertBefore(n, cn);
+                }
+
+                if (type === 'link') {
+                    n.rel = 'stylesheet'
+                    n.href = ip + path + s
+                    let h = doc.getElementsByTagName('head')[0];
+                    h.appendChild(n);
+                }
+
+            }
+        })(window, document) -->
+    </script>
+    <style>
+        @keyframes locate-loading {
+            0% {
+                opacity: 1;
+                -webkit-transform: rotate(0deg);
+                transform: rotate(0deg);
+            }
+
+            to {
+                opacity: 1;
+                -webkit-transform: rotate(1turn);
+                transform: rotate(1turn);
+            }
+        }
+
+        @-webkit-keyframes locate-loading {
+            0% {
+                opacity: 1;
+                -webkit-transform: rotate(0deg);
+                transform: rotate(0deg);
+            }
+
+            to {
+                opacity: 1;
+                -webkit-transform: rotate(1turn);
+                transform: rotate(1turn);
+            }
+        }
+
+        .loader {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            z-index: 9999;
+            -webkit-font-smoothing: subpixel-antialiased;
+            line-height: 1;
+        }
+
+        .loader .cui-grayload-text {
+            width: 100px;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            -webkit-transform: translate3d(-50%, -50%, 0);
+            transform: translate3d(-50%, -50%, 0);
+            font-size: 16px;
+            text-align: center;
+            background: rgba(0, 0, 0, 0.7);
+            color: #fff;
+            border-radius: 5px;
+            z-index: 99;
+        }
+
+        .loader .g-m--c {
+            width: 48px;
+            height: 48px;
+            margin: -25px 0 0 -25px;
+            -webkit-animation-name: locate-loading;
+            animation-name: locate-loading;
+            -webkit-animation-duration: 1.58s;
+            animation-duration: 1.58s;
+            -webkit-animation-timing-function: linear;
+            animation-timing-function: linear;
+            -webkit-animation-iteration-count: infinite;
+            animation-iteration-count: infinite;
+            border-top: 2px solid #fff;
+            border-left: 2px solid #fff;
+            border-radius: 50%;
+        }
+
+        .loader .g-m--c,
+        .loader .g-m--l {
+            position: absolute;
+            left: 50%;
+            top: 40%;
+        }
+
+        .loader .g-m--l {
+            width: 28px;
+            height: 28px;
+            z-index: 9;
+            margin: -15px 0 0 -12px;
+            background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAA2CAMAAAC2heqoAAAAhFBMVEUAAAD///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////8g2+bRAAAAK3RSTlMA8U0C+bkL/CZ+9cs4Fgftw5N3cT8Qpp1ZRizn3tlsXx+MUzKwl2Yc4tGGuUvfggAAAo1JREFUSMeVltfWqjAQhUPvAgpIR4qNef/3OyFRYgzB838XLlnuJFP2EJEUzXeM2gW9Mk4B+s19rmBFj80f8svZAo7mvic/OC5842lyffmEDW5S/U3nhFFswMJTFs6Zk1vDKbYTEmG6qTcN4LjGlR8jBzDF/YAYdufE8y0JIuBRlWs6IP+defLa9tiAhPwRYUGyNoS0sKhAitHB1AUsrwHrcwt2iJM2cdijj9Cowy7uU2EPGT7AgN94dFPFWdqtW1ObE+vIqTr1dGwL6sCBJH6EfZoC8SR7aiXLBXs7UrU1qYcNR4TSRmwPQgsyVLSJ98cFF5Aybi44yQu0PZmG0FrHY17YQOHlequhkn6z/yeFMFkminzt0CYFb89x7eQRbdOJhfR1fNLAJDtFOiNMGkI9B5yIuYm3qkLfJoHJq2MX6kI4QR52RkpWru+6j4qSA5Ivvf2OVqzSROLpEY9KfB7bbAP+levkiGdckvPN3OloahrrNAnzWSKeFADyS4M/6/uXlw7kZ2HEXOzCiZmLlcklTXORuCA6WLTsq5nYo6oIdwDAlAIFEaL3xJMFQkglwPnOFJgBXlzIglL0Tu9TQYUIWvPhvBFObyX7tXjl6bHWEPolYt0Q3NxoERN8VvahkYxGzhgKPtkHyurAu8JiuoHxqX8AXLVo3fDNwGJMFWjXirYKQKbNG2Z2mJuOYHV468uo9hVA2K4T8+DG5EqbbeNtnwCxWfbRo/auuRlksGbAEcNCHdA8w7mkXZtXbzrCO5n4pcHdo5d/6BlR+HHLI4GkJjoVO7AWLorN6TV7nZjYRunXvff0pf+tyJIpT+0zG6xo0JCU4OTRi9DIKmq464h+EOS9UYck7ezoc5v/A8imzeBKssPpAAAAAElFTkSuQmCC) no-repeat;
+            background-size: 24px 27px;
+        }
+
+        .loader .cui-grayload-bfont {
+            margin: 70px 0 6px;
+            font-size: 14px;
+        }
+
+        @-webkit-keyframes loading {
+            0% {
+                -webkit-transform: rotate3d(0, 0, 1, 0deg);
+                transform: rotate3d(0, 0, 1, 0deg);
+            }
+
+            100% {
+                -webkit-transform: rotate3d(0, 0, 1, 360deg);
+                transform: rotate3d(0, 0, 1, 360deg);
+            }
+        }
+
+        @keyframes loading {
+            0% {
+                -webkit-transform: rotate3d(0, 0, 1, 0deg);
+                transform: rotate3d(0, 0, 1, 0deg);
+            }
+
+            100% {
+                -webkit-transform: rotate3d(0, 0, 1, 360deg);
+                transform: rotate3d(0, 0, 1, 360deg);
+            }
+        }
+
+        .t-loading {
+            font-size: 16px;
+            position: fixed;
+            z-index: 1002;
+            top: 0;
+            right: 0;
+            left: 0;
+            bottom: 0;
+            -webkit-font-smoothing: subpixel-antialiased;
+            line-height: 1;
+        }
+
+        .t-loading__toast {
+            position: fixed;
+            z-index: 1003;
+            width: 120px;
+            height: 120px;
+            top: 50%;
+            left: 50%;
+            -webkit-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+            background: rgba(17, 17, 17, 0.7);
+            border-radius: 5px;
+            color: #ffffff;
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: flex;
+            -webkit-box-orient: vertical;
+            -webkit-box-direction: normal;
+            -ms-flex-direction: column;
+            flex-direction: column;
+            -webkit-box-align: center;
+            -ms-flex-align: center;
+            align-items: center;
+            -webkit-box-pack: center;
+            -ms-flex-pack: center;
+            justify-content: center;
+        }
+
+        .t-loading__icon {
+            display: block;
+            width: 38px;
+            height: 38px;
+            -webkit-animation: loading 1s steps(12, end) infinite;
+            animation: loading 1s steps(12, end) infinite;
+            background: transparent url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMjAiIGhlaWdodD0iMTIwIiB2aWV3Qm94PSIwIDAgMTAwIDEwMCI+PHBhdGggZmlsbD0ibm9uZSIgZD0iTTAgMGgxMDB2MTAwSDB6Ii8+PHJlY3Qgd2lkdGg9IjciIGhlaWdodD0iMjAiIHg9IjQ2LjUiIHk9IjQwIiBmaWxsPSIjRTlFOUU5IiByeD0iNSIgcnk9IjUiIHRyYW5zZm9ybT0idHJhbnNsYXRlKDAgLTMwKSIvPjxyZWN0IHdpZHRoPSI3IiBoZWlnaHQ9IjIwIiB4PSI0Ni41IiB5PSI0MCIgZmlsbD0iIzk4OTY5NyIgcng9IjUiIHJ5PSI1IiB0cmFuc2Zvcm09InJvdGF0ZSgzMCAxMDUuOTggNjUpIi8+PHJlY3Qgd2lkdGg9IjciIGhlaWdodD0iMjAiIHg9IjQ2LjUiIHk9IjQwIiBmaWxsPSIjOUI5OTlBIiByeD0iNSIgcnk9IjUiIHRyYW5zZm9ybT0icm90YXRlKDYwIDc1Ljk4IDY1KSIvPjxyZWN0IHdpZHRoPSI3IiBoZWlnaHQ9IjIwIiB4PSI0Ni41IiB5PSI0MCIgZmlsbD0iI0EzQTFBMiIgcng9IjUiIHJ5PSI1IiB0cmFuc2Zvcm09InJvdGF0ZSg5MCA2NSA2NSkiLz48cmVjdCB3aWR0aD0iNyIgaGVpZ2h0PSIyMCIgeD0iNDYuNSIgeT0iNDAiIGZpbGw9IiNBQkE5QUEiIHJ4PSI1IiByeT0iNSIgdHJhbnNmb3JtPSJyb3RhdGUoMTIwIDU4LjY2IDY1KSIvPjxyZWN0IHdpZHRoPSI3IiBoZWlnaHQ9IjIwIiB4PSI0Ni41IiB5PSI0MCIgZmlsbD0iI0IyQjJCMiIgcng9IjUiIHJ5PSI1IiB0cmFuc2Zvcm09InJvdGF0ZSgxNTAgNTQuMDIgNjUpIi8+PHJlY3Qgd2lkdGg9IjciIGhlaWdodD0iMjAiIHg9IjQ2LjUiIHk9IjQwIiBmaWxsPSIjQkFCOEI5IiByeD0iNSIgcnk9IjUiIHRyYW5zZm9ybT0icm90YXRlKDE4MCA1MCA2NSkiLz48cmVjdCB3aWR0aD0iNyIgaGVpZ2h0PSIyMCIgeD0iNDYuNSIgeT0iNDAiIGZpbGw9IiNDMkMwQzEiIHJ4PSI1IiByeT0iNSIgdHJhbnNmb3JtPSJyb3RhdGUoLTE1MCA0NS45OCA2NSkiLz48cmVjdCB3aWR0aD0iNyIgaGVpZ2h0PSIyMCIgeD0iNDYuNSIgeT0iNDAiIGZpbGw9IiNDQkNCQ0IiIHJ4PSI1IiByeT0iNSIgdHJhbnNmb3JtPSJyb3RhdGUoLTEyMCA0MS4zNCA2NSkiLz48cmVjdCB3aWR0aD0iNyIgaGVpZ2h0PSIyMCIgeD0iNDYuNSIgeT0iNDAiIGZpbGw9IiNEMkQyRDIiIHJ4PSI1IiByeT0iNSIgdHJhbnNmb3JtPSJyb3RhdGUoLTkwIDM1IDY1KSIvPjxyZWN0IHdpZHRoPSI3IiBoZWlnaHQ9IjIwIiB4PSI0Ni41IiB5PSI0MCIgZmlsbD0iI0RBREFEQSIgcng9IjUiIHJ5PSI1IiB0cmFuc2Zvcm09InJvdGF0ZSgtNjAgMjQuMDIgNjUpIi8+PHJlY3Qgd2lkdGg9IjciIGhlaWdodD0iMjAiIHg9IjQ2LjUiIHk9IjQwIiBmaWxsPSIjRTJFMkUyIiByeD0iNSIgcnk9IjUiIHRyYW5zZm9ybT0icm90YXRlKC0zMCAtNS45OCA2NSkiLz48L3N2Zz4=') no-repeat;
+            background-size: 100%;
+            font-size: 55px;
+        }
+
+        .t-loading__content {
+            display: block;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="app">
+        <div class="t-loading">
+            <div class="t-loading__toast">
+                <i class="t-loading__icon"></i> <span class="t-loading__content">正在加载...</span>
+            </div>
+        </div>
+    </div>
+    <!-- built files will be auto injected -->
+    <!-- <script type="text/javascript" src="//jscapp.yto56.com.cn:8081/jscApp/analytics.min.js"></script> -->
+    <script type="text/javascript" src="//jscapp.yto56.com.cn:8081/jscPackageApp/yto-report.js"></script>
+    <script type="text/javascript" src="//jscapp.yto56.com.cn:8081/jscPackageApp/yto-package.js"></script>
+    <script>
+
+        //手动更新缓存代码
+        // if(window.applicationCache.status == window.applicationCache.UPDATEREADY){
+        //     window.applicationCache.update();
+        // }
+    </script>
+    <script>
+        //window.sessionStorage.removeItem('userInfo')
+        //从search取值
+        window.getQueryString = function (url) {
+            let obj = {}
+            if (url.indexOf('?') == -1) return obj
+            let par = url.split('?')[1].split('&')
+            par.forEach(item => {
+                let query = item.split('=')
+                obj[query[0]] = query[1]
+            })
+            return obj
+        }
+        window.setStorage = function (key, val) {
+            window.localStorage.setItem(key, JSON.stringify(val));
+        }
+        window.setSessionStorage = function (key, val) {
+            window.sessionStorage.setItem(key, JSON.stringify(val));
+        }
+        const { accessToken, source, target, erudadebug, sys_tab_id, activeType } = window.getQueryString(location.href);
+        if (accessToken != '' && accessToken != undefined) {
+            window.setStorage('token', accessToken);
+        }
+        if (activeType != '' && activeType != undefined) {   //实时业务量活动tab
+            window.localStorage.setItem('realTimeVolume', activeType);
+        }
+        // if(target !='' && target != undefined ){
+        //     window.sessionStorage.removeItem('target')
+        //     window.sessionStorage.setItem('target',target);
+        // }
+        //source值：网点管家：sys_wdgj
+        if (source != '' && source != undefined && sys_tab_id != '' && sys_tab_id != undefined) {
+            window.setSessionStorage('source', source);
+            window.setStorage('sys_tab_id', sys_tab_id);
+            // 如果是网点管家 和他们商量一个方法 不清除 我们本地的缓存数据
+            window.localStorage.setItem('YTO_JSC_WEB_APP_VUE', true);
+            window.sessionStorage.setItem('YTO_JSC_WEB_APP_VUE', true);
+        } else {
+            window.sessionStorage.removeItem('userInfo');
+            window.localStorage.removeItem('sys_tab_id');
+            window.sessionStorage.removeItem('source');
+        }
+    </script>
+
+    <script>
+        let isDebugMod = (erudadebug === '1') && /mobile/i.test(navigator.appVersion)
+        if (isDebugMod) {
+            document.write(
+                '<script type="text/javascript" src="//cdn.bootcss.com/eruda/2.3.3/eruda.min.js" charset="utf-8"><\/script>'
+            )
+        }
+
+    </script>
+    <!-- <link rel="stylesheet" href="<%=htmlWebpackPlugin.options['yto-package-css'] %>" />
+    <script type="text/javascript" src="<%=htmlWebpackPlugin.options['yto-package-js'] %>"></script> -->
+    <link rel="stylesheet" href="//jscapp.yto56.com.cn:8081/jscPackageApp/yto-package.css" />
+    <script type="text/javascript" src="//jscapp.yto56.com.cn:8081/jscPackageApp/yto-package.js"></script>
+    <script type="text/javascript" src="//jscapp.yto56.com.cn:8081/jscPackageApp/yto-report.js"></script>
+
+    <!-- <link rel="stylesheet" href="//10.130.36.205:8095/jscPackageApp/yto-package.css" />
+    <script type="text/javascript" src="//10.130.36.205:8095/jscPackageApp/yto-package.js"></script>
+    <script type="text/javascript" src="//10.130.36.205:8095/jscPackageApp/yto-report.js"></script> -->
+
+    <script>
+        //初始化eruda调试工具
+        if (window.isDebugMod) {
+            eruda.init()
+        }
+    </script>
+
+</body>
+
+</html>

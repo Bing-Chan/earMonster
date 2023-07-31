@@ -10,13 +10,6 @@ let questionOne = [
 		message: "Enter your Project's name:",
 		choices: [],
 		default: '',
-		validate(value) {
-			if (value.length) {
-				return true
-			} else {
-				return `Please Enter your Project's name`
-			}
-		},
 	},
 ]
 let questionAdd = [
@@ -24,16 +17,6 @@ let questionAdd = [
 		name: 'templateName',
 		type: 'input',
 		message: "Enter your Template's name:",
-		validate(value) {
-			if (value.length) {
-				if (/[\\\/\*\?\|\<\>\:\"]+/g.test(value) || /^\.+$/.test(value)) {
-					return `Template name is illegal.`
-				}
-				return true
-			} else {
-				return `Please Enter your Template's name.`
-			}
-		},
 	},
 	{
 		name: 'bAdd',

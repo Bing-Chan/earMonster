@@ -1,0 +1,264 @@
+/**
+    新的公共css 原则
+
+    1、原则上不用标签选择器
+    2、原则上不用id选择器
+    3、在写sass文件之后避免 解析之后生成片段过多问题
+    4、特殊需要单独处理的原则上  在vue文件中 scoped
+
+**/
+
+// 驾驶舱app主色调
+$theme-color: #2482FC;
+
+html, body, div, span, i, ul, li, p {
+    margin: 0;
+    padding: 0;
+}
+
+html, body, #app {
+    height: 100%;
+}
+
+body {
+    font-size: 14px;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    background-color: #F5F5F5;
+}
+
+ul {
+    list-style: none;
+}
+
+i {
+    font-style: normal;
+}
+
+.col-1 {
+    width: calc((100% - 45px) / 3);
+    margin-left: 15px;
+}
+  
+.col-2 {
+    width: calc((100% - 45px) / 2);
+    margin-left: 15px;
+}
+  
+.col-3 {
+    width: calc((100% - 60px) / 3);
+    margin-left: 15px;
+}
+  
+.col-4 {
+    width: calc((100% - 75px) / 4);
+    margin-left: 15px;
+}
+  
+.col-5 {
+    width: calc((100% - 90px) / 5);
+    margin-left: 15px;
+}
+  
+.clear::after {
+    content: '';
+    width: 0;
+    height: 0;
+    display: block;
+    clear: both;
+}
+.isHidden {
+    visibility: hidden;
+    height: 0;
+    overflow: hidden;
+}
+.mint-button {
+    font-family: 'MicrosoftYaHei';
+    border-radius: 2px;
+}
+  
+.mint-button--primary {
+    background-color: $theme-color;
+}
+  
+.mint-button--default {
+    background-color: #fff;
+}
+
+.blue-li {
+    color: #0066cc;
+}
+.red-li {
+    color: red;
+}
+.black-li {
+    color: #333333
+}
+
+
+.tableFixed {
+    position: fixed;
+    top: 80px;
+    width: 100%;
+    background: #ffffff;
+}
+
+.headFixed {
+    position: fixed;
+    top: 40px;
+    width: 100%;
+    background: #ffffff;
+}
+
+
+// 页面样式
+.yto-page {
+    height: 100%;
+}
+
+.yto-panel-head {
+    position: relative;
+    height: 42px;
+    line-height: 41px;
+    border-bottom: 1px solid #E9E9E9;
+    font-size: 15px;
+    color: #333333;
+    font-family: 'PingFangSC-Medium';
+    font-weight: 500;
+    padding-left: 20px;
+
+    .title {
+        float: left;
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        &.length {
+          width: 190px;
+        }
+    }
+
+    &::before {
+        content: '';
+        display: block;
+        width: 2px;
+        height: 15px;
+        position: absolute;
+        top: 13px;
+        left: 13px;
+        background-color: $theme-color;
+    }
+}
+
+.yto-panel-head-right {
+    float: right;
+    padding-right: 15px;
+    font-size: 14px;
+
+    .icon-more {
+        display: inline-block;
+        vertical-align: middle;
+        width: 24px;
+        height: 24px;
+        background: url(../../assets/images/icon_more@2x.png) center center no-repeat;
+        background-size: 24px 24px;
+    }
+}
+
+
+.loading-panel {
+    text-align: center;
+
+    span {
+        display: inline-block;
+    }
+
+    .more-btn {
+        display: inline-block;
+        margin: 0 10px;
+        padding: 0 10px;
+        height: 30px;
+        line-height: 30px;
+        border-radius: 20px;
+        border: 1px solid #d2d2d2;
+        color: #666;
+    }
+
+    .no-more {
+        box-sizing: border-box;
+        clear: both;
+        width: 100%;
+        padding: 20px 0;
+        font-size: 10px;
+        text-align: center;
+        color: #8d8d8d;
+
+    }
+}
+
+
+.list-custom {
+    ul {
+        line-height: 165%;
+        text-align: center;
+        width: 100%;
+        padding-left: 2px;
+        align-items: center;
+        box-sizing: border-box;
+
+        display: flex;
+
+        &:first-child {
+            color: #999999;
+
+        }
+
+        &:nth-child(2n) {
+            background: #F5F5F5;
+
+        }
+
+        &.list-head {
+            color: #999999;
+
+        }
+
+        &.list-head-space {
+            height: 50px;
+            background-color: #fff;
+
+        }
+
+        &.list-body {
+            color: #333333;
+
+        &:hover {
+            padding-left: 0;
+            background: rgba(242, 248, 255, 1);
+            border-left: 2px solid #2482FC;
+        }
+        }
+
+        &.list-foot {
+        color: #999999;
+        background-color: #fff;
+        }
+
+        li {
+        padding: 10px 2px;
+        word-wrap: break-word;
+        word-break: break-all;
+        }
+        li:not(.planArriveTime):not(.timer-show-w) {
+        flex: 1;
+        }
+        .planArriveTime {
+        width: 42px;
+        }
+        .timer-show-w {
+        width: 76px;
+        }
+    }
+
+    .infiniteScroll {
+        display: block;
+    }
+}

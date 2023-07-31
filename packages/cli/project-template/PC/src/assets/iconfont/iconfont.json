@@ -1,0 +1,23 @@
+{
+  "id": "2750427",
+  "name": "HR",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon-",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "16921574",
+      "name": "组织",
+      "font_class": "zuzhi",
+      "unicode": "e7f1",
+      "unicode_decimal": 59377
+    },
+    {
+      "icon_id": "23097364",
+      "name": "二维码",
+      "font_class": "General-2-63",
+      "unicode": "e7ce",
+      "unicode_decimal": 59342
+    }
+  ]
+}
