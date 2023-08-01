@@ -200,8 +200,6 @@ export default defineComponent({
 			}
 		}
 
-		console.log(moduleList, 'moduleList')
-
 		useWindowSize(() => {
 			console.log('变化了')
 		}, 200)
