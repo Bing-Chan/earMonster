@@ -29,7 +29,6 @@ export const mdPlugin = (md: MarkdownIt) => {
 					const data = (md as any).__data
 					const hoistedTags: string[] = data.hoistedTags || (data.hoistedTags = [])
 					const m = tokens[idx].info.trim().match(/^demo\s*(.*)$/)
-					console.log(tokens, 'tokens')
 					if (tokens[idx].nesting === 1 /* means the tag is opening */) {
 						const description = m && m.length > 1 ? m[1] : ''
 						const sourceFileToken = tokens[idx + 2]
@@ -77,7 +76,6 @@ export const mdPlugin = (md: MarkdownIt) => {
 					const data = (md as any).__data
 					const hoistedTags: string[] = data.hoistedTags || (data.hoistedTags = [])
 					const m = tokens[idx].info.trim().match(/^demo\s*(.*)$/)
-					console.log(tokens, 'tokens')
 					if (tokens[idx].nesting === 1 /* means the tag is opening */) {
 						const description = m && m.length > 1 ? m[1] : ''
 						const sourceFileToken = tokens[idx + 2]

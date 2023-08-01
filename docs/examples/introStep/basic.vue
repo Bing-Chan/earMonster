@@ -1,6 +1,6 @@
 <template>
 	<p>
-		<ear-button type="primary" @click="handleStart">点击</ear-button>
+		<el-button type="primary" @click="handleStart">点击</el-button>
 		<span class="step-item" id="step1">菜单一</span>
 		<span class="step-item" id="step2">菜单二</span>
 		<span class="step-item" id="step3">菜单三</span>
