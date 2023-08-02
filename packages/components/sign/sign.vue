@@ -180,7 +180,6 @@ const closeDraw = () => {
 	onDrawEnd && onDrawEnd(canvasRef.current)
 }
 const initCanvas = () => {
-	debugger
 	// 获取canvas 实例
 	const canvas: HTMLCanvasElement = canvasRef.value as any
 	// 设置宽高
