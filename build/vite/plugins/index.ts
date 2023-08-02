@@ -5,7 +5,6 @@
 
 import type { PluginOption } from 'vite';
 import vue from '@vitejs/plugin-vue';
-import { ConfigSvgIconsPlugin } from './svgIcons';
 import { ConfigCompressPlugin } from './compress';
 import { ConfigRestartPlugin } from './restart';
 import { ConfigProgressPlugin } from './progress';
@@ -16,7 +15,6 @@ export function createVitePlugins(env: ViteEnv, isBuild: boolean) {
     vue(),
   ];
 
-
   // 开启.gz压缩  rollup-plugin-gzip
   vitePlugins.push(ConfigCompressPlugin());
 
@@ -25,9 +23,6 @@ export function createVitePlugins(env: ViteEnv, isBuild: boolean) {
 
   // 构建时显示进度条
   vitePlugins.push(ConfigProgressPlugin());
-
-  // vite-plugin-svg-icons
-  vitePlugins.push(ConfigSvgIconsPlugin(isBuild));
 
   return vitePlugins;
 }
