@@ -69,9 +69,15 @@ importers:
       typescript:
         specifier: ^4.1.5
         version: 4.9.5
+      vite-plugin-compression:
+        specifier: ^0.5.1
+        version: 0.5.1(vite@2.9.16)
       vite-plugin-inspect:
         specifier: ^0.3.11
         version: 0.3.15(vite@2.9.16)
+      vite-plugin-progress:
+        specifier: ^0.0.7
+        version: 0.0.7(vite@2.9.16)
       vite-plugin-sass-dts:
         specifier: ^1.1.20
         version: 1.3.8(postcss@8.4.26)(prettier@2.8.8)(sass@1.63.6)(vite@2.9.16)
@@ -3760,6 +3766,10 @@ packages:
     resolution: {integrity: sha512-wXPCn3t9uu5rR4zXNSLasZHQMuRzUKBsdi4MsgT8uq4Lp1gQQo+T2G23tGj4SSgDHeNBle6vGseZtM2XV/X9bw==}
     dependencies:
       '@types/node': 16.18.38
+    dev: true
+
+  /@types/node@10.17.60:
+    resolution: {integrity: sha512-F0KIgDJfy2nA3zMLmWGKxcH2ZVEtCZXHHdOQs2gSaQ27+lNeEfGxzkIw90aXswATX7AZ33tahPbzy6KAfUreVw==}
     dev: true
 
   /@types/node@12.20.55:
@@ -10814,7 +10824,6 @@ packages:
       graceful-fs: 4.2.11
       jsonfile: 6.1.0
       universalify: 2.0.0
-    dev: false
 
   /fs-extra@11.1.1:
     resolution: {integrity: sha512-MGIE4HOvQCeUCzmlHs0vXpih4ysz4wg9qiSAu6cd42lVwPbTM1TjV7RusoyQqMmk/95gdQZX72u+YW+c3eEpFQ==}
@@ -17135,6 +17144,12 @@ packages:
       strip-json-comments: 2.0.1
     dev: true
 
+  /rd@2.0.1:
+    resolution: {integrity: sha512-/XdKU4UazUZTXFmI0dpABt8jSXPWcEyaGdk340KdHnsEOdkTctlX23aAK7ChQDn39YGNlAJr1M5uvaKt4QnpNw==}
+    dependencies:
+      '@types/node': 10.17.60
+    dev: true
+
   /react-dom@16.14.0(react@16.14.0):
     resolution: {integrity: sha512-1gCeQXDLoIqMgqD3IO2Ah9bnf0w9kzhwN5q4FGnHZ67hBm9yePzB5JJAIQCc8x3pFnNlwFq4RidZggNAAkzWWw==}
     peerDependencies:
@@ -20314,6 +20329,19 @@ packages:
       source-map: 0.5.7
     dev: true
 
+  /vite-plugin-compression@0.5.1(vite@2.9.16):
+    resolution: {integrity: sha512-5QJKBDc+gNYVqL/skgFAP81Yuzo9R+EAf19d+EtsMF/i8kFUpNi3J/H01QD3Oo8zBQn+NzoCIFkpPLynoOzaJg==}
+    peerDependencies:
+      vite: '>=2.0.0'
+    dependencies:
+      chalk: 4.1.2
+      debug: 4.3.4(supports-color@6.1.0)
+      fs-extra: 10.0.0
+      vite: 2.9.16(sass@1.63.6)
+    transitivePeerDependencies:
+      - supports-color
+    dev: true
+
   /vite-plugin-inspect@0.3.15(vite@2.0.0):
     resolution: {integrity: sha512-WlAnh0L14jtQA3q6+6cbhU3+ZcOE5iOeNuyQqUAK/T3IKsv1PwDwpHUSWjpP25uBO0WTbw2zsY0R3Hpbtfw+AA==}
     engines: {node: '>=14'}
@@ -20344,6 +20372,18 @@ packages:
       vite: 2.9.16(sass@1.63.6)
     transitivePeerDependencies:
       - supports-color
+    dev: true
+
+  /vite-plugin-progress@0.0.7(vite@2.9.16):
+    resolution: {integrity: sha512-zyvKdcc/X+6hnw3J1HVV1TKrlFKC4Rh8GnDnWG/2qhRXjqytTcM++xZ+SAPnoDsSyWl8O93ymK0wZRgHAoglEQ==}
+    engines: {node: '>=14', pnpm: '>=7.0.0'}
+    peerDependencies:
+      vite: '>2.0.0-0'
+    dependencies:
+      picocolors: 1.0.0
+      progress: 2.0.3
+      rd: 2.0.1
+      vite: 2.9.16(sass@1.63.6)
     dev: true
 
   /vite-plugin-sass-dts@1.1.20:
