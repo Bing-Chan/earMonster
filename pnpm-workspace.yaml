@@ -1,3 +1,4 @@
 packages:
   - docs # 文档预览
-  - packages/* # 存放编写的组件的
+  - demo # demo 调试
+  - packages/* # 存放编写的组件
