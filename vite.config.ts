@@ -1,10 +1,10 @@
 import { defineConfig } from 'vite'
-import { createVitePlugins } from './build/vite/plugins';
+// import { createVitePlugins } from './build/vite/plugins'
+import vue from '@vitejs/plugin-vue';
 import { resolve } from 'path'
 
 module.exports = {
-	assetsDir: './',
-	plugins: [ vue()],
+	plugins: [vue()],
 	resolve: {
 		alias: [
 			{
@@ -16,6 +16,16 @@ module.exports = {
 				replacement: resolve('packages'),
 			},
 		],
+	},
+	build: {
+		minify: 'terser',
+		terserOptions: {
+			compress: {
+				//生产环境时移除console
+				drop_console: true,
+				drop_debugger: true,
+			},
+		},
 	},
 	chainWebpack: config => {
 		config.resolve.alias.set('@ear-monster', resolve(__dirname, 'packages/components'))

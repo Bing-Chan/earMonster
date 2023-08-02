@@ -9,8 +9,11 @@ importers:
   .:
     dependencies:
       vite:
-        specifier: ^2.0.0
+        specifier: ^2.0.2
         version: 2.9.16(sass@1.63.6)
+      vite-plugin-restart:
+        specifier: ^0.3.1
+        version: 0.3.1(vite@2.9.16)
     devDependencies:
       '@changesets/cli':
         specifier: ^2.26.1
@@ -362,11 +365,11 @@ importers:
         specifier: ^4.1.5
         version: 4.1.5
       vite:
-        specifier: ^2.0.0
-        version: 2.0.0
+        specifier: ^2.0.2
+        version: 2.9.16(sass@1.44.0)
       vite-plugin-inspect:
         specifier: ^0.3.15
-        version: 0.3.15(vite@2.0.0)
+        version: 0.3.15(vite@2.9.16)
       vite-plugin-sass-dts:
         specifier: ^1.1.20
         version: 1.1.20
@@ -442,8 +445,8 @@ importers:
         version: 2.3.4(vue@3.2.47)
     devDependencies:
       vite:
-        specifier: ^2.0.0
-        version: 2.0.0
+        specifier: ^2.0.2
+        version: 2.9.16(sass@1.63.6)
       vue:
         specifier: ^3.2.47
         version: 3.2.47
@@ -9657,12 +9660,6 @@ packages:
       '@esbuild/win32-ia32': 0.18.13
       '@esbuild/win32-x64': 0.18.13
 
-  /esbuild@0.8.57:
-    resolution: {integrity: sha512-j02SFrUwFTRUqiY0Kjplwjm1psuzO1d6AjaXKuOR9hrY0HuPsT6sV42B6myW34h1q4CRy+Y3g4RU/cGJeI/nNA==}
-    hasBin: true
-    requiresBuild: true
-    dev: true
-
   /escalade@3.1.1:
     resolution: {integrity: sha512-k0er2gUkLf8O0zKJiAhmkTnJlTvINGv7ygDNPbeIsX/TJjGJZHuh9B2UxbsaEkmlEo9MfhrSzmhIlhRlI2GXnw==}
     engines: {node: '>=6'}
@@ -10006,7 +10003,7 @@ packages:
       esutils: 2.0.3
       file-entry-cache: 2.0.0
       functional-red-black-tree: 1.0.1
-      glob: 7.2.0
+      glob: 7.2.3
       globals: 11.12.0
       ignore: 3.3.10
       imurmurhash: 0.1.4
@@ -18491,6 +18488,7 @@ packages:
   /source-map@0.6.1:
     resolution: {integrity: sha512-UjgapumWlbMhkBgzT7Ykc5YXUT46F0iKu8SGXq0bcwP5dz/h0Plj6enJqjz1Zbq2l5WaqYnrVbwWOWMyF3F47g==}
     engines: {node: '>=0.10.0'}
+    requiresBuild: true
 
   /source-map@0.7.4:
     resolution: {integrity: sha512-l3BikUxvPOcn5E74dZiq5BGsTb5yEwhaTSzccU6t4sDOH8NWJCstKO5QT2CvtFoK6F0saL7p9xHAqHOlCPJygA==}
@@ -20375,22 +20373,6 @@ packages:
       - supports-color
     dev: true
 
-  /vite-plugin-inspect@0.3.15(vite@2.0.0):
-    resolution: {integrity: sha512-WlAnh0L14jtQA3q6+6cbhU3+ZcOE5iOeNuyQqUAK/T3IKsv1PwDwpHUSWjpP25uBO0WTbw2zsY0R3Hpbtfw+AA==}
-    engines: {node: '>=14'}
-    peerDependencies:
-      vite: ^2.0.0
-    dependencies:
-      '@rollup/pluginutils': 4.2.1
-      debug: 4.3.4(supports-color@6.1.0)
-      kolorist: 1.8.0
-      sirv: 2.0.3
-      ufo: 0.7.11
-      vite: 2.0.0
-    transitivePeerDependencies:
-      - supports-color
-    dev: true
-
   /vite-plugin-inspect@0.3.15(vite@2.9.16):
     resolution: {integrity: sha512-WlAnh0L14jtQA3q6+6cbhU3+ZcOE5iOeNuyQqUAK/T3IKsv1PwDwpHUSWjpP25uBO0WTbw2zsY0R3Hpbtfw+AA==}
     engines: {node: '>=14'}
@@ -20402,7 +20384,7 @@ packages:
       kolorist: 1.8.0
       sirv: 2.0.3
       ufo: 0.7.11
-      vite: 2.9.16(sass@1.63.6)
+      vite: 2.9.16(sass@1.44.0)
     transitivePeerDependencies:
       - supports-color
     dev: true
@@ -20418,6 +20400,15 @@ packages:
       rd: 2.0.1
       vite: 2.9.16(sass@1.63.6)
     dev: true
+
+  /vite-plugin-restart@0.3.1(vite@2.9.16):
+    resolution: {integrity: sha512-LVe74MLUwaOzXVUgRGiphYbAYNgdGF6mP5vxj5BKcKkdmzvuuw79qcNgn9kHKKaIlCCjmOUiY3qlJ8jBSBUCoA==}
+    peerDependencies:
+      vite: ^2.9.0 || ^3.0.0 || ^4.0.0
+    dependencies:
+      micromatch: 4.0.5
+      vite: 2.9.16(sass@1.63.6)
+    dev: false
 
   /vite-plugin-sass-dts@1.1.20:
     resolution: {integrity: sha512-T1w0kb1mjsnjRY1loc85capdcdrtMA6d1AHlUi0LP0oQjIOS3QqM7xgx/Nzc3sIpjSUPGsTITle3CvoR2pCQOg==}
@@ -20440,19 +20431,6 @@ packages:
       prettier: 2.8.8
       sass: 1.63.6
       vite: 2.9.16(sass@1.63.6)
-    dev: true
-
-  /vite@2.0.0:
-    resolution: {integrity: sha512-rNli5g0DaQ6+btlRqkmaR06neWaJGApmt40gocqrYDNi2XoEXYQgKiHSWzMeUgc1Cdva2HduqazaE+RaKjBpdQ==}
-    engines: {node: '>=12.0.0'}
-    hasBin: true
-    dependencies:
-      esbuild: 0.8.57
-      postcss: 8.4.26
-      resolve: 1.22.2
-      rollup: 2.79.1
-    optionalDependencies:
-      fsevents: 2.3.2
     dev: true
 
   /vite@2.9.16(sass@1.44.0):
