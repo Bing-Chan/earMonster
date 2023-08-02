@@ -1,6 +1,6 @@
 import { defineConfig } from 'vite'
 // import { createVitePlugins } from './build/vite/plugins'
-import vue from '@vitejs/plugin-vue';
+import vue from '@vitejs/plugin-vue'
 import { resolve } from 'path'
 
 module.exports = {
@@ -26,6 +26,9 @@ module.exports = {
 				drop_debugger: true,
 			},
 		},
+	},
+	server: {
+		port: 9000,
 	},
 	chainWebpack: config => {
 		config.resolve.alias.set('@ear-monster', resolve(__dirname, 'packages/components'))

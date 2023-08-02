@@ -50,6 +50,7 @@
 		"release-it": "^15.10.3",
 		"rollup-plugin-visualizer": "^5.9.2",
 		"typescript": "^4.1.5",
+		"vite": "^4.0.4",
 		"vite-plugin-compression": "^0.5.1",
 		"vite-plugin-inspect": "^0.3.11",
 		"vite-plugin-progress": "^0.0.7",
@@ -74,7 +75,6 @@
 		"*.{js,ts,css,vue,scss}": "prettier  --plugin-search-dir ./node_modules --config .prettierrc --write"
 	},
 	"dependencies": {
-		"vite": "^2.0.2",
 		"vite-plugin-restart": "^0.3.1"
 	},
 	"description": "一些常用的ui组件合集",
