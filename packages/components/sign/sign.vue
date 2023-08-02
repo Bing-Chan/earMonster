@@ -8,7 +8,7 @@
 	</div>
 </template>
 <script lang="ts" setup>
-import { ref, onMounted, onUnmounted, defineExpose } from 'vue'
+import { ref, onMounted, onUnmounted } from 'vue'
 
 export interface IProps {
 	/**
@@ -180,6 +180,7 @@ const closeDraw = () => {
 	onDrawEnd && onDrawEnd(canvasRef.current)
 }
 const initCanvas = () => {
+	debugger
 	// 获取canvas 实例
 	const canvas: HTMLCanvasElement = canvasRef.value as any
 	// 设置宽高
