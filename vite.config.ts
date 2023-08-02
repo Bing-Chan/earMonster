@@ -11,10 +11,10 @@ module.exports = {
 				find: '@',
 				replacement: resolve('demo'),
 			},
-			// {
-			// 	find: '~',
-			// 	replacement: resolve('packages'),
-			// },
+			{
+				find: '~',
+				replacement: resolve('packages/components'),
+			},
 		],
 	},
 	build: {

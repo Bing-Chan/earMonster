@@ -8,7 +8,7 @@
 	</div>
 </template>
 <script lang="ts" setup>
-import { ref, onMounted, onUnmounted } from 'vue'
+import { ref, onMounted, onUnmounted, defineExpose } from 'vue'
 
 export interface IProps {
 	/**
@@ -218,6 +218,8 @@ const initEsign = () => {
 }
 
 onMounted(() => {
+	debugger
+	// initEsign()
 	initEsign()
 })
 

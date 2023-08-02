@@ -244,6 +244,7 @@ export default defineComponent({
 		}
 
 		watchEffect(() => {
+			debugger
 			state.isOpen = props.isOpen
 			state.selected = JSON.parse(JSON.stringify(props.modelValue))
 			console.log(state.selected, 'state.selected ')

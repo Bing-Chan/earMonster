@@ -16,7 +16,6 @@ export default {
 		return process.env.version
 	},
 	install(app) {
-		debugger
 		Object.values(component).forEach(item => {
 			app.use(item)
 		})
