@@ -75,7 +75,8 @@
 		"*.{js,ts,css,vue,scss}": "prettier  --plugin-search-dir ./node_modules --config .prettierrc --write"
 	},
 	"dependencies": {
-		"vite-plugin-restart": "^0.3.1"
+		"vite-plugin-restart": "^0.3.1",
+		"vue": "^3.2.47"
 	},
 	"description": "一些常用的ui组件合集",
 	"directories": {

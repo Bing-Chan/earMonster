@@ -11,10 +11,10 @@ module.exports = {
 				find: '@',
 				replacement: resolve('demo'),
 			},
-			{
-				find: '~',
-				replacement: resolve('packages'),
-			},
+			// {
+			// 	find: '~',
+			// 	replacement: resolve('packages'),
+			// },
 		],
 	},
 	build: {
@@ -28,6 +28,7 @@ module.exports = {
 		},
 	},
 	server: {
+		host: '0.0.0.0',
 		port: 9000,
 	},
 	chainWebpack: config => {

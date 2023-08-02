@@ -1,21 +1,19 @@
 <template>
-<div>sadsa</div>
+	<div>asdsad</div>
 </template>
-<script setup lang="ts">
 
+<script lang="ts">
+import { defineComponent, reactive, toRefs } from 'vue';
+export default defineComponent({
+	name: 'App',
+	setup() {
+		const state = reactive({
+			include: ['perProgram', 'sectionPrice'],
+		});
 
+		return {
+			...toRefs(state),
+		};
+	},
+});
 </script>
-
-<style lang="scss">
-* {
-  padding: 0;
-  margin: 0;
-  box-sizing: border-box;
-}
-html {
-  font-size: 10px;
-}
-body {
-  font-size: 12px;
-}
-</style>
