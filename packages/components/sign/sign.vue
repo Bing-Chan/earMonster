@@ -8,7 +8,7 @@
 	</div>
 </template>
 <script lang="ts" setup>
-import { ref, onMounted, onUnmounted, defineExpose } from 'vue'
+import { ref, onMounted, onUnmounted, defineExpose, watchEffect } from 'vue'
 
 export interface IProps {
 	/**
@@ -80,6 +80,7 @@ const props = withDefaults(defineProps<IProps>(), {
 
 const { width, height, lineWidth, strokeColor, lineCap, lineJoin, bgColor, showBtn, onSave, onClear, onDrawEnd } = props
 
+const strokeColorRef = ref()
 const canvasRef = ref<any>(null)
 const ctxRef = ref<any>(null)
 
@@ -162,7 +163,7 @@ const init = (event: { changedTouches?: any; offsetX?: any; offsetY?: any; pageX
 	ctxRef.value.beginPath()
 	// 根据配置文件设置相应配置
 	ctxRef.value.lineWidth = lineWidth
-	ctxRef.value.strokeStyle = strokeColor
+	ctxRef.value.strokeStyle = strokeColorRef.value
 	ctxRef.value.lineCap = lineCap
 	ctxRef.value.lineJoin = lineJoin
 	// 设置画线起始点位
@@ -172,7 +173,6 @@ const init = (event: { changedTouches?: any; offsetX?: any; offsetY?: any; pageX
 }
 // 结束绘制
 const closeDraw = () => {
-
 	// 结束绘制
 	ctxRef.value.closePath()
 	// 移除鼠标移动或手势移动监听器
@@ -216,9 +216,8 @@ const initEsign = () => {
 	addEventListener()
 }
 
-onMounted(() => {
-	debugger
-	// initEsign()
+watchEffect(() => {
+	strokeColorRef.value = props.strokeColor
 	initEsign()
 })
 

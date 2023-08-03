@@ -80,10 +80,9 @@ export default defineComponent({
 			...toRefs(state),
 			signRef,
 			handleStart: () => {
-				debugger
 				state.signShow = false
 				state.signShow = true
-				// signRef.value.initEsign()
+				signRef.value.initEsign()
 			},
 		}
 	},
