@@ -1,7 +1,8 @@
 {
   "name": "@ear-monster/constants",
-  "version": "2.0.0",
+  "version": "3.0.1",
   "description": "常量库",
+  "author": "bing.chan",
   "main": "index.ts",
   "private": false,
   "scripts": {
@@ -11,6 +12,5 @@
     "access": "public",
     "registry": "https://registry.npmjs.org/"
   },
-  "author": "chenbing",
   "license": "ISC"
 }

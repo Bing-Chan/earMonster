@@ -8,7 +8,7 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
-  "author": "",
+  "author": "bing.chan",
   "publishConfig": {
     "access": "public",
     "registry": "https://registry.npmjs.org/"

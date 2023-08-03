@@ -1,7 +1,7 @@
 {
   "name": "@ear-monster/utils",
-  "version": "4.0.0",
-  "description": "工具库",
+  "version": "3.0.1",
+  "description": "",
   "private": false,
   "main": "index.ts",
   "publishConfig": {
@@ -12,7 +12,6 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "description": ""
+  "author": "bing.chan",
+  "license": "ISC"
 }
