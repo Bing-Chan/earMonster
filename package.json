@@ -27,7 +27,9 @@
 		"version": "changeset version --patch",
 		"preinstall": "npx only-allow pnpm",
 		"changeset": "changeset add ",
-		"version:rc": "changeset pre rc",
+		"changeset:rc": "changeset pre enter rc",
+		"changeset:beta": "changeset pre enter beta",
+		"pre:exit": "changeset pre exit",
 		"clear": "rimraf 'packages/*/{lib,node_modules}' && rimraf node_modules"
 	},
 	"devDependencies": {

@@ -8,7 +8,7 @@
 	</div>
 </template>
 <script lang="ts" setup>
-import { ref, onMounted, onUnmounted, defineExpose, watchEffect } from 'vue'
+import { ref, onMounted, onUnmounted, defineExpose, watchEffect,nextTick } from 'vue'
 
 export interface IProps {
 	/**
@@ -80,7 +80,6 @@ const props = withDefaults(defineProps<IProps>(), {
 
 const { width, height, lineWidth, strokeColor, lineCap, lineJoin, bgColor, showBtn, onSave, onClear, onDrawEnd } = props
 
-const strokeColorRef = ref()
 const canvasRef = ref<any>(null)
 const ctxRef = ref<any>(null)
 
@@ -163,7 +162,7 @@ const init = (event: { changedTouches?: any; offsetX?: any; offsetY?: any; pageX
 	ctxRef.value.beginPath()
 	// 根据配置文件设置相应配置
 	ctxRef.value.lineWidth = lineWidth
-	ctxRef.value.strokeStyle = strokeColorRef.value
+	ctxRef.value.strokeStyle = strokeColor
 	ctxRef.value.lineCap = lineCap
 	ctxRef.value.lineJoin = lineJoin
 	// 设置画线起始点位
@@ -179,7 +178,8 @@ const closeDraw = () => {
 	window.removeEventListener('mousemove', draw)
 	onDrawEnd && onDrawEnd(canvasRef.current)
 }
-const initCanvas = () => {
+const initCanvas = async () => {
+	await nextTick()
 	// 获取canvas 实例
 	const canvas: HTMLCanvasElement = canvasRef.value as any
 	// 设置宽高
@@ -216,10 +216,6 @@ const initEsign = () => {
 	addEventListener()
 }
 
-watchEffect(() => {
-	strokeColorRef.value = props.strokeColor
-	initEsign()
-})
 
 onUnmounted(() => {
 	removeEventListener()
