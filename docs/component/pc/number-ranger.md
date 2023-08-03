@@ -13,16 +13,19 @@ number-ranger/basic
 
 | Name                  | Description                          | Type                                     | Default |
 | --------------------- | ------------------------------------ | ---------------------------------------- | ------- |
-| model-value / v-model | binding value                        | ^[string] / ^[number] / ^[boolean]       | —       |
-| placeholder           | 提示文字                  | ^[string]       | —       |
-| row              | 绑定扩展信息           | ^[string]                               | {}   |
-| isOpen                | 是否需要打开选择框 | ^[boolean]                               | true                             | —       |
+|	placeholder	 | 提示文字   | ^[string]      | 请填写	|
+|	modelValue	 | 绑定值   | ^[Array]      | []	|
+|	row	 | 当前行  | ^[object]     | {}	|
+|	isOpen	 | 是否打开  | ^[boolean]      | true	|
+
+
 
 ### 事件
 
 | Name   | Description                           | Type                                                      |
 | ------ | ------------------------------------- | --------------------------------------------------------- |
 | complete | 选择区间完成事件 | ^[Function]`({ row:object,selected:object}) => void` |
+| open | 打开事件 | ^[Function]`() => void` |
 
 ### 插槽
 

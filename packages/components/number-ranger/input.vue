@@ -127,7 +127,7 @@ export default defineComponent({
 			},
 		},
 	},
-	emits: ['update:modelValue'],
+	emits: ['update:modelValue',"complete","open"],
 	setup(props, { emit }) {
 		const { proxy } = getCurrentInstance() as any
 		const state = reactive({
@@ -244,7 +244,6 @@ export default defineComponent({
 		}
 
 		watchEffect(() => {
-			debugger
 			state.isOpen = props.isOpen
 			state.selected = JSON.parse(JSON.stringify(props.modelValue))
 			console.log(state.selected, 'state.selected ')

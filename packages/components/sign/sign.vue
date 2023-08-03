@@ -4,6 +4,7 @@
 		<div v-show="showBtn" className="sign-btnWrap">
 			<el-button type="default" @click="cancel">清除</el-button>
 			<el-button type="primary" @click="save">保存图片</el-button>
+			<slot name="btn"></slot>
 		</div>
 	</div>
 </template>

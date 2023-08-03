@@ -20,21 +20,26 @@ sign/color
 
 | Name                  | Description                          | Type                                     | Default |
 | --------------------- | ------------------------------------ | ---------------------------------------- | ------- |
-| model-value / v-model | binding value                        | ^[string] / ^[number] / ^[boolean]       | —       |
-| label                 | the value of Radio                   | ^[string] / ^[number] / ^[boolean]       | —       |
-| disabled              | whether Radio is disabled            | ^[boolean]                               | false   |
-| border                | whether to add a border around Radio | ^[boolean]                               | false   |
-| size                  | size of the Radio                    | ^[enum]`'large' \| 'default' \| 'small'` | —       |
-| name                  | native `name` attribute              | ^[string]                                | —       |
+|strokeColor|画笔线条颜色     | ^[enum]`'#000' \| '#333' \| '#666'`      | #333  | 
+|width	 	|画布宽度         | ^[string] / ^[number]                    | 500	 |
+|height	 	|画布高度         | ^[string] / ^[number]                    | 200   |
+|lineWidth	|线条宽度         | ^[string] / ^[number]                    | 200   |
+|bgColor	|背景宽度         |  ^[enum]`'#000' \| '#333' \| '#666'`     | #fff  |
+|showBtn    |是否显示清空按钮 |  ^[boolean]                              | true  |
+
+
+
+
+
 
 ### 事件
 
 | Name   | Description                           | Type                                                      |
 | ------ | ------------------------------------- | --------------------------------------------------------- |
-| change | triggers when the bound value changes | ^[Function]`(value: string \| number \| boolean) => void` |
+| onSave |  保存图片事件 | ^[Function]`(blob:blob) => void` |
 
 ### 插槽
 
 | Name    | Description               |
 | ------- | ------------------------- |
-| default | customize default content |
+| btn | 按钮插槽 |
