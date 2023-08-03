@@ -1,10 +1,10 @@
 import { defineConfig } from 'vite'
-// import { createVitePlugins } from './build/vite/plugins'
-import vue from '@vitejs/plugin-vue'
+import { createVitePlugins } from './build/vite/plugins'
+// import vue from '@vitejs/plugin-vue'
 import { resolve } from 'path'
 
 module.exports = {
-	plugins: [vue()],
+	plugins: [createVitePlugins()],
 	resolve: {
 		alias: [
 			{

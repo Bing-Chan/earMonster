@@ -6,7 +6,7 @@
 import type { PluginOption } from 'vite';
 import vue from '@vitejs/plugin-vue';
 import { ConfigCompressPlugin } from './compress';
-// import { ConfigRestartPlugin } from './restart';
+import { ConfigRestartPlugin } from './restart';
 // import { ConfigProgressPlugin } from './progress';
 
 export function createVitePlugins() {
@@ -16,12 +16,12 @@ export function createVitePlugins() {
   ];
 
   // 开启.gz压缩  rollup-plugin-gzip
-  vitePlugins.push(ConfigCompressPlugin());
+   vitePlugins.push(ConfigCompressPlugin());
 
 //   // 监听配置文件改动重启
-//   vitePlugins.push(ConfigRestartPlugin());
+  vitePlugins.push(ConfigRestartPlugin());
 
-//   // 构建时显示进度条
+  // 构建时显示进度条
 //   vitePlugins.push(ConfigProgressPlugin());
 
   return vitePlugins;
