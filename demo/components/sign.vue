@@ -1,12 +1,5 @@
 <template>
-  <u-counter ref="counter" :start-amount="500" :end-amount="10000"></u-counter>
+	<div><ear-sign width="500"></ear-sign></div>
 </template>
-<script setup lang="ts">
-import { ref } from 'vue'
-defineOptions({
-  name: 'counterVue'
-})
-
+<script setup lang="ts" name="signVue">
 </script>
-
-<style lang="scss" scoped></style>

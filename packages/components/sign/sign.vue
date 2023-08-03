@@ -228,7 +228,6 @@ defineExpose({
 
 <style scoped lang="scss">
 .esign-wrapper {
-	border: 1px solid #ccc;
 	padding: 10px 10px;
 	.sign-btnWrap {
 		margin-top: 10px;
