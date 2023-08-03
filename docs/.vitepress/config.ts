@@ -78,6 +78,13 @@ module.exports = {
 					],
 				},
 				{
+					text: 'Common',
+					collapsible: true,
+					children: [
+						{ text: 'useDeepCopy', link: '/component/use/common/useDeepCopy.html' },
+					],
+				},
+				{
 					text: 'Router',
 					collapsible: true,
 					children: [
