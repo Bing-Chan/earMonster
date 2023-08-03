@@ -4,7 +4,6 @@
 		<div v-show="showBtn" className="sign-btnWrap">
 			<el-button type="default" @click="cancel">清除</el-button>
 			<el-button type="primary" @click="save">保存图片</el-button>
-			{{ strokeColor }}
 		</div>
 	</div>
 </template>
@@ -70,6 +69,11 @@ export interface IProps {
 
 const state = reactive({
 	strokeColor: 'green',
+	width: 400,
+	height: 200,
+	lineWidth: 4,
+	bgColor: 'transparent',
+	showBtn: true,
 })
 
 const props = withDefaults(defineProps<IProps>(), {
@@ -83,7 +87,7 @@ const props = withDefaults(defineProps<IProps>(), {
 	showBtn: true,
 })
 
-const { width, height, lineWidth, lineCap, lineJoin, bgColor, showBtn, onSave, onClear, onDrawEnd } = props
+const { lineJoin, lineCap, onSave, onClear, onDrawEnd } = props
 
 const canvasRef = ref<any>(null)
 const ctxRef = ref<any>(null)
@@ -104,7 +108,7 @@ const cancel = () => {
 	// 清空当前画布上的所有绘制内容
 	if (canvasRef.value) {
 		const canvasCtx = canvasRef.value.getContext('2d')
-		canvasCtx.clearRect(0, 0, width, height)
+		canvasCtx.clearRect(0, 0, state.width, state.height)
 
 		onClear && onClear(canvasRef.value)
 	}
@@ -134,16 +138,16 @@ const save = () => {
 // 绘制
 const draw = (event: { changedTouches?: any; pageX?: any; pageY?: any }) => {
 	// 获取当前坐标点位
-	const { pageX, pageY } = mobileStatus ? event.changedTouches[0] : event
+	const { clientX, clientY } = mobileStatus ? event.changedTouches[0] : event
 	// 获取canvas 实例
 	const canvas: HTMLCanvasElement = canvasRef.value as any
 
 	const { x, y } = canvas.getBoundingClientRect()
 	// 修改最后一次绘制的坐标点
-	client.value.endX = pageX
-	client.value.endY = pageY
+	client.value.endX = clientX
+	client.value.endY = clientY
 	// 根据坐标点位移动添加线条
-	ctxRef.value.lineTo(pageX - x, pageY - y)
+	ctxRef.value.lineTo(clientX - x, clientY - y)
 
 	// 绘制
 	ctxRef.value.stroke()
@@ -152,20 +156,21 @@ const draw = (event: { changedTouches?: any; pageX?: any; pageY?: any }) => {
 // 初始化
 const init = (event: { changedTouches?: any; offsetX?: any; offsetY?: any; pageX?: any; pageY?: any }) => {
 	// 获取偏移量及坐标
-	const { offsetX, offsetY, pageX, pageY } = mobileStatus ? event.changedTouches[0] : event
+	const { offsetX, offsetY, pageX, pageY, clientX, clientY } = mobileStatus ? event.changedTouches[0] : event
 	const canvas: HTMLCanvasElement = canvasRef.value as any
 
 	const { x, y } = canvas.getBoundingClientRect()
-
+	console.log(x, 'xxxxxxxx')
+	console.log(y, 'yyyyyyyy')
 	client.value.offsetX = offsetX
 	client.value.offsetY = offsetY
-	client.value.endX = pageX
-	client.value.endY = pageY
+	client.value.endX = clientX
+	client.value.endY = clientY
 
 	// 清除以上一次 beginPath 之后的所有路径，进行绘制
 	ctxRef.value.beginPath()
 	// 根据配置文件设置相应配置
-	ctxRef.value.lineWidth = lineWidth
+	ctxRef.value.lineWidth = state.lineWidth
 	ctxRef.value.strokeStyle = state.strokeColor
 	ctxRef.value.lineCap = lineCap
 	ctxRef.value.lineJoin = lineJoin
@@ -183,24 +188,23 @@ const closeDraw = () => {
 	onDrawEnd && onDrawEnd(canvasRef.current)
 }
 const initCanvas = async () => {
-	debugger
 	await nextTick()
 	// 获取canvas 实例
 	const canvas: HTMLCanvasElement = canvasRef.value as any
 	// 设置宽高
-	canvas.width = width
-	canvas.height = height
+	canvas.width = state.width
+	canvas.height = state.height
 	// 创建上下文
 	const ctx: any = canvas.getContext('2d')
 	ctxRef.value = ctx
 	// 设置填充背景色
-	ctxRef.value.fillStyle = bgColor
+	ctxRef.value.fillStyle = state.bgColor
 	// 绘制填充矩形
 	ctxRef.value.fillRect(
 		0, // x 轴起始绘制位置
 		0, // y 轴起始绘制位置
-		width, // 宽度
-		height, // 高度
+		state.width, // 宽度
+		state.height, // 高度
 	)
 }
 const addEventListener = () => {
@@ -231,18 +235,22 @@ onUnmounted(() => {
 
 watchEffect(() => {
 	state.strokeColor = props.strokeColor
+	state.width = props.width
+	state.height = props.height
+	state.lineWidth = props.lineWidth
+	state.bgColor = props.bgColor
+	state.showBtn = props.showBtn
 })
 
 defineExpose({
 	initEsign,
 })
 
-const { strokeColor } = toRefs(state)
+const { strokeColor, width, height, lineWidth, bgColor, showBtn } = toRefs(state)
 </script>
 
 <style scoped lang="scss">
 .esign-wrapper {
-	padding: 10px 10px;
 	.sign-btnWrap {
 		margin-top: 10px;
 		.sign-btn {
