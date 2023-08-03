@@ -2,13 +2,14 @@
 	<div class="esign-wrapper">
 		<canvas ref="canvasRef" :width="width" :height="height" style="border: 1px solid #ccc"></canvas>
 		<div v-show="showBtn" className="sign-btnWrap">
-			<span @click="cancel" className="sign-btn">清除</span>
-			<span @click="save" className="sign-btn primary">保存</span>
+			<el-button type="default" @click="cancel">清除</el-button>
+			<el-button type="primary" @click="save">保存图片</el-button>
+			{{ strokeColor }}
 		</div>
 	</div>
 </template>
 <script lang="ts" setup>
-import { ref, onMounted, onUnmounted, defineExpose, watchEffect,nextTick } from 'vue'
+import { ref, onMounted, onUnmounted, defineExpose, watchEffect, toRefs, reactive, nextTick } from 'vue'
 
 export interface IProps {
 	/**
@@ -67,6 +68,10 @@ export interface IProps {
 	onDrawEnd?: (canvas: HTMLCanvasElement) => void
 }
 
+const state = reactive({
+	strokeColor: 'green',
+})
+
 const props = withDefaults(defineProps<IProps>(), {
 	width: 400,
 	height: 200,
@@ -78,7 +83,7 @@ const props = withDefaults(defineProps<IProps>(), {
 	showBtn: true,
 })
 
-const { width, height, lineWidth, strokeColor, lineCap, lineJoin, bgColor, showBtn, onSave, onClear, onDrawEnd } = props
+const { width, height, lineWidth, lineCap, lineJoin, bgColor, showBtn, onSave, onClear, onDrawEnd } = props
 
 const canvasRef = ref<any>(null)
 const ctxRef = ref<any>(null)
@@ -128,7 +133,6 @@ const save = () => {
 
 // 绘制
 const draw = (event: { changedTouches?: any; pageX?: any; pageY?: any }) => {
-	debugger
 	// 获取当前坐标点位
 	const { pageX, pageY } = mobileStatus ? event.changedTouches[0] : event
 	// 获取canvas 实例
@@ -162,7 +166,7 @@ const init = (event: { changedTouches?: any; offsetX?: any; offsetY?: any; pageX
 	ctxRef.value.beginPath()
 	// 根据配置文件设置相应配置
 	ctxRef.value.lineWidth = lineWidth
-	ctxRef.value.strokeStyle = strokeColor
+	ctxRef.value.strokeStyle = state.strokeColor
 	ctxRef.value.lineCap = lineCap
 	ctxRef.value.lineJoin = lineJoin
 	// 设置画线起始点位
@@ -179,6 +183,7 @@ const closeDraw = () => {
 	onDrawEnd && onDrawEnd(canvasRef.current)
 }
 const initCanvas = async () => {
+	debugger
 	await nextTick()
 	// 获取canvas 实例
 	const canvas: HTMLCanvasElement = canvasRef.value as any
@@ -216,14 +221,23 @@ const initEsign = () => {
 	addEventListener()
 }
 
+onMounted(() => {
+	initEsign()
+})
 
 onUnmounted(() => {
 	removeEventListener()
 })
 
+watchEffect(() => {
+	state.strokeColor = props.strokeColor
+})
+
 defineExpose({
 	initEsign,
 })
+
+const { strokeColor } = toRefs(state)
 </script>
 
 <style scoped lang="scss">

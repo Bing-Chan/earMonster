@@ -15,6 +15,5 @@
 
 <script setup lang="ts">
 import signVue from './components/sign.vue'
-
 const moduleList = [signVue]
 </script>
