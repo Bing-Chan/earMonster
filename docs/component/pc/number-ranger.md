@@ -5,9 +5,8 @@
 点击输入框显示浮动层选择数字
 
 :::demo
-number-ranger/basic
+use/useDeepCopy
 :::
-
 
 ### 属性
 

@@ -23,7 +23,10 @@
 ## 🏋特性
 
 - 🚀 性能极佳，组件平均体积小于 1KB（min+gzip）
-- 🚀 零外部依赖，不依赖三方 npm 包
+- 🚀 初期依赖element plus做一些基础控件使用
+- 🚀 vite-plugin-progress   构建初始化进度条
+- 💪 vite-plugin-restart  修改自动重启插件
+- 💪 vite-plugin-compression  开启.gz压缩
 - 💪 使用 TypeScript 编写，提供完整的类型定义
 - 📖 提供丰富的中英文文档和组件示例
 - 📖 提供 Sketch 和 Axure 设计资源

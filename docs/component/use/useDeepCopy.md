@@ -1,29 +1,19 @@
----
-category: Utilities
----
+
 
 # useDeepCopy
 
-Reactive clone of a ref. By default, it use `JSON.parse(JSON.stringify())` to do the clone.
+深拷贝
 
 ## Usage
 
-```ts
-import { useDeepCopy } from '@ear-monster/use'
+:::demo
+use/useDeepCopy
+:::
 
-const original = ref({ key: 'value' })
-
-const { cloned } = useCloned(original)
-
-original.value.key = 'some new value'
-
-console.log(cloned.value.key) // 'some new value'
-```
-
-## Manual cloning
+## 手动拷贝
 
 ```ts
-import { useCloned } from '@vueuse/core'
+import { useDeepCopy } from '@ear-monster/use/core'
 
 const original = ref({ key: 'value' })
 
@@ -38,12 +28,12 @@ sync()
 console.log(cloned.value.key)// 'manual'
 ```
 
-## Custom Clone Function
+## 自定义拷贝
 
 Using [`klona`](https://www.npmjs.com/package/klona) for example:
 
 ```ts
-import { useCloned } from '@vueuse/core'
+import { useDeepCopy } from '@ear-monster/use/core'
 import { klona } from 'klona'
 
 const original = ref({ key: 'value' })

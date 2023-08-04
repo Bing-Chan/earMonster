@@ -81,7 +81,7 @@ module.exports = {
 					text: 'Common',
 					collapsible: true,
 					children: [
-						{ text: 'useDeepCopy', link: '/component/use/common/useDeepCopy.html' },
+						{ text: 'useDeepCopy', link: '/component/use/useDeepCopy.html' },
 					],
 				},
 				{

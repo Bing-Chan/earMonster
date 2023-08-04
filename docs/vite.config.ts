@@ -7,9 +7,16 @@ const path = require('path')
 export default defineConfig({
 	plugins: [sassDts(), Inspect()],
 	resolve: {
-		alias: {
-			'@ear-monster/components': path.resolve(__dirname, '../packages/components'),
-		},
+		alias: [
+			{
+				find: '@ear-monster/components',
+				replacement: path.resolve(__dirname, '../packages/components'),
+			},
+			{
+				find: '@ear-monster/use',
+				replacement: path.resolve(__dirname, '../packages/use'),
+			},
+		],
 	},
 	server: {
 		fs: {
