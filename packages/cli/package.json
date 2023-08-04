@@ -1,6 +1,6 @@
 {
 	"name": "@ear-monster/cli",
-	"version": "3.0.1",
+	"version": "3.0.2-rc.0",
 	"description": "脚手架",
 	"private": false,
 	"main": "./build",

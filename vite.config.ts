@@ -15,6 +15,10 @@ module.exports = {
 				find: '~',
 				replacement: resolve('packages/components'),
 			},
+			{
+				find: '$',
+				replacement: resolve('packages/use'),
+			},
 		],
 	},
 	build: {

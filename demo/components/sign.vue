@@ -10,10 +10,18 @@
 	</div>
 </template>
 <script setup lang="ts" name="signVue">
-import { reactive, ref, toRefs } from 'vue'
+import { onMounted, reactive, ref, toRefs } from 'vue'
+import { useDeepCopy } from '$/core/useDeepCopy'
 const state = reactive({
 	strokeColor: '#000',
 })
+const { cloned } = useDeepCopy()
+
+const json = ref({
+	name: 111,
+})
+
+onMounted(() => {})
 
 const { strokeColor } = toRefs(state)
 </script>

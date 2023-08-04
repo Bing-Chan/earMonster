@@ -1,5 +1,11 @@
 # @ear-monster/docs
 
+## 4.0.2-rc.0
+
+### Patch Changes
+
+-   发布 rc 版本
+
 ## 4.0.1
 
 ### Patch Changes

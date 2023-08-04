@@ -1,6 +1,6 @@
 {
   "name": "@ear-monster/theme-chalk",
-  "version": "3.0.1",
+  "version": "3.0.2-rc.0",
   "description": "样式文件",
   "private": false,
   "main": "index.js",
