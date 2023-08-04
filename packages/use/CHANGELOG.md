@@ -1,5 +1,11 @@
 # @ear-monster/use
 
+## 3.0.2-rc.1
+
+### Patch Changes
+
+-   发布深拷贝钩子
+
 ## 3.0.2-rc.0
 
 ### Patch Changes

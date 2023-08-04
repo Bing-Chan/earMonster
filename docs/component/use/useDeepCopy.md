@@ -17,13 +17,13 @@ import { useDeepCopy } from '@ear-monster/use/core'
 
 const original = ref({ key: 'value' })
 
-const { cloned, sync } = useCloned(original, { manual: true })
+const { cloned, exec } = useCloned(original, { manual: true })
 
 original.value.key = 'manual'
 
 console.log(cloned.value.key) // 'value'
 
-sync()
+exec()
 
 console.log(cloned.value.key)// 'manual'
 ```
@@ -38,5 +38,5 @@ import { klona } from 'klona'
 
 const original = ref({ key: 'value' })
 
-const { cloned, sync } = useCloned(original, { clone: klona })
+const { cloned, exec } = useCloned(original, { clone: klona })
 ```

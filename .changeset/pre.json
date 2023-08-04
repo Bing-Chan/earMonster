@@ -2,15 +2,16 @@
   "mode": "pre",
   "tag": "rc",
   "initialVersions": {
-    "@ear-monster/docs": "4.0.1",
-    "@ear-monster/cli": "3.0.1",
-    "@ear-monster/components": "3.0.1",
-    "@ear-monster/constants": "3.0.1",
-    "@ear-monster/theme-chalk": "3.0.1",
-    "@ear-monster/use": "3.0.1",
-    "@ear-monster/utils": "3.0.1"
+    "@ear-monster/docs": "4.0.2-rc.0",
+    "@ear-monster/cli": "3.0.2-rc.0",
+    "@ear-monster/components": "3.0.2-rc.0",
+    "@ear-monster/constants": "3.0.2-rc.0",
+    "@ear-monster/theme-chalk": "3.0.2-rc.0",
+    "@ear-monster/use": "3.0.2-rc.0",
+    "@ear-monster/utils": "3.0.2-rc.0"
   },
   "changesets": [
-    "kind-apricots-exist"
+    "kind-apricots-exist",
+    "tiny-socks-sparkle"
   ]
 }

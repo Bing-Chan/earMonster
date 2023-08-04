@@ -46,7 +46,7 @@ export function useDeepCopy<T>(source: MaybeRefOrGetter<T>, options: UseClonedOp
 		immediate = true,
 	} = options
 
-	function sync() {
+	function exec() {
 		cloned.value = clone(toValue(source))
 	}
 
@@ -57,8 +57,8 @@ export function useDeepCopy<T>(source: MaybeRefOrGetter<T>, options: UseClonedOp
 			immediate,
 		})
 	} else {
-		sync()
+		exec()
 	}
 
-	return { cloned, sync }
+	return { cloned, exec }
 }
