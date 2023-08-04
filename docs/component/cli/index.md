@@ -1,5 +1,7 @@
 
 
+
+
 ## 👷创建一个项目
 
 #### 全局安装脚手架
@@ -21,12 +23,13 @@ pnpm add  @ear-monster/cli
 
 #### 打开命令提示框
 
+gitee.com/duochan/earMonster/raw/3.x/docs/assets/md/1.png
+
 查看是否已安装成功
 
-![](https://gitee.com/duochan/earMonster/raw/3.x/docs/assets/md/1.png)
+![](D:\工作台\绩效项目\ear-monster\docs\assets\md\1.png)
 
 输入 ear-cli init  开始创建项目，再输入项目名称
-
 ![](https://gitee.com/duochan/earMonster/raw/3.x/docs/assets/md/2.png)
 
 回车后，选择对应项目模板，开始完成下载
