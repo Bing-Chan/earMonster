@@ -1,56 +1,34 @@
-## 👷创建一个H5项目
+## 👷创建一个项目
+
+#### 全局安装脚手架
 
 ```shell
-# Vue 3 项目，安装最新版  @ear-monster/components
-npm i  @ear-monster/components
+# 安装最新版  @ear-monster/cli
+npm i  @ear-monster/cli -g
 ```
 
 当然，你也可以通过 `yarn` 或 `pnpm` 进行安装：
 
 ```bash
 # 通过 yarn 安装
-yarn add  @ear-monster/components
+yarn add  @ear-monster/cli
 
 # 通过 pnpm 安装
-pnpm add  @ear-monster/components
+pnpm add  @ear-monster/cli
 ```
 
+#### 打开命令提示框
 
-## 🏌创建一个移动报表项目
+查看是否已安装成功
 
-```js
-import { createApp } from 'vue';
-//😂😂😂由于自己当时申请的npm包起了这个名字，现在没法改了，重新申请需要交钱，我就放弃了，先将就用着
-import * as galaxyUI from ' @ear-monster/components';
+![image-20230804140203265](C:\Users\陈冰\AppData\Roaming\Typora\typora-user-images\image-20230804140203265.png)
 
-const app = createApp();
-//注册你的全局组件
-app.use(earMonster);
+输入 ear-cli init  开始创建项目，再输入项目名称
 
-// 也可以按需引入哦~
-import {EarIntroStep  } from ' @ear-monster/components';
+![image-20230804140254206](C:\Users\陈冰\AppData\Roaming\Typora\typora-user-images\image-20230804140254206.png)
 
-//注册你的全局组件
-app.compoent(EarIntroStep);
-```
+回车后，选择对应项目模板，开始完成下载
 
+![image-20230804140340861](C:\Users\陈冰\AppData\Roaming\Typora\typora-user-images\image-20230804140340861.png)
 
-## 🏌创建一个PC端项目
-
-```js
-import { createApp } from 'vue';
-//😂😂😂由于自己当时申请的npm包起了这个名字，现在没法改了，重新申请需要交钱，我就放弃了，先将就用着
-import * as galaxyUI from ' @ear-monster/components';
-
-const app = createApp();
-//注册你的全局组件
-app.use(earMonster);
-
-// 也可以按需引入哦~
-import {EarIntroStep  } from ' @ear-monster/components';
-
-//注册你的全局组件
-app.compoent(EarIntroStep);
-```
-
-
+![image-20230804140429004](C:\Users\陈冰\AppData\Roaming\Typora\typora-user-images\image-20230804140429004.png)
