@@ -26,7 +26,7 @@ module.exports = {
 			{ text: '主页', link: '/' },
 			{ text: 'PC端', link: '/component/pc/index.html' },
 			{ text: 'Use', link: '/component/use/index.html' },
-
+			{ text: '脚手架', link: '/component/cli/index.html' },
 			// { text: 'H5端', link: '/component/h5/index.html' },
 			{ text: 'Gitee', link: 'https://gitee.com/duochan' },
 		],
