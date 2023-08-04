@@ -27,7 +27,7 @@ gitee.com/duochan/earMonster/raw/3.x/docs/assets/md/1.png
 
 查看是否已安装成功
 
-![](D:\工作台\绩效项目\ear-monster\docs\assets\md\1.png)
+![](https://gitee.com/duochan/earMonster/raw/3.x/docs/assets/md/1.png)
 
 输入 ear-cli init  开始创建项目，再输入项目名称
 ![](https://gitee.com/duochan/earMonster/raw/3.x/docs/assets/md/2.png)
