@@ -1,3 +1,5 @@
+
+
 ## 👷创建一个项目
 
 #### 全局安装脚手架
@@ -21,14 +23,14 @@ pnpm add  @ear-monster/cli
 
 查看是否已安装成功
 
-![image-20230804140203265](C:\Users\陈冰\AppData\Roaming\Typora\typora-user-images\image-20230804140203265.png)
+![](https://gitee.com/duochan/earMonster/raw/3.x/docs/assets/md/1.png)
 
 输入 ear-cli init  开始创建项目，再输入项目名称
 
-![image-20230804140254206](C:\Users\陈冰\AppData\Roaming\Typora\typora-user-images\image-20230804140254206.png)
+![](https://gitee.com/duochan/earMonster/raw/3.x/docs/assets/md/2.png)
 
 回车后，选择对应项目模板，开始完成下载
 
-![image-20230804140340861](C:\Users\陈冰\AppData\Roaming\Typora\typora-user-images\image-20230804140340861.png)
+![](https://gitee.com/duochan/earMonster/raw/3.x/docs/assets/md/3.png)
 
-![image-20230804140429004](C:\Users\陈冰\AppData\Roaming\Typora\typora-user-images\image-20230804140429004.png)
+![](https://gitee.com/duochan/earMonster/raw/3.x/docs/assets/md/4.png)
