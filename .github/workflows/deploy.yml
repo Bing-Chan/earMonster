@@ -1,58 +1,56 @@
-# 简单的工作流程，用于将静态内容部署到 GitHub Pages
-name: Deploy static content to Pages
+name: Deploy Vue App to GitHub Pages
 
 on:
-  # 在针对“main”分支的推送时运行
   push:
-    branches: ['master']
-
-  # 允许你从 Actions 选项卡手动运行此工作流程
-  workflow_dispatch:
-
-# 设置 GITHUB_TOKEN 的权限，以允许部署到 GitHub Pages
-permissions:
-  contents: read
-  pages: write
-  id-token: write
-
-# 允许一个并发部署
-concurrency:
-  group: 'pages'
-  cancel-in-progress: true
+    branches: [ main ]  # 当推送到 main 分支时触发（如果你的默认分支是 master，请改为 master）
 
 jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+    # 1. 获取代码仓库
+    - name: Checkout
+      uses: actions/checkout@v4
+
+    # 2. 设置 Node.js 环境
+    - name: Setup Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: '18'  # 使用你项目所需的 Node.js 版本
+        cache: 'npm'
+
+    # 3. 安装依赖
+    - name: Install Dependencies
+      run: npm ci
+
+    # 4. 执行构建命令，生成 dist 目录
+    - name: Build
+      run: npm run build  # 这是 Vue CLI 项目的默认构建命令
+
+    # 5. 上传构建好的 dist 目录
+    - name: Upload Artifact
+      uses: actions/upload-pages-artifact@v3
+      with:
+        path: ./dist  # Vue 项目构建后的默认输出目录
+
   deploy:
+    # 这个部署任务需要在上一个构建任务成功完成后才能运行
+    needs: build-and-deploy
+    
+    # 授予部署所需的权限
+    permissions:
+      pages: write
+      id-token: write
+    
+    # 定义部署环境
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
+    
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-
-      # 如果你的项目需要构建步骤，在这里添加
-      # 例如，对于一个 Vite/Vue/React 项目：
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: '18.12.1' # 请使用你项目所需的 Node.js 版本
-          cache: 'npm'
-
-      - name: Install dependencies
-        run: npm ci
-
-      - name: Build
-        run: npm run build # 你的构建命令
-
-      - name: Setup Pages
-        uses: actions/configure-pages@v4
-
-      - name: Upload artifact
-        uses: actions/upload-pages-artifact@v3
-        with:
-          # 上传由构建步骤生成的 dist 文件夹
-          path: './dist' # 请确保这里是你静态文件构建输出的目录
-
+      # 6. 部署到 GitHub Pages
       - name: Deploy to GitHub Pages
         id: deployment
-        uses: actions/deploy-pages@v4
+        uses: actions/deploy-pages@v3
