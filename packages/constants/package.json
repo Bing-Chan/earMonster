@@ -1,6 +1,6 @@
 {
   "name": "@ear-monster/constants",
-  "version": "3.0.2-rc.0",
+  "version": "3.0.3",
   "description": "常量库",
   "author": "bing.chan",
   "main": "index.ts",

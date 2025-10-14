@@ -9,6 +9,7 @@ export default defineConfig({
 	resolve: {
 		alias: {
 			'@ear-monster/components': path.resolve(__dirname, '../packages/components'),
+			'@ear-monster/use': path.resolve(__dirname, '../packages/use'),
 		},
 	},
 	server: {

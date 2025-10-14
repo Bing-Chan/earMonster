@@ -23,98 +23,97 @@ export const mdPlugin = (md: MarkdownIt) => {
 			'demo',
 			{
 				validate(params) {
+					console.log(params,"params")
 					return !!params.trim().match(/^demo\s*(.*)$/)
 				},
 				render(tokens, idx) {
-					const data = (md as any).__data
-					const hoistedTags: string[] = data.hoistedTags || (data.hoistedTags = [])
-					const m = tokens[idx].info.trim().match(/^demo\s*(.*)$/)
-					if (tokens[idx].nesting === 1 /* means the tag is opening */) {
-						const description = m && m.length > 1 ? m[1] : ''
-						const sourceFileToken = tokens[idx + 2]
-
-						let source = ''
-						const sourceFile = sourceFileToken.children?.[0].content ?? ''
-						if (sourceFileToken.type === 'inline') {
-							source = fs.readFileSync(path.resolve(docRoot, 'examples', `${sourceFile}.vue`), 'utf-8')
-
-							const existingScriptIndex = hoistedTags.findIndex(tag => {
-								return scriptSetupRE.test(tag)
-							})
-							if (existingScriptIndex === -1) {
-								hoistedTags.push(`
-    <script setup>
-    const demos = import.meta.globEager('../../examples/${sourceFile.split('/')[0]}/*.vue')
-	console.log(demos,"demosdemosdemos")
-    </script>`)
-							}
-						}
-						if (!source) throw new Error(`Incorrect source file: ${sourceFile}`)
-
-						//是否存在模板页
-						let isLayout = sourceFile.includes('all/')
-						console.log(sourceFile, 'isLayout')
-
-						const { html, js, css, cssPreProcessor, jsPreProcessor } = generateCodePenSnippet(source)
-						return `<vp-demo :demos="demos" source="${encodeURIComponent(
-							highlight(source, 'vue'),
-						)}" path="${sourceFile}" isLayout="${isLayout}"  html="${html}" js="${js}" css="${css}" css-pre-processor="${cssPreProcessor}" js-pre-processor="${jsPreProcessor}" raw-source="${encodeURIComponent(
-							source,
-						)}" description="${encodeURIComponent(localMd.render(description))}">`
-					} else {
-						return '</vp-demo>'
-					}
-				},
-			},
-		],
-	).use(
-		...[
-			mdContainer,
-			'nolayout',
-			{
-				render(tokens, idx) {
-					const data = (md as any).__data
-					const hoistedTags: string[] = data.hoistedTags || (data.hoistedTags = [])
-					const m = tokens[idx].info.trim().match(/^demo\s*(.*)$/)
-					if (tokens[idx].nesting === 1 /* means the tag is opening */) {
-						const description = m && m.length > 1 ? m[1] : ''
-						const sourceFileToken = tokens[idx + 2]
-
-						let source = ''
-						const sourceFile = sourceFileToken.children?.[0].content ?? ''
-						if (sourceFileToken.type === 'inline') {
-							source = fs.readFileSync(path.resolve(docRoot, 'examples', `${sourceFile}.vue`), 'utf-8')
-
-							const existingScriptIndex = hoistedTags.findIndex(tag => {
-								return scriptSetupRE.test(tag)
-							})
-							if (existingScriptIndex === -1) {
-								hoistedTags.push(`
-<script setup>
-const demos = import.meta.globEager('../../examples/${sourceFile.split('/')[0]}/*.vue')
-console.log(demos,"demosdemosdemos")
-</script>`)
-							}
-						}
-						if (!source) throw new Error(`Incorrect source file: ${sourceFile}`)
-
-						//是否存在模板页
-						let isLayout = sourceFile.includes('all/')
-						console.log(sourceFile, 'isLayout')
-
-						const { html, js, css, cssPreProcessor, jsPreProcessor } = generateCodePenSnippet(source)
-						return `<all-demo :demos="demos" source="${encodeURIComponent(
-							highlight(source, 'vue'),
-						)}" path="${sourceFile}" isLayout="${isLayout}"  html="${html}" js="${js}" css="${css}" css-pre-processor="${cssPreProcessor}" js-pre-processor="${jsPreProcessor}" raw-source="${encodeURIComponent(
-							source,
-						)}" description="${encodeURIComponent(localMd.render(description))}">`
-					} else {
-						return '</all-demo>'
-					}
+					return toDemo(tokens, idx)
 				},
 			},
 		],
 	)
+
+	md.use(
+		...[
+			mdContainer,
+			'nolayout',
+			{
+				validate(params) {
+					return !!params.trim().match(/^nolayout\s*(.*)$/)
+				},
+				render(tokens, idx) {
+					return toNolayout(tokens, idx)
+				},
+			},
+		],
+	)
+
+	md.use(
+		...[
+			mdContainer,
+			'level3',
+			{
+				validate(params) {
+					return !!params.trim().match(/^level3\s*(.*)$/)
+				},
+				render(tokens, idx) {
+					return tolevel3(tokens, idx)
+				},
+			},
+		],
+	)
+
+	const toDemo = (tokens, idx) => {
+		return render(tokens, idx, '../../examples', 'vp-demo')
+	}
+
+	const tolevel3 = (tokens, idx) => {
+		return render(tokens, idx, '../../../examples', 'level3-demo')
+	}
+
+	const toNolayout = (tokens, idx) => {
+		return render(tokens, idx, '../../examples', 'all-demo')
+	}
+
+	function render(tokens, idx, pathStr, demoName) {
+		const data = (md as any).__data
+		const hoistedTags: string[] = data.hoistedTags || (data.hoistedTags = [])
+		const m = tokens[idx].info.trim().match(/^demo\s*(.*)$/)
+		if (tokens[idx].nesting === 1 /* means the tag is opening */) {
+			const description = m && m.length > 1 ? m[1] : ''
+			const sourceFileToken = tokens[idx + 2]
+			let source = ''
+			const sourceFile = sourceFileToken.children?.[0].content ?? ''
+			if (sourceFileToken.type === 'inline') {
+				source = fs.readFileSync(path.resolve(docRoot, 'examples', `${sourceFile}.vue`), 'utf-8')
+				const existingScriptIndex = hoistedTags.findIndex(tag => {
+					return scriptSetupRE.test(tag)
+				})
+				if (existingScriptIndex === -1) {
+					hoistedTags.push(`
+									<script setup>
+									const demos = import.meta.globEager('${pathStr}/${sourceFile.split('/')[0]}/*.vue')
+									console.log(demos,"demosdemosdemos")
+									</script>`)
+				}
+			}
+			if (!source) throw new Error(`Incorrect source file: ${sourceFile}`)
+
+			//是否存在模板页
+			let isLayout = sourceFile.includes('all/')
+			console.log(sourceFile, 'isLayout')
+			console.log(demoName, 'isLayout')
+			const { html, js, css, cssPreProcessor, jsPreProcessor } = generateCodePenSnippet(source)
+			return `<${demoName} :demos="demos" source="${encodeURIComponent(
+				highlight(source, 'vue'),
+			)}" path="${sourceFile}" isLayout="${isLayout}"  html="${html}" js="${js}" css="${css}" css-pre-processor="${cssPreProcessor}" js-pre-processor="${jsPreProcessor}" raw-source="${encodeURIComponent(
+				source,
+			)}" description="${encodeURIComponent(localMd.render(description))}">`
+		} else {
+			console.log(demoName, '</>')
+			return '</' + demoName + '>'
+		}
+	}
 }
 
 function generateCodePenSnippet(source: string) {

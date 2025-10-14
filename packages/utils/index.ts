@@ -2,4 +2,7 @@ export * from './color'
 export * from './is'
 export * from './raf'
 export * from './validate'
-
+export * from './data2blob'
+export * from './effectRipple'
+export * from './language'
+export * from './mimes'

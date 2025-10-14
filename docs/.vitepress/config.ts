@@ -47,6 +47,20 @@ module.exports = {
 			],
 			'/component/pc/': [
 				{
+					text: '快速指南',
+					collapsible: true,
+					children: [
+						{
+							text: '介绍',
+							link: '/component/pc/introStep.html',
+						},
+						{
+							text: '脚手架安装',
+							link: '/component/pc/introStep.html',
+						},
+					],
+				},
+				{
 					text: 'PC基础组件',
 					collapsible: true,
 					children: [
@@ -62,6 +76,43 @@ module.exports = {
 							text: '区间选择',
 							link: '/component/pc/number-ranger.html',
 						},
+						{
+							text: '步进器',
+							link: '/component/pc/stepper.html',
+						},
+						{
+							text: '公式编辑器',
+							link: '/component/pc/formale.html',
+						},
+						{
+							text: '文档预览',
+							link: '/component/pc/preview.html',
+						},
+						{
+							text: '拖拽',
+							link: '/component/pc/number-ranger.html',
+						},
+					],
+				},
+				{
+					text: '扩展组件',
+					collapsible: true,
+					children: [
+						{
+							text: '图片裁剪',
+							link: '/component/pc/upload.html',
+						},
+					],
+				},
+				{
+					text: '业务组件',
+					collapsible: true,
+					children: [
+						{
+							text: '叫号系统',
+							link: '/component/pc/introStep.html',
+						},
+
 					],
 				},
 			],
@@ -78,10 +129,17 @@ module.exports = {
 					],
 				},
 				{
-					text: 'Common',
+					text: 'utilities',
 					collapsible: true,
 					children: [
-						{ text: 'useDeepCopy', link: '/component/use/common/useDeepCopy.html' },
+						{ text: 'useDeepCopy', link: '/component/use/utilities/useDeepCopy.html' },
+					],
+				},
+				{
+					text: 'time',
+					collapsible: true,
+					children: [
+						{ text: 'useDateFormat', link: '/component/use/time/useDateFormat.html' },
 					],
 				},
 				{
@@ -101,6 +159,11 @@ module.exports = {
 							link: '/component/use/router/useRouteHash.html',
 						},
 					],
+				},
+				{
+					text: 'Watch',
+					collapsible: true,
+					children: [{ text: 'whenever', link: '/component/use/watch/whenever.html' }],
 				},
 				{
 					text: 'Math',

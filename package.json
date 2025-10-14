@@ -19,7 +19,7 @@
 		"demo:dev": "vite",
 		"demo:build": "vite build",
 		"docs:dev": "pnpm run -C docs dev",
-		"docs:build": "pnpm run -C docs build",
+		"docs:build": "pnpm run -C docs build", 
 		"build:cli": "pnpm  --filter=@ear-monster/cli build",
 		"build": "pnpm --filter=@ear-monster/* run build",
 		"publish": "changeset publish --access public",
@@ -33,7 +33,7 @@
 		"clear": "rimraf 'packages/*/{lib,node_modules}' && rimraf node_modules"
 	},
 	"devDependencies": {
-		"@changesets/cli": "^2.26.1",
+		"@changesets/cli": "^2.26.2",
 		"@changesets/git": "^2.0.0",
 		"@ear-monster/constants": "workspace:*",
 		"@ear-monster/theme-chalk": "workspace:*",

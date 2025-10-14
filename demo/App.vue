@@ -14,6 +14,15 @@
 </template>
 
 <script setup lang="ts">
-import signVue from './components/sign.vue'
-const moduleList = [signVue]
+import sign from './components/sign.vue'
+import counter from './components/counter.vue'
+import stepper from './components/stepper.vue'
+import numberRange from './components/numberRange.vue'
+const moduleList = [numberRange,sign, counter,stepper]
 </script>
+<style lang="scss">
+.box-card {
+	margin-bottom: 20px;
+	line-height: 40px;
+}
+</style>

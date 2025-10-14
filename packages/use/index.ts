@@ -27,3 +27,9 @@ export * from './core/useLocalStorage'
 export * from './core/useSessionStorage'
 export * from './core/useStorage'
 export * from './core/useStorageAsync'
+
+export * from './core/useDeepCopy'
+
+//  time
+export * from './shared/useDateFormat'
+

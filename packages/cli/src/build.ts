@@ -28,7 +28,7 @@ function addQuestions() {
 			},
 			{
 				key: 0,
-				name: 'H5(vue2)',
+				name: 'H5(vue3)',
 				value: 'H5',
 			},
 		]

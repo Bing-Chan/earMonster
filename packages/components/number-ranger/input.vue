@@ -1,6 +1,6 @@
 <template>
 	<el-popover ref="popover" :visible="showRange" placement="bottom-start" title="" :width="350">
-		<div>
+		<div v-click-outside="handleOutside"  style="padding-top: 10px">
 			<div class="number-wapper">
 				<el-form ref="formRef" :model="formData" :rules="formRules" label-width="0px">
 					<div class="number-wapper-body">
@@ -75,7 +75,7 @@
 				</el-form>
 			</div>
 
-			<div style="text-align: right; margin: 0; margin-top: 10px">
+			<div style="text-align: right; margin: 0; margin-top: 5px">
 				<el-button size="mini" type="default" @click="showRange = false">取消</el-button>
 				<el-button type="primary" :loading="loading" size="mini" @click="handleSave">确定</el-button>
 			</div>
@@ -97,7 +97,7 @@
 <script lang="ts">
 import { defineComponent, reactive, toRefs, watchEffect, getCurrentInstance } from 'vue'
 import { SCOPE_TYPE } from '@ear-monster/constants/number'
-import { ClickOutside } from 'element-plus'
+import { ClickOutside as vClickOutside } from 'element-plus'
 import { validateEnd, validateStart, toBeginFlag, toEndFlag } from '@ear-monster/utils/validate'
 
 export default defineComponent({
@@ -127,7 +127,10 @@ export default defineComponent({
 			},
 		},
 	},
-	emits: ['update:modelValue',"complete","open"],
+	emits: ['update:modelValue', 'complete', 'open'],
+	directives:{
+		"ClickOutside":vClickOutside
+	},
 	setup(props, { emit }) {
 		const { proxy } = getCurrentInstance() as any
 		const state = reactive({
@@ -264,6 +267,13 @@ export default defineComponent({
 			state.formData.endFlag = 2
 		}
 
+		/***
+		 * 用于处理多个浮动时重叠问题
+		 */
+		const handleOutside = () => {
+			state.showRange = false
+		}
+
 		return {
 			...toRefs(state),
 			handleMax,
@@ -271,6 +281,8 @@ export default defineComponent({
 			handleSave,
 			handleOpen,
 			SCOPE_TYPE,
+			vClickOutside,
+			handleOutside,
 		}
 	},
 })
@@ -292,6 +304,7 @@ input::-webkit-inner-spin-button {
 	width: 100%;
 	.item {
 		flex: 1;
+		text-align: center;
 	}
 }
 </style>

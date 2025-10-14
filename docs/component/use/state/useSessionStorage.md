@@ -8,4 +8,11 @@ Reactive [SessionStorage](https://developer.mozilla.org/en-US/docs/Web/API/Windo
 
 ## Usage
 
-Please refer to `useStorage`.
+```ts
+
+import { useLocalStorage } from '@ear-monster/use'
+
+// bind object
+const state = useLocalStorage('my-store', { hello: 'hi', greeting: 'Hello' })
+
+```

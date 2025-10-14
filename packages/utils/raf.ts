@@ -1,5 +1,6 @@
 export const inBrowser = typeof window !== 'undefined';
 
+// 定时器
 // Keep forward compatible
 // should be removed in next major version
 export const supportsPassive = true;

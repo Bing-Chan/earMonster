@@ -6,11 +6,16 @@ category: State
 
 Reactive async state. Will not block your setup function and will trigger changes once the promise is ready.
 
+:::level3
+state/useAsyncState
+:::
+
+
 ## Usage
 
 ```ts
 import axios from 'axios'
-import { useAsyncState } from '@vueuse/core'
+import { useAsyncState } from '@ear-monster/use'
 
 const { state, isReady, isLoading } = useAsyncState(
   axios
