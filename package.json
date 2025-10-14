@@ -19,7 +19,7 @@
 		"demo:dev": "vite",
 		"demo:build": "vite build",
 		"docs:dev": "pnpm run -C docs dev",
-		"build": "pnpm run -C docs build", 
+		"docs:build": "pnpm run -C docs build", 
 		"build:cli": "pnpm  --filter=@ear-monster/cli build",
 		"build:all": "pnpm --filter=@ear-monster/* run build",
 		"publish": "changeset publish --access public",
