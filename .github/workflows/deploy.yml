@@ -6,7 +6,7 @@ on:
   workflow_dispatch:
 
 permissions:
-  contents: read
+  contents: write
   pages: write
   id-token: write
 
@@ -39,7 +39,12 @@ jobs:
         run: pnpm install
         
       - name: Build
-        run: pnpm run build
+        run: pnpm run docs:build
+      - name: Debug - List directory contents
+        run: |
+          ls -la ./docs/.vitepress/dist
+          echo "Current directory: $(pwd)"
+          echo "GitHub Run ID: ${{ github.run_id }}"
         
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
@@ -56,3 +61,7 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v3
+        with:
+          # 确保GitHub Pages在仓库设置中已启用：https://github.com/Bing-Chan/earMonster/settings/pages
+          # 请设置Source为GitHub Actions
+          artifact_name: github-pages
