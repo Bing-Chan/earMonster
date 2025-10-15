@@ -8,6 +8,10 @@ on:
 jobs:
   deploy:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      pages: write
+      id-token: write
     steps:
       - name: Checkout repository
         uses: actions/checkout@v3
@@ -49,6 +53,10 @@ jobs:
           user_email: 'github-actions[bot]@users.noreply.github.com'
           force_orphan: true
           commit_message: 'deploy: ${{ github.sha }}'
+          full_commit_message: |
+            Deploy documentation for ${{ github.sha }}
+            
+            Deployed from ${{ github.repository }}@${{ github.ref }}
 
       - name: Deployment info
         run: |
