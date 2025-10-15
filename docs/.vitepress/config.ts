@@ -5,7 +5,7 @@ module.exports = {
 	lang: 'zh-CN',
 	title: 'Ear Monster',
 	description: 'ear-monster',
-	base: '/earmonster/',
+	base: '/earMonster/',
 	head: [
 		[
 			'link',
@@ -187,13 +187,13 @@ module.exports = {
 			],
 		},
 		editLink: {
-			pattern: 'https://github.com/vueuse/vueuse/tree/main/packages/:path',
+			pattern: 'https://github.com/Bing-Chan/earMonster/tree/master/docs/:path',
 			text: 'Suggest changes to this page',
 		},
 
 		footer: {
 			message: 'Released under the MIT License.',
-			copyright: 'Copyright © 2020-PRESENT Anthony Fu and VueUse contributors',
+			copyright: 'Copyright © EAR MONSTER contributors',
 		},
 	},
 }
