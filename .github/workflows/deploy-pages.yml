@@ -32,6 +32,13 @@ jobs:
       - name: Build documentation
         run: pnpm run docs:build
 
+      - name: Debug - Verify build output
+        run: |
+          echo "Checking build output directory..."
+          ls -la ./docs/.vitepress/dist
+          echo "\nCurrent directory: $(pwd)"
+          echo "\nBuild successful. Proceeding with deployment..."
+
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
@@ -46,4 +53,5 @@ jobs:
       - name: Deployment info
         run: |
           echo "Deployment successful!"
-          echo "GitHub Pages URL: https://${{ github.repository_owner }}.github.io/${{ github.event.repository.name }}/"
+          echo "Please ensure GitHub Pages is enabled in your repository settings"
+          echo "Set the Source to 'Deploy from a branch' and select 'gh-pages' branch"
