@@ -21,6 +21,8 @@
 
 自己模仿尝试编写的简单轻量插件，希望有志同道合的同学或大佬赐教，多提意见~
 
+示例地址：https://bing-chan.github.io/earMonster/
+
 
 
 ## 🏋特性
