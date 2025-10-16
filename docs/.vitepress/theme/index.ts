@@ -5,9 +5,8 @@ import vpDemo from '../components/vp-demo.vue'
 import allDemo from '../components/all-demo.vue'
 import level3Demo from '../components/level3-demo.vue'
 import ElementPlus from 'element-plus'
-import 'element-plus/dist/index.css'
-
 import './doc.scss'
+import 'element-plus/dist/index.css'
 
 export default {
 	...DefaultTheme,

@@ -92,8 +92,7 @@ export const mdPlugin = (md: MarkdownIt) => {
 				if (existingScriptIndex === -1) {
 					hoistedTags.push(`
 									<script setup>
-									const demos = import.meta.globEager('${pathStr}/${sourceFile.split('/')[0]}/*.vue')
-									console.log(demos,"demosdemosdemos")
+									const demos = import.meta.globEager('${pathStr}/${sourceFile.split('/')[0]}/*.vue', { eager: true })
 									</script>`)
 				}
 			}
@@ -101,8 +100,7 @@ export const mdPlugin = (md: MarkdownIt) => {
 
 			//是否存在模板页
 			let isLayout = sourceFile.includes('all/')
-			console.log(sourceFile, 'isLayout')
-			console.log(demoName, 'isLayout')
+		
 			const { html, js, css, cssPreProcessor, jsPreProcessor } = generateCodePenSnippet(source)
 			return `<${demoName} :demos="demos" source="${encodeURIComponent(
 				highlight(source, 'vue'),
