@@ -5,7 +5,7 @@ module.exports = {
 	lang: 'zh-CN',
 	title: 'Ear Monster',
 	description: 'ear-monster',
-	base: '/',
+	base: '/earMonster/',
 	head: [
 		[
 			'link',
@@ -21,7 +21,7 @@ module.exports = {
 	},
 	themeConfig: {
 		// repo: 'fish-uncle/design-plus', 自动生成github链接
-		logo: '/logo.jpg',
+		logo: '/earMonster/logo.png',
 		nav: [
 			{ text: '主页', link: '/' },
 			{ text: 'PC端', link: '/component/pc/index.html' },
