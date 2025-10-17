@@ -16,7 +16,7 @@
 
 ### 🕵介绍
 
-​		Ear-Monster 是自己模仿、学习、编写的一些日常工作中用到的插件，整理起来，方便复用,目前支持[Vue 3 版本](https://vant-contrib.gitee.io/vant)，希望有志同道合的同学或大佬赐教，多提意见~
+​		Ear-Monster 是自己模仿、学习、编写的一些日常工作中用到的插件，整理起来，方便复用,目前支持[Vue 3 版本](https://bing-chan.github.io/earMonster/)，希望有志同道合的同学或大佬赐教，多提意见~
 
 
 
