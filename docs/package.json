@@ -5,7 +5,7 @@
   "scripts": {
     "dev": "vitepress dev",
     "build": "vitepress build",
-    "preview": "vite preview --port 4173 --base=/ .vitepress/dist"
+    "preview": "vite preview --port 4173 .vitepress/dist"
   },
   "dependencies": {
     "@vue/compiler-sfc": "^3.2.47",

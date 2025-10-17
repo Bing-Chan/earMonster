@@ -11,7 +11,7 @@ module.exports = {
 			'link',
 			{
 				rel: 'icon',
-				href: '/11.ico',
+				href: '/earMonster/11.ico',
 			},
 		],
 	],
@@ -21,7 +21,7 @@ module.exports = {
 	},
 	themeConfig: {
 		// repo: 'fish-uncle/design-plus', 自动生成github链接
-		logo: '/earMonster/logo.png',
+		logo: '/logo.png',
 		nav: [
 			{ text: '主页', link: '/' },
 			{ text: 'PC端', link: '/component/pc/index.html' },
